@@ -62,7 +62,7 @@ $$T_{VC} = 0.2*10^{-3}sec + T_{DGRAM} = 1.1162sec$$
 - Step 5:
 $$T_{MSG} = 5*((\frac{1*2^{20}bits}{100*10^{6}bits/sec})+(\frac{2*10^{3}meters}{2.8*10^{8}meters/sec}))$$
 
-### Socket Programming
+### **Socket Programming Files**
 
 - Files > Doc Sharing > Socket Programming > Sample Socket Code.zip
 - TCPEchoClient.c
@@ -71,6 +71,21 @@ $$T_{MSG} = 5*((\frac{1*2^{20}bits}{100*10^{6}bits/sec})+(\frac{2*10^{3}meters}{
 - UDPEchoServer.c
 - HandleTCPClient.c
 
+### **Socket Programming Notes**
 
+- IP Address
+    - Datagram (packet) protocol
+    - 32-bit identifier 
+    - Dotted-quad: 192.118.56.25
+    - Identifies a host interface 
+- Transport Protocols
+    - Add services on top of IP
+    - User Datagram Protocol (UDP)
+        - Data checksum
+        - Best-effort
+    - Transmission Control Protocol (TCP)
+        - Data checksum
+        - Reliable byte-stream delivery
+        
 
 
