@@ -1,6 +1,57 @@
-# 556 
+# 556 Computer Graphics
 
-## 09/21 Notes
+Fall 2022
+Matt Evett
+
+## 08/31 Class Notes
+
+- 1970s - 1980s
+  - Raster Graphics - array (raster) of picture elements (pixels) in frame buffer
+  - IFIPS - GKS European, ISO 2D standard
+- 1990s - 2000s
+  - OpenGL API
+- 2000s - 2010s
+  - Photorealism
+  - Graphics Cards
+- Generic Flat Panel Display
+  - Vertical Grid / Light Emitting Elements / Horizontal Grid
+- Brief WebGL intro
+  - Each application contains at least 2 files: 1 html, 1 JS
+    - HTML includes utilities, shaders
+    - JS defines the model, does most of the graphics
+- Change from 1.0 to 2.0
+  - WebGL uses an earlier version of GLSL which is the default
+  - Attribute in vertex shader vs in variable
+- Three-color Theory
+  - Human visual system has two types of sensors
+    - Rods - monochromatic, night vision
+    - Cones - color sensitive, three types of cones, only three values (the tristimulus values) are sent to the brain
+
+## 09/19 Class Notes
+
+- Coordinate Systems and Shaders
+    - Vertex shader must output in clip coordinates
+    - Input to fragment shader from rasterizer is in window coordinates
+    - Application can provide certex data in any coordinate system but shader must eventually produce gl_position in clip coordinates
+- Default view is Orthographic Viewing
+- Don’t have to use the entire window for the viewport
+    ```
+    gl.viewport(x,y,w,h)
+    ```
+- Naming Conventions
+    - aPosition, aColor, etc - attributes passed to a vertex shader have names beginning with “a” in both the application and the shader
+    - vColor - variable variables begin with “v” are defined in the vertex shader
+    - fColor - variable variables begin with “f” 
+- Attributes determine the appearance of objects
+    - Color (points, lines, polygons)
+    - Size & Width (points, lines)
+    - Stipple Pattern (lines, polygons)
+    - Polygon mode
+        - Display as filled, solid color or shaded
+        - Display edges
+        - Display vertices
+
+## 09/21 Class Notes
 
 #### Program Object
 
