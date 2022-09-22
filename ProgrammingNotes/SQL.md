@@ -12,6 +12,7 @@ Notes on using SQL.
 
 - [Accessing & Creating : Data & Tables](#accessing--creating--data--tables)
 - [Queries](#queries)
+- [Aggregate Functions](#aggregate-functions)
 
 ---
 
@@ -164,8 +165,64 @@ SELECT * FROM movies
 WHERE name LIKE '%man%';
 ```
 
+### Data Range
+
+- 'BETWEEN' is used to create a search range
+```
+SELECT * FROM movies
+WHERE year BETWEEN 1990 AND 1999;
+```
+
+### AND OR
+
+```
+SELECT * FROM movies
+WHERE year BETWEEN 1990 AND 1999
+AND genre = 'romance';
+
+SELECT * FROM movies
+WHERE year BETWEEN 1990 AND 1999
+OR genre = 'romance';
+```
+
+### Sort Results
+
+```
+SELECT * FROM movies
+ORDER BY name;
+
+SELECT * FROM movies
+ORDER BY year DESC;
+```
+
+### Limit Search Results
+
+- Limit the number of returned results
+```
+SELECT * FROM movies LIMIT 10;
+```
+
+### Case (if-else)
+
+```
+SELECT NAME,
+    CASE
+        WHEN rating > 8 THEN 'Fantastic'
+        WHEN rating > 6 THEN 'Average'
+        ELSE 'Avoid'
+    END AS 'Review'
+FROM movies;
+```
 
 [Return to Top](#table-of-contents)
 ___
 
+# Aggregate Functions
+
+- Aggregates: calculations performed on multiple rows of a table
+
+
+
+[Return to Top](#table-of-contents)
+___
 
