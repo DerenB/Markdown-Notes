@@ -221,7 +221,50 @@ ___
 
 - Aggregates: calculations performed on multiple rows of a table
 
+### Count
 
+```
+SELECT COUNT(*) FROM movies
+WHERE price = 0;
+```
+
+### SUM
+
+```
+SELECT SUM(downloads) FROM movies;
+```
+
+### MIN / MAX
+
+```
+SELECT MAX(price) FROM movies;
+```
+
+### Average
+
+```
+SELECT AVG(price) FROM movies;
+```
+
+### Round
+
+- Rounds the return column to the number of decimal places
+- ROUND(dataToRound, numberOfDecimalPlaces)
+
+```
+SELECT name, ROUND(price, 2) FROM movies;
+SELECT ROUND(AVG(price),2) FROM movies;
+```
+
+### Group By
+
+- Groups similar return results
+- Example returns the count for each price group where downloads are over 20,000
+```
+SELECT price, COUNT(*) FROM movies
+WHERE downloads > 20000 
+GROUP BY price
+```
 
 [Return to Top](#table-of-contents)
 ___
