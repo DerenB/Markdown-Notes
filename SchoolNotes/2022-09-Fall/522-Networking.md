@@ -86,6 +86,10 @@ $$T_{MSG} = 5*((\frac{1*2^{20}bits}{100*10^{6}bits/sec})+(\frac{2*10^{3}meters}{
     - Transmission Control Protocol (TCP)
         - Data checksum
         - Reliable byte-stream delivery
-        
+
+
+# 09/26 Notes - Sockets
+
+- Both Client and Server have to make their own socket 
 
 
