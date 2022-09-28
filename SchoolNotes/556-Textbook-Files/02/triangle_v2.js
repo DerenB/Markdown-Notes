@@ -8,8 +8,8 @@ window.onload = function init()
 {
     var canvas = document.getElementById( "gl-canvas" );
 
-    gl = canvas.getContext('webgl2');
-    if (!gl) { alert( "WebGL 2.0 isn't available" ); }
+    gl = canvas.getContext('webgl1');
+    if (!gl) { alert( "WebGL 1.0 isn't available" ); }
 
     //
     //  Initialize our data for a single triangle
@@ -17,11 +17,11 @@ window.onload = function init()
 
     // First, initialize the  three points.
 
-    points = new Float32Array([
-        -1, -1 ,
-        0,  1 ,
-        1, -1
-    ]);
+     points = new Float32Array([
+       -1, -1 ,
+          0,  1 ,
+          1, -1
+        ]);
 
     //
     //  Configure WebGL

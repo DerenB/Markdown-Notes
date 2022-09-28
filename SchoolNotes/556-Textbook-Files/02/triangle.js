@@ -17,11 +17,11 @@ window.onload = function init()
 
     // First, initialize the  three points.
 
-    points = new Float32Array([
-        -1, -1 ,
-        0,  1 ,
-        1, -1
-    ]);
+     points = new Float32Array([
+       -1, -1 ,
+          0,  1 ,
+          1, -1
+        ]);
 
     //
     //  Configure WebGL
