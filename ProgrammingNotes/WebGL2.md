@@ -3,6 +3,14 @@
 # Table of Contents
 
 [Basics](#basics)
+- Rasterization
+- Functions
+- Vertex Shader
+- Fragment Shader
+- Setup
+- Send data to shaders
+
+[Hello World](#hello-world)
 
 # Basics
 
@@ -44,10 +52,43 @@ gl.drawElements;
 
 ### Send Data to Shaders
 
-- Four ways 
+- Four ways a shader can receive data:
+
+#### Attributes, Buffers, Vertex Arrays
+
+- Buffers: arrays of binary data you upload to the GPU
+- Buffers contain positions, normals, texture coordinates, vertex colors, etc
+- Attributes: used to specify how to pull data out of your buffers, and provide them to your vertex shader
+- Buffers are not random access
+- Vertex shader is executed a specified number of times
+- Each time it's executed, the next value from each specified buffer is pulled out and assigned to an attribute
+- Vertex Array Object (VAO): collection of the state of attributes, which buffers to use for each, and how to pull data
+
+#### Unifroms
+
+- Global variables you set before you execute the shader program
+
+#### Textures
+
+- Arrays of data you can randomly access in the shader program
+- Most common thing to put in a texture is an image
+- Just data, can contain something other than colors
+
+#### Varyings
+
+- A way for a vertex shader to pass data to a fragment shader.
+- Depending on what is being rendered, the values set on a varying by a vertex shader
 
 [Back to Top](#table-of-contents)
 
+# Hello World
+
+- WebGL only cares about: Clip Space Coordinates & Colors
+- Clip Space Coordinates
+  - From Vertex Shader
+  - Always go from -1 to +1 no matter the canvas size
+- Colors
+  - From Fragment Shader
 
 
 
@@ -56,6 +97,8 @@ gl.drawElements;
 
 
 
+
+[Back to Top](#table-of-contents)
 
 
 
