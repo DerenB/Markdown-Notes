@@ -1,10 +1,57 @@
-### 523 - Exam 1 Notes
+# 523 - Exam 1 Notes
 
-- Chapters 1, 2
-- 10 T/F
-
-### Content
-- OSI Reference Model
-- Nyquist / Shannon
+- Terminologies
+  - OSI Reference Model
+  - dB = 10 * log2(s/n)
+  - S/N = 10^dB/10
+  - $$dB=10*log_{10}(\frac{S}{N})$$
+  - $$\frac{S}{N}=10^{\frac{dB}{10}}$$
+- Nyquist's Theorem
+  - Bitrate = 2f * log2(b)
+  - $$Bitrate=2f*log_{2}(B)$$
+- Shannon's Noisy Theorem
+  - Bitrate = Bandwidth * log2(1 + s/n)
+  - $$Bitrate=Bandwidth*log_{2}(1+\frac{S}{N}$$
 - Baseband Transmission
-    - NRZ, NRZ-I, Manchester
+  - NRZ
+    - 0: High
+    - 1: Low
+  - NRZ-I
+    - 0: Stay
+    - 1: Flip sides
+  - Manchester
+    - 0: Top-mid-bottom
+    - 1: bottom-mid-top
+  - Differential Manchester
+    - 0: Flip, mid, return
+    - 1: mid, flip, stay
+  - Bipolar/AMI
+    - 0: middle
+    - 1: flip opposite from previous
+- Passband Transmission
+  - AM/ASK
+    - 0: Level 1 up/down
+    - 1: Level 2 up/down
+  - FM/FSK
+    - 0: Level 1, 1 up/down
+    - 1: Level 1, 2 up/down
+  - PM/PSK
+    - 0: Level 1, V shape
+    - 1: Level 2, up/down
+  - DPSK
+  - QAM
+- Analog to Digital Conversion
+  - PAM
+  - PCM
+  - DPCM
+  - Quantization Error
+- Transmission Media
+- Multiplexing Techniques
+  - FDM
+  - TDM (STDM, ATDM)
+  - CDMA
+  - WDM
+- Switching Techniques
+  - Circuit Switching
+  - Message Switching
+  - Packet Switching (datagram & virtual circuit)
