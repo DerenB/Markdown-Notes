@@ -10,7 +10,9 @@
 - Setup
 - Send data to shaders
 
-[Hello World](#hello-world)
+[Hello World Shaders](#hello-world)
+
+[Project Setup](#project-setup)
 
 # Basics
 
@@ -81,7 +83,7 @@ gl.drawElements;
 
 [Back to Top](#table-of-contents)
 
-# Hello World
+# Hello World Shaders
 
 - WebGL only cares about: Clip Space Coordinates & Colors
 - Clip Space Coordinates
@@ -118,15 +120,92 @@ drawArrays(..., offset, count) {
 ```
 - positionBuffer - needs to be converted to binary data
 
+### Fragment Shader
 
+```
+#version 300 es
+ 
+// fragment shaders don't have a default precision so we need
+// to pick one. highp is a good default. It means "high precision"
+precision highp float;
+ 
+// we need to declare an output for the fragment shader
+out vec4 outColor;
+ 
+void main() {
+  // Just set the output to a constant reddish-purple
+  outColor = vec4(1, 0, 0.5, 1);
+}
+```
+- outColor declared as fragmetn shader's output
+- Setting the color to vec4(R,G,B,Alpha)
 
+[Back to Top](#table-of-contents)
 
+# Project Setup
 
+- Create a canvas
+```
+<canvas id="mycanvas"></canvas>
+```
 
+- Look up canvas in JS
+```
+var canvas = document.querySelector("#mycanvas");
+```
+
+- Create WebGL2Rendering Context
+```
+var gl = canvas.getContext("webgl2");
+if(!gl) {
+  // no webgl2
+}
+```
+
+- Compile those shaders to put them on the GPU
+- Need to put them into strings
+- Most 3D engines generate GLSL shaders on the flay using various types of templates
+```
+var vertexShaderSource = `#version 300 es
+ 
+// an attribute is an input (in) to a vertex shader.
+// It will receive data from a buffer
+in vec4 a_position;
+ 
+// all shaders have a main function
+void main() {
+  // gl_Position is a special variable a vertex shader
+  // is responsible for setting
+  gl_Position = a_position;
+}
+`;
+ 
+var fragmentShaderSource = `#version 300 es
+ 
+// fragment shaders don't have a default precision so we need
+// to pick one. highp is a good default. It means "high precision"
+precision highp float;
+ 
+// we need to declare an output for the fragment shader
+out vec4 outColor;
+ 
+void main() {
+  // Just set the output to a constant reddish-purple
+  outColor = vec4(1, 0, 0.5, 1);
+}
+`;
+```
+- "#version 300 es" **must be the very first line of the shader**
+  - Tells WebGL2 to use the WebGL2 language called GLSL ES 3.00
 
 
 [Back to Top](#table-of-contents)
 
+# Class Notes
 
-
+- 1 array for all locations
+- 1 array for all colors
+- Circle
+  - Pick center of circle for first point
+  - draw triangles to various points, starting at 3-clock and going counter-clockwise
 
