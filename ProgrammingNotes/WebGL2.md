@@ -42,9 +42,11 @@ gl.drawElements;
 ```
   - Functions execute your shaders on the GPU
 
+### Send Data to Shaders
 
+- Four ways 
 
-
+[Back to Top](#table-of-contents)
 
 
 
