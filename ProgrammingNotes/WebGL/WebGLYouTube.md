@@ -19,6 +19,11 @@
 - [Uniforms](#uniforms)
     - [Basics](#basics)
     - [Locations](#locations)
+    - [Get Uniform Location](#get-uniform-location)
+    - [Pass Data to Uniform](#pass-data-to-uniform)
+    - [Shader vs JavaScript Uniform Tables](#shader-vs-javascript-uniform-tables)
+    - [Multiple Draws](#multiple-draws)
+    - [Uniform Example](#uniform-example)
 - [Attributes](#attributes)
 - [Element Arrays & Draw Elements](#element-arrays--draw-elements)
 - [Objects, Targets, Binding](#objects-targets-binding)
@@ -173,6 +178,95 @@ void main()
 - getAttributeLocation - returns a Number
 - getUniformLocation - returns an Object
 - Location won't change when compiled, only needs to be asked once
+
+### Get Uniform Location
+
+```
+const varibaleNameLoc = gl.getUniformLocation(program, 'uniformName');
+
+const uPositionLoc = gl.getUniformLocation(program, 'uPosition');
+const uPointSizeLoc = gl.getUniformLocation(program, 'uPointSize');
+```
+
+### Pass Data to Uniform
+
+```
+// '###' after 'uniform' various by data type 
+gl.uniform###(variableNameLoc, value);
+
+gl.uniform1f(uPointSizeLoc, 100);
+gl.uniform2f(uPositionLoc, 0, -0.2);
+```
+### Shader vs JavaScript Uniform Tables
+
+- **Floats:**
+
+| Shader 	| JavaScript               	|
+|--------	|--------------------------	|
+| float  	| gl.uniform1f(p, a)       	|
+| vec2   	| gl.uniform2f(p, a,b)     	|
+| vec3   	| gl.uniform3f(p, a,b,c)   	|
+| vec4   	| gl.uniform4f(p, a,b,c,d) 	|
+
+- **Integers:**
+
+| Shader  	| JavaScript               	|
+|---------	|--------------------------	|
+| int     	| gl.uniform1i(p, a)       	|
+| ivec2   	| gl.uniform2i(p, a,b)     	|
+| ivec3   	| gl.uniform3i(p, a,b,c)   	|
+| ivec4   	| gl.uniform4i(p, a,b,c,d) 	|
+| sampler 	| gl.uniform1i(p, s)       	|
+
+- **Unsigned ints:**
+
+| Shader 	| JavaScript               	|
+|--------	|--------------------------	|
+| uint   	| gl.uniform1u(p, a)       	|
+| uvec2  	| gl.uniform2u(p, a,b)     	|
+| uvec3  	| gl.uniform3u(p, a,b,c)   	|
+| uvec4  	| gl.uniform4u(p, a,b,c,d) 	|
+
+- **Matrices:**
+
+| Shader 	| JavaScript                               	|
+|--------	|------------------------------------------	|
+| mat2   	| gl.uniformMatrix2fv(p, [4 value array])  	|
+| mat3   	| gl.uniformMatrix3fv(p, [9 value array])  	|
+| mat4   	| gl.uniformMatrix4fv(p, [16 value array]) 	|
+
+### Multiple Draws
+
+- To do multiple draws, duplicate the uniform lines & draw lines
+
+### Uniform Example
+
+- Example of adding a uniform to the vertex shader
+```
+// Vertex Shader Source
+const vertexShaderSource = `#version 300 es
+
+uniform float uPointSize;
+uniform vec2 uPosition;
+
+void main()
+{
+  gl_PointSize = uPointSize;
+  gl_Position = vec4(uPosition, 0.0, 1.0);
+}
+`;
+
+// Get the Uniform Location
+const uPositionLoc = gl.getUniformLocation(program, 'uPosition');
+const uPointSizeLoc = gl.getUniformLocation(program, 'uPointSize');
+
+// Pass in values to Uniforms
+gl.uniform1f(uPointSizeLoc, 100);
+gl.uniform2f(uPositionLoc, 0, -0.2);
+
+// Draw the points
+gl.drawArrays(gl.POINTS, 0, 1);
+```
 
 [Return to Top](#table-of-contents)
 

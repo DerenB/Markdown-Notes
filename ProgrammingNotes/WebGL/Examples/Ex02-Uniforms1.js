@@ -2,10 +2,13 @@
 // Vertex Shader Source Code
 const vertexShaderSource = `#version 300 es
 
+uniform float uPointSize;
+uniform vec2 uPosition;
+
 void main()
 {
-    gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-    gl_PointSize = 150.0;
+    gl_PointSize = uPointSize;
+    gl_Position = vec4(uPosition, 0.0, 1.0);
 }
 `;
 
@@ -52,6 +55,14 @@ if(!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 
 // Uses the Program
 gl.useProgram(program);
+
+// Get Uniform Locations
+const uPositionLoc = gl.getUniformLocation(program, 'uPosition');
+const uPointSizeLoc = gl.getUniformLocation(program, 'uPointSize');
+
+// Pass in values to Uniforms
+gl.uniform1f(uPointSizeLoc, 100);
+gl.uniform2f(uPositionLoc, 0, -0.2);
 
 // Draw the Objects
 gl.drawArrays(gl.POINTS, 0, 1);
