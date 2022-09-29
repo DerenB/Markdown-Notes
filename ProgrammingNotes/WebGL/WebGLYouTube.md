@@ -25,6 +25,9 @@
     - [Multiple Draws](#multiple-draws)
     - [Uniform Example](#uniform-example)
 - [Attributes](#attributes)
+    - [Attribute Basics](#attribute-basics)
+    - [Attribute Path](#attribute-path)
+    - [Attribute Locations](#attribute-locations)
 - [Element Arrays & Draw Elements](#element-arrays--draw-elements)
 - [Objects, Targets, Binding](#objects-targets-binding)
 - [Textures](#textures)
@@ -271,6 +274,45 @@ gl.drawArrays(gl.POINTS, 0, 1);
 [Return to Top](#table-of-contents)
 
 # Attributes
+
+### Attribute Basics
+
+- Can pull data from array buffers
+- Quick & Efficient
+- Allows many different primitive types
+- Uniform vs. Attribute differences:
+  - Uniforms
+    - Available in vertex and fragment shaders
+    - Cannot be changed during draw call
+  - Attributes
+    - Available only in vertex shaders
+    - Changes for every vertex in the buffer
+- Limited to at least 16 attributes, more than 16 is risky
+  - Look up max attribute count:
+```
+gl.getParameter(gl.MAX_VERTEX_ATTRIBS);
+```
+- Vertices limit: over 65,000
+
+### Attribute Path
+
+- Vertex Shader
+  - Attributes comes **in** from the JavaScript
+  - Varyings go **out** to the Fragment shader
+- Fragment Shader
+  - Varyings come **in**
+  - Resulting information goes **out** to frame buffer & canvas
+
+### Attribute Locations
+
+- Attribute locations are just numbers
+- Read with:
+```
+gl.getAttributeLocation()
+```
+- Does not change over the life of the program
+- Can declare attribute location
+  - Can only be done before linking with shaders
 
 [Return to Top](#table-of-contents)
 
