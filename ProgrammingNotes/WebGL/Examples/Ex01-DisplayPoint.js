@@ -4,16 +4,21 @@ const vertexShaderSource = `#version 300 es
 
 void main()
 {
-
+    gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
+    gl_PointSize = 150.0;
 }
 `;
 
 // Fragment Shader Source Code
 const fragmentShaderSource = `#version 300 es
 
+precision mediump float;
+
+out vec4 fragColor;
+
 void main()
 {
-
+    fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 `;
 
@@ -50,6 +55,7 @@ gl.useProgram(program);
 
 // Draw the Objects
 gl.drawArrays(gl.POINTS, 0, 1);
+
 
 
 
