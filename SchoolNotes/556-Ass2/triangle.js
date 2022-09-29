@@ -1,8 +1,7 @@
 "use strict";
 
 var gl;
-var points;
-var points2;
+var pointsTriangle;
 
 
 window.onload = function init()
@@ -18,16 +17,10 @@ window.onload = function init()
 
     // First, initialize the  three points.
 
-    points = new Float32Array([
+    pointsTriangle = new Float32Array([
         -1, -1 ,
         0,  1 ,
-        1, -1,
-    ]);
-    
-    points2 = new Float32Array([
-        -0.5, -0.5 ,
-        0,  0.5 ,
-        0.5, -0.5,
+        1, -1
     ]);
 
     //
@@ -45,7 +38,7 @@ window.onload = function init()
 
     var bufferId = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
-    gl.bufferData( gl.ARRAY_BUFFER, points, gl.STATIC_DRAW );
+    gl.bufferData( gl.ARRAY_BUFFER, pointsTriangle, gl.STATIC_DRAW );
 
     // Associate out shader variables with our data buffer
 
