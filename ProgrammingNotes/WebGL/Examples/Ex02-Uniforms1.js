@@ -75,7 +75,7 @@ gl.uniform2f(uPositionLoc, 0, -0.2);
 gl.uniform1i(uIndexLoc, 1);
 gl.uniform4fv(uColorsLoc, [
     1,0,0,1,
-    0,1,0,1,
+    0.77,0.58,0.16,1,
     0,0,1,1 
 ]);
 

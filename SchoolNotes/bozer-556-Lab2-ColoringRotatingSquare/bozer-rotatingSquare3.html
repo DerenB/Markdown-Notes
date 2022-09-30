@@ -1,0 +1,115 @@
+<!--
+    Deren Bozer
+    COSC-556 F22
+    Lab 2: Rotating & Color Square
+-->
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>Bozer: Rotating Square</title>
+
+<style>
+    #buttonArray {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        padding-bottom: 15px;
+    }
+
+    #buttonArray button {
+        max-width: 125px;
+    }
+
+    .menuItem {
+        margin-top: 15px;
+    }
+
+    #colorResults {
+        display: flex;
+        flex-direction: row;
+        max-width: 300px;
+    }
+    #colorResults p {
+        margin-right: 20px;
+    }
+</style>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+in vec4 aPosition;
+uniform float uTheta;
+
+void
+main()
+{
+    float s = sin(uTheta);
+    float c = cos(uTheta);
+
+    gl_Position.x = -s*aPosition.y + c*aPosition.x;
+    gl_Position.y =  s*aPosition.x + c*aPosition.y;
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+precision mediump float;
+
+uniform vec4 uColors[3];
+
+out vec4 fColor;
+
+void
+main()
+{
+    fColor = uColors[0];
+}
+</script>
+
+<script type="text/javascript" src="Common/initShaders.js"></script>
+<script type="text/javascript" src="Common/MVnew.js"></script>
+<script type="text/javascript" src="bozer-rotatingSquare3.js"></script>
+</head>
+
+<body>
+<div>
+speed 0% <input id="slider" type="range"
+ min="0" max="100" step="10" value="50" />
+ 100%
+</div>
+
+<div id="buttonArray">
+    <button id="Direction" class="menuItem">Change Rotation Direction</button>
+
+    <select id="Controls" size="3" class="menuItem">
+        <option value="0">Toggle Rotation Direction</option>
+        <option value="1">Spin Faster</option>
+        <option value="2">Spin Slower</option>
+    </select>
+    
+    <button id="ColorChanger" class="menuItem">Random Color</button>
+    <div id="colorResults">
+        <div>
+            <p>Red</p>
+            <p id="results-red">255</p>
+        </div>
+        <div>
+            <p>Green</p>
+            <p id="results-green">0</p>
+        </div>
+        <div>
+            <p>Blue</p>
+            <p id="results-blue">0</p>
+        </div>
+    </div>
+</div>
+
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
