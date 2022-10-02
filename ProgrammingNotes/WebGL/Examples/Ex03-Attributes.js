@@ -2,13 +2,13 @@
 // Vertex Shader Source Code
 const vertexShaderSource = `#version 300 es
 
-uniform float uPointSize;
-uniform vec2 uPosition;
+in float aPointSize;
+in vec2 aPosition;
 
 void main()
 {
-    gl_PointSize = uPointSize;
-    gl_Position = vec4(uPosition, 0.0, 1.0);
+    gl_PointSize = aPointSize;
+    gl_Position = vec4(aPosition, 0.0, 1.0);
 }
 `;
 
@@ -17,14 +17,11 @@ const fragmentShaderSource = `#version 300 es
 
 precision mediump float;
 
-uniform int uIndex;
-uniform vec4 uColors[3];
-
 out vec4 fragColor;
 
 void main()
 {
-    fragColor = uColors[uIndex];
+    fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 `;
 
@@ -59,38 +56,39 @@ if(!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 // Uses the Program
 gl.useProgram(program);
 
-// Get Vertex Shader Uniform Locations
-const uPointSizeLoc = gl.getUniformLocation(program, 'uPointSize');
-const uPositionLoc = gl.getUniformLocation(program, 'uPosition');
+// Get Location of attributes
+const aPositionLoc = gl.getAttribLocation(program, 'aPosition');
+const aPointSizeLoc = gl.getAttribLocation(program, 'aPointSize');
 
-// Get Fragment Shader Uniform Locations
-const uIndexLoc = gl.getUniformLocation(program, 'uIndex');
-const uColorsLoc = gl.getUniformLocation(program, 'uColors');
+// Enable Attribute Locations
+gl.enableVertexAttribArray(aPositionLoc);
+gl.enableVertexAttribArray(aPointSizeLoc);
 
-// Pass in values to Vertex Shader Uniforms
-gl.uniform1f(uPointSizeLoc, 100);
-gl.uniform2f(uPositionLoc, 0, -0.2);
-
-// Pass in values to Fragment Shader Uniforms
-gl.uniform1i(uIndexLoc, 1);
-gl.uniform4fv(uColorsLoc, [
-    1,0,0,1,
-    0,1,0,1,
-    0,0,1,1 
+// Create Buffer Data
+const bufferData = new Float32Array([
+    0.0,0.0,    100,
+    0.5,-0.8,   32,
+    -0.9,0.5,   50,
 ]);
 
-// Draw the Objects
-gl.drawArrays(gl.POINTS, 0, 1);
+// Create a Buffer
+const buffer = gl.createBuffer();
 
+// Bind to Buffer
+gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
 
+// Set Buffer data
+gl.bufferData(gl.ARRAY_BUFFER, bufferData, gl.STATIC_DRAW);
 
+// Position Attribute Data conversion
+gl.vertexAttribPointer(aPositionLoc, 2, gl.FLOAT, false, 3 * 4, 0);
 
+// PointSize Attribute Data conversion
+gl.vertexAttribPointer(aPointSizeLoc, 1, gl.FLOAT, false, 3 * 4, 2 * 4);
 
+// Draw one box
+//gl.drawArrays(gl.POINTS, 0, 1);
 
-
-
-
-
-
-
+// Draw three boxes
+gl.drawArrays(gl.POINTS, 0, 3);
 

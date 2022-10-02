@@ -28,6 +28,13 @@
     - [Attribute Basics](#attribute-basics)
     - [Attribute Path](#attribute-path)
     - [Attribute Locations](#attribute-locations)
+    - [Enable Attributes](#enable-attributes)
+    - [Attribute Data](#attribute-data)
+- [Buffers](#buffers)
+    - [Create Buffer](#create-buffer)
+    - [Bind Buffer](#bind-buffer)
+    - [Create Buffer Data](#create-buffer-data)
+    - [Set Buffer Data](#set-buffer-data)
 - [Element Arrays & Draw Elements](#element-arrays--draw-elements)
 - [Objects, Targets, Binding](#objects-targets-binding)
 - [Textures](#textures)
@@ -60,6 +67,10 @@
 ```
 const canvas = document.querySelector('mycanvas');
 const gl = canvas.getContext('webgl2');
+```
+- Canvas + Context shorthand:
+```
+const gl = document.querySelector('canvas').getContext('webgl2');
 ```
 
 ### Program
@@ -308,11 +319,77 @@ gl.getParameter(gl.MAX_VERTEX_ATTRIBS);
 - Attribute locations are just numbers
 - Read with:
 ```
-gl.getAttributeLocation()
+gl.getAttribLocation()
+
+const aPositionLoc = gl.getAttribLocation(program, 'aPosition');
 ```
+- Connect the JavaScript to the parts of the shaders that change
 - Does not change over the life of the program
 - Can declare attribute location
   - Can only be done before linking with shaders
+
+### Enable Attributes
+
+- After locations found, they have to be enabled
+- Done only once, typically after binding to a buffer
+```
+gl.enableVertexAttribArray(aPositionLoc);
+gl.enableVertexAttribArray(aPointSizeLoc);
+```
+
+### Attribute Data
+
+- Attribute Data in **Shaders**
+  - Simple declarations
+  - Floats or made of Floats
+- Attribute Data in **JavaScript**
+  - Chain of interleving data types
+  - Different Datatypes
+  - Including 8-bit and 16-bit integers
+- Use Attribute Pointer to tell WebGL how to unravel array buffer data into what the shader needs
+```
+gl.vertexAttribPointer(LocationVariable, size:number, type:number, normalized: boolean, stride: number, offset: number);
+gl.vertexAttribPointer(aPositionLoc, 2, gl.FLOAT, false, 3 * 4, 0);
+gl.vertexAttribPointer(aPointSizeLoc, 1, gl.FLOAT, false, 3 * 4, 2 * 4);
+```
+- Size (x,y) is 2
+- Stride
+  - number of bytes in each set of vertex data
+  - 3 floats, each float contains 4 bytes (3 * 4)
+- Offset: position of attribute 
+  - Ex: first attribute = 0, takes 2 spaces
+  - Second attribute = 2 * 4. 2 spaces for first attribute, times 4 bytes
+
+[Return to Top](#table-of-contents)
+
+# Buffers
+
+### Create Buffer
+
+- Need a buffer to hold data, and bind buffer to a target
+```
+const buffer = gl.createBuffer();
+```
+
+### Bind Buffer
+
+```
+gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+```
+
+### Create Buffer Data
+
+```
+// Creates a single point at center (0,0) size 100
+const bufferData = new Float32Array([
+    0,0,    100,
+]);
+```
+
+### Set Buffer Data
+
+- Can specify size of data in bytes, or send data in directly
+
 
 [Return to Top](#table-of-contents)
 
