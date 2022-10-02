@@ -28,6 +28,7 @@
     - [Attribute Basics](#attribute-basics)
     - [Attribute Path](#attribute-path)
     - [Attribute Locations](#attribute-locations)
+    - [Manually set Attribute Locations](#manually-set-attribute-locations)
     - [Enable Attributes](#enable-attributes)
     - [Attribute Data](#attribute-data)
 - [Buffers](#buffers)
@@ -36,6 +37,7 @@
     - [Create Buffer Data](#create-buffer-data)
     - [Set Buffer Data](#set-buffer-data)
 - [Element Arrays & Draw Elements](#element-arrays--draw-elements)
+    - [Draw Arrays](#draw-arrays)
 - [Objects, Targets, Binding](#objects-targets-binding)
 - [Textures](#textures)
 - [Debugging](#debugging)
@@ -313,6 +315,40 @@ gl.getParameter(gl.MAX_VERTEX_ATTRIBS);
 - Fragment Shader
   - Varyings come **in**
   - Resulting information goes **out** to frame buffer & canvas
+- Example of JS > Attribute > Varying > Out path:
+```
+// Vertex Shader Source Code
+const vertexShaderSource = `#version 300 es
+
+// Attribute coming in to go out as Varying
+in vec3 aColor;
+
+// Varyings going out to the Fragment Shader
+// Has to be same name as the fragment shader IN
+out vec3 vColor;
+
+void main()
+{
+    vColor = aColor;
+}
+`;
+
+// Fragment Shader Source Code
+const fragmentShaderSource = `#version 300 es
+
+precision mediump float;
+
+// Varyings coming in from Vertex Shader
+in vec3 vColor;
+
+out vec4 fragColor;
+
+void main()
+{
+    fragColor = vec4(vColor, 1.0);
+}
+`;
+```
 
 ### Attribute Locations
 
@@ -327,6 +363,22 @@ const aPositionLoc = gl.getAttribLocation(program, 'aPosition');
 - Does not change over the life of the program
 - Can declare attribute location
   - Can only be done before linking with shaders
+
+### Manually set Attribute Locations
+
+```
+// Have to set up before gl.linkProgram(program)
+
+const aPositionLoc = 0;
+const aPointSizeLoc = 1;
+const aColorLoc = 2;
+
+// Bind the locations:
+gl.bindAttribLocation(program, aPositionLoc, 'aPosition');
+gl.bindAttribLocation(program, aPointSizeLoc, 'aPointSize');
+gl.bindAttribLocation(program, aColorLoc, 'aColor');
+*/
+```
 
 ### Enable Attributes
 
@@ -394,6 +446,25 @@ const bufferData = new Float32Array([
 [Return to Top](#table-of-contents)
 
 # Element Arrays & Draw Elements
+
+### Draw Arrays
+
+```
+// Draw x number of points
+gl.drawArrays(gl.POINTS, 0, x);
+
+// Draw lines
+gl.drawArrays(gl.LINES, 0, x);
+
+// Draw lines that connects any number of vertices
+gl.drawArrays(gl.LINE_STRIP, 0, x);
+
+// Draw lines that connects the last vertex with the first
+gl.drawArrays(gl.LINE_LOOP, 0, x);
+
+// Draws a triangle
+gl.drawArrays(gl.TRIANGLES, 0, x);
+```
 
 [Return to Top](#table-of-contents)
 
