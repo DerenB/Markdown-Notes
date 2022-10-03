@@ -405,10 +405,16 @@ gl.vertexAttribPointer(aPositionLoc, 2, gl.FLOAT, false, 3 * 4, 0);
 gl.vertexAttribPointer(aPointSizeLoc, 1, gl.FLOAT, false, 3 * 4, 2 * 4);
 ```
 - Size (x,y) is 2
+- Normalized
+  - rarely set to true
+  - only affects integers, specifically 8-bit
+  - Normalize figures out where a number is in the range
 - Stride
+  - the length of each chunk
   - number of bytes in each set of vertex data
   - 3 floats, each float contains 4 bytes (3 * 4)
 - Offset: position of attribute 
+  - Number of bytes to skip over to get to the new value
   - Ex: first attribute = 0, takes 2 spaces
   - Second attribute = 2 * 4. 2 spaces for first attribute, times 4 bytes
 
