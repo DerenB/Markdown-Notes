@@ -10,9 +10,43 @@ Notes on using SQL.
 
 # Table of Contents
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [SQL Notes](#sql-notes)
+- [Learning Sources:](#learning-sources)
+- [Table of Contents](#table-of-contents)
 - [Accessing & Creating : Data & Tables](#accessing--creating--data--tables)
+    - [Select data from a table](#select-data-from-a-table)
+  - [Select specific data from a table](#select-specific-data-from-a-table)
+    - [Create Table](#create-table)
+    - [Add Table Column](#add-table-column)
+    - [Insert Data into Table](#insert-data-into-table)
+    - [Update Table Row Data](#update-table-row-data)
+    - [Delete Row/Data from Table](#delete-rowdata-from-table)
+    - [Data Constraints](#data-constraints)
 - [Queries](#queries)
+    - [Select Data with New Column Name](#select-data-with-new-column-name)
+    - [Select only unique values](#select-only-unique-values)
+    - [Conditional Data Selection](#conditional-data-selection)
+    - [Similar Data Selection](#similar-data-selection)
+    - [Pattern Data Selection](#pattern-data-selection)
+    - [Data Range](#data-range)
+    - [AND OR](#and-or)
+    - [Sort Results](#sort-results)
+    - [Limit Search Results](#limit-search-results)
+    - [Case (if-else)](#case-if-else)
 - [Aggregate Functions](#aggregate-functions)
+    - [Count](#count)
+    - [SUM](#sum)
+    - [MIN / MAX](#min--max)
+    - [Average](#average)
+    - [Round](#round)
+    - [Group By](#group-by)
+
+<!-- /code_chunk_output -->
+
 
 ---
 
