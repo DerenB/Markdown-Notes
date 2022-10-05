@@ -27,6 +27,8 @@ Matt Evett
 - [10/05 Notes - Representation](#1005-notes---representation)
     - [Linear Independence](#linear-independence)
     - [Dimension](#dimension)
+    - [Coordinate System](#coordinate-system)
+    - [Homogeneous Coordinates](#homogeneous-coordinates)
 
 # 08/31 Class Notes
 
@@ -289,6 +291,36 @@ $$y(\alpha)=\alpha y_{0}+(1-\alpha)y_{1}$$
 - In an n-dimensional space, any set of n linearly independent vectors may form a *basis* for the space
 - Given a basis $v_{1}, v_{2}, ...,v_{n}$, any vector *v* can be written as:
 - $v=\alpha_{1}v_{1}+\alpha_{2}v_{2}+...+\alpha_{n}v_{n}$
+
+### Coordinate System
+
+- Consider a basis of vectors
+- A vector is written: $v=\alpha_{1}v_{1}+\alpha_{2}v_{2}+...+\alpha_{n}v_{n}$
+- The list of scalars is the *representation* of *v* with respect to the given basis
+- We can write the representation as a row or column array of scalars
+- $a=[\alpha_{1},\alpha_{2},\alpha_{n}]^{T}$
+- A coordinate system is insufficient to represent points
+  - Vectors will have a **0** at the end
+  - $v=[\alpha_{1}\alpha_{2}\alpha_{3} 0]^{T}$
+  - Points will have a **1** at the end
+  - $p=[\beta_{1}\beta_{2}\beta_{3}1]^{T}$
+
+$$X=\begin{bmatrix}
+    1 & x_{1}\\
+    1 & x_{2}\\
+    1 & x_{3}\\
+\end{bmatrix}$$
+
+### Homogeneous Coordinates
+
+- The homogeneous coordinates form for a three dimensional point [x y z] is given as:
+  - $p=[x' y' z' w]^{T}=[wx \space wy \space wz \space w]^{T}$
+- All homogeneous coordinates are key to all computer graphics systems
+  - All standard transformations (rotation, translation, scaling) can be implemented with matrix multiplications using 4x4 matrices
+  - Hardware pipeline works with 4 dimensional representations
+  - For orthographic viewing, we can maintain w=0 for vectors and w=1 for points
+
+
 
 
 
