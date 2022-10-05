@@ -26,6 +26,17 @@
       - [Framing-Bit Stuffing](#framing-bit-stuffing)
     - [EX) Data Link Layer](#ex-data-link-layer)
     - [Data Link Protocols](#data-link-protocols)
+      - [Error Control](#error-control)
+      - [Flow Control](#flow-control)
+    - [Elementary Data Link Protocols](#elementary-data-link-protocols)
+      - [Link Layer Environment](#link-layer-environment)
+      - [Utopian Simplex Protocol](#utopian-simplex-protocol)
+      - [Stop-and-wait: Error-free channel](#stop-and-wait-error-free-channel)
+      - [Stop-and-wait: Noisy Channel](#stop-and-wait-noisy-channel)
+      - [Stop-and-wait Protocol](#stop-and-wait-protocol)
+      - [Protocol Efficiency](#protocol-efficiency)
+    - [Channel Utilization](#channel-utilization)
+    - [Effective Data Rate, E](#effective-data-rate-e)
 
 # 09-21 Notes
 
@@ -195,10 +206,147 @@ FLAG A B ESC FLAG FLAG
     - Automatic Repeat Request
   - Flow Control: protocol that regulates the exchange of information between two devices
 
+#### Error Control
+
+- Error control repairs frames that are received in error
+  - Requires errors to be detected at the receiver
+  - Typically retransmit the unacknowledged frames
+  - Timer protects against lost acknowledgements
+
+#### Flow Control
+
+- Prevents a fast sender from out-pacing a slow receiver
+  - Receiver gives feedback on the data it can accept
+  - Rare in the Link layer as NICs run at "wire speed"
+  - Receiver can take data as fast as it can be sent
+
+### Elementary Data Link Protocols
+
+- Link Layer Environment
+- Utopian Simplex Protocol
+- Stop-and-wait Protocol for Error-free channel
+- Stop-and-wait Protocol for Noisy channel
+
+#### Link Layer Environment
+
+- Commonly implemented as NICs and OS drivers: network layer (IP) is often OS software
+- ![](images/522-classnotes-image2.png)
+
+#### Utopian Simplex Protocol
+
+- An optimistic protocol (p1) to get us started
+- Assumes no errors, and receiver as fast as sender
+- Considers one-way data transfer
+- ![](images/522-classnotes-image3.png)
+
+#### Stop-and-wait: Error-free channel
+
+- Protocol (p2) ensures sender can't outpace receiver
+- Receiver returns a dummy frame (ack) when ready
+- Only one frame out at a time, called **stop-and-wait**
+- Added flow control:
+- ![](images/522-classnotes-image4.png)
+
+#### Stop-and-wait: Noisy Channel
+
+- ARQ - Automatic Repeat reQuest
+  - Adds error control
+  - receiver acks frames that are correctly delivered 
+  - Sender sets timer and resends frame if no ack
+- For correctness, frames and acks must be numbered
+  - Else receiver can't tell retransmission (due to lost ack or early timer) from new frame
+  - For stop-and-wait, 2 numbers (1 bit) are sufficient
+- Sender Loop (p3):
+  - Send frame (or retransmission)
+  - Set timer for retransmission
+  - Wait for ack or timeout
+  - If a good ack then set up for the next frame to send (else the old frame will be retransmitted)
+  - ![](images/522-classnotes-image5.png)
+- Receiver Loop (p3)
+  - Wait for a frame
+  - If it's new then take it and advance expected frame
+  - Ack current frame
+  - ![](images/522-classnotes-image6.png)
+
+#### Stop-and-wait Protocol
+
+- Sender transmits one frame and waits for acknowledgment (ACK) before transmitting next frame
+- Transmission scenarios:
+  - (a) Frame arrives intact and on time
+  - (b) Lost data frame
+  - (c) Lost acknowledgment frame
+  - (d) Delayed acknowledgment frame
+  - (e) Damaged frame
+  - (f) Damaged acknowledgment frame
+- ![](images/522-classnotes-image7.png)
+
+#### Protocol Efficiency
+
+- Channel Utilization - the percentage of time the channel is busy transferring data frames
+- Effective Data rate - the actual number of data bits sent per unit of time
+- Link layer protocol implementations use library functions
+- Define:
+  - R: transmission rate (10 Mbps = 10 bits/usec)
+  - S: signal (propagation) speed (200 meters per usec)
+  - D: distance between sender and receiver (200 meters)
+  - T: time to create one frame (1 usec)
+  - F: number of bits in a frame (200)
+  - N: number of data bits in a frame (160)
+  - A: number of bits in an acknowledgment (40)
+
+### Channel Utilization
+
+- Define time elapsed between sending two consecutive frames:
+  - Unrestricted protocol
+$$time=T+\frac{F}{R}$$
+  - Stop-and-wait protocol
+$$time=(T+\frac{F}{R}+\frac{D}{S})+(T+\frac{A}{R}+\frac{D}{S})$$
+$$=2(T+\frac{D}{S})+\frac{F+A}{R}$$
+
+- P=Percentage time frame bits occupy channel
+- P(unrestricted protocol)
+$$P=100*\frac{\frac{F}{R}}{T+\frac{F}{R}}$$
+$$P=100*\frac{\frac{200bits}{10bits/\mu sec}}{1\mu sec+\frac{200bits}{10bits/\mu sec}}$$
+$$P\approx95\%$$
+
+- P(stop and wait Protocol)
+$$P=100*\frac{\frac{F}{R}+\frac{D}{S}}{2*(T+\frac{D}{S})+\frac{F+A}{R}}$$
+$$P=100*\frac{\frac{200bits}{10bits/\mu sec}+\frac{200meters}{200meters/\mu sec}}{2*(1\mu sec+\frac{200meters}{200meters/\mu sec})+\frac{200bits+40bits}{10bits/\mu sec}}$$
+$$P\approx75\%$$
+
+### Effective Data Rate, E
+
+- E (Unrestricted Protocol)
+$$E=\frac{N}{T+\frac{F}{R}}$$
+$$E=\frac{160bits}{1\mu sec+\frac{200 bits}{10bits/\mu sec}}$$
+$$E\approx7.6bits/\mu sec$$
+$$E\approx7.6Mbps$$
+- E (Stop and wait Protocol)
+$$E=\frac{N}{2*(T+\frac{D}{S})+\frac{F+A}{R}}$$
+$$E=\frac{160bits}{2*(1\mu sec+\frac{200 meters}{200meters/\mu sec})+\frac{200bits+40bits}{10bits/\mu sec}}$$
+$$E\approx5.7bits/\mu sec$$
+$$E\approx5.7Mbps$$
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d
 
