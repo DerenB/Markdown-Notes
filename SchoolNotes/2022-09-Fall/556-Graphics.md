@@ -32,8 +32,11 @@ Matt Evett
     - [Dimension](#dimension)
     - [Coordinate System](#coordinate-system)
     - [Homogeneous Coordinates](#homogeneous-coordinates)
-    - [Matrix Multiplication](#matrix-multiplication)
+- [Matrix](#matrix)
 - [10/10 Notes](#1010-notes)
+    - [Affine Transformations](#affine-transformations)
+    - [Transformations](#transformations)
+    - [Notation](#notation)
 
 # 08/31 Class Notes
 
@@ -331,7 +334,7 @@ $$X=\begin{bmatrix}
   - Hardware pipeline works with 4 dimensional representations
   - For orthographic viewing, we can maintain w=0 for vectors and w=1 for points
 
-### Matrix Multiplication
+# Matrix 
 
 $$\begin{bmatrix}
     A & B & C\\
@@ -362,5 +365,27 @@ $$\begin{bmatrix}
 
 # 10/10 Notes
 
-- 
+### Affine Transformations
+
+- Every linear transformation is equivalent to a change in frames
+- Every affine transformation perserves lines
+- An affine transformation has only 12 *degrees of freedom* because 4 of the elements in the matrix are fixed and are a subset of all possible 4x4 linear transformations
+
+### Transformations
+
+- A transformation maps points to other points and/or vectors to other vectors
+- Affine Transformations
+  - Line preserving
+  - Characteristic of many physically important transformations
+    - Rigid body transformations: rotation, translation
+    - Scaling, shear
+  - Importance in graphics is that we need only transform endpoints of line segment between the transformed endpoints
+
+### Notation
+
+- P, Q, R: uppercase letters $\rArr$ points in an affine space
+- u, v, w: lowercase letters $\rArr$ vectors in an affine space
+- $\alpha$,$\beta$,$\gamma$: Greek letters $\rArr$ scalars
+
+
 
