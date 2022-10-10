@@ -3,7 +3,10 @@
 Fall 2022
 Matt Evett
 
+# Table of Contents
+
 - [556 Computer Graphics](#556-computer-graphics)
+- [Table of Contents](#table-of-contents)
 - [08/31 Class Notes](#0831-class-notes)
 - [09/19 Class Notes](#0919-class-notes)
 - [09/21 Class Notes](#0921-class-notes)
@@ -29,6 +32,8 @@ Matt Evett
     - [Dimension](#dimension)
     - [Coordinate System](#coordinate-system)
     - [Homogeneous Coordinates](#homogeneous-coordinates)
+    - [Matrix Multiplication](#matrix-multiplication)
+- [10/10 Notes](#1010-notes)
 
 # 08/31 Class Notes
 
@@ -54,6 +59,7 @@ Matt Evett
     - Rods - monochromatic, night vision
     - Cones - color sensitive, three types of cones, only three values (the tristimulus values) are sent to the brain
 
+
 # 09/19 Class Notes
 
 - Coordinate Systems and Shaders
@@ -77,6 +83,8 @@ Matt Evett
         - Display as filled, solid color or shaded
         - Display edges
         - Display vertices
+
+[Back to Top](#table-of-contents)
 
 # 09/21 Class Notes
 
@@ -175,6 +183,8 @@ void divide_triangle(GLfloat *a, GLfloat *b, GLfloat *c, int m)
     ```
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
     ```
+
+[Back to Top](#table-of-contents)
 
 # 10/05 Class Notes
 
@@ -276,6 +286,7 @@ $$y(\alpha)=\alpha y_{0}+(1-\alpha)y_{1}$$
 - Every plane has a vector n normal (perpendicular, orthogonal) to it
 - From point-two vector form defining the plane, we know we can use the cross product to find n=u*v and the equivalent form
 
+[Back to Top](#table-of-contents)
 
 # 10/05 Notes - Representation
 
@@ -320,11 +331,36 @@ $$X=\begin{bmatrix}
   - Hardware pipeline works with 4 dimensional representations
   - For orthographic viewing, we can maintain w=0 for vectors and w=1 for points
 
+### Matrix Multiplication
 
+$$\begin{bmatrix}
+    A & B & C\\
+    D & E & F\\
+\end{bmatrix}
+*
+\begin{bmatrix}
+    1 & 4\\
+    2 & 5\\
+    3 & 6\\
+\end{bmatrix}$$
 
+$$==$$
 
+$$AA=(A*1)+(B*2)+(C*3)$$
+$$BB=(A*4)+(B*5)+(C*6)$$
+$$CC=(D*1)+(E*2)+(F*3)$$
+$$DD=(D*4)+(E*5)+(F*^)$$
 
+$$==$$
 
+$$\begin{bmatrix}
+    AA & BB\\
+    CC & DD\\
+\end{bmatrix}$$
 
+[Back to Top](#table-of-contents)
 
+# 10/10 Notes
+
+- 
 

@@ -42,6 +42,7 @@
     - [Go-Back-N ARQ](#go-back-n-arq)
     - [Damaged Frame](#damaged-frame)
     - [Go-Back-N Protocol](#go-back-n-protocol)
+    - [Selective Repeat Request Protocol](#selective-repeat-request-protocol)
 
 # 09-21 Notes
 
@@ -131,6 +132,8 @@ $$T_{MSG} = 5*((\frac{1*2^{20}bits}{100*10^{6}bits/sec})+(\frac{2*10^{3}meters}{
     - Transmission Control Protocol (TCP)
         - Data checksum
         - Reliable byte-stream delivery
+
+[Back to Top](#table-of-contents)
 
 # 10/05 Notes - Data Link Layer
 
@@ -332,6 +335,8 @@ $$E=\frac{160bits}{2*(1\mu sec+\frac{200 meters}{200meters/\mu sec})+\frac{200bi
 $$E\approx5.7bits/\mu sec$$
 $$E\approx5.7Mbps$$
 
+[Back to Top](#table-of-contents)
+
 # 10/10 Notes
 
 - Error Control Utilities
@@ -400,7 +405,14 @@ $$E\approx5.7Mbps$$
   - Sender timer expires and retransmits 0..7
   - Receiver expecting new frames 0..7 instead receives old (duplicate) frames; receiver does not detect duplication
 
+### Selective Repeat Request Protocol
 
+- Accepts out-of-order frames within receive window
+- Requests only retransmission of damaged frames
+- Receiver also maintains a window to buffer out of order frames
+- Acknowledgments are for the frame immediately prior to the one at the beginning of the receiver's window NOT the most recently received frames
+
+[Back to Top](#table-of-contents)
 
 
 
