@@ -39,6 +39,9 @@
     - [Effective Data Rate, E](#effective-data-rate-e)
 - [10/10 Notes](#1010-notes)
     - [Sliding Winfow Protocols](#sliding-winfow-protocols)
+    - [Go-Back-N ARQ](#go-back-n-arq)
+    - [Damaged Frame](#damaged-frame)
+    - [Go-Back-N Protocol](#go-back-n-protocol)
 
 # 09-21 Notes
 
@@ -344,9 +347,58 @@ $$E\approx5.7Mbps$$
 - Receiver maintains window of frames it can receive
   - Needs to keep buffer space for arrivals
   - Window advances with in-order arrivals
+- Larger windows enable *pipelining* for efficient link use
+  - Stop-and-wait (w=1) is inefficient for long links
+  - Best window (w) depends on bandwidth-delay (BD)
+  - Want w $\ge$ 2BD+1 to ensure high link utilization
+- Pipelining leads to different choices for errors/buffering
+  - We will consider *Go-Back-N* and *Selective Repeat*
+- Allow multiple unacknowledged (outstanding) frames
+- Upper bound on outstanding frames, called *window*
+- Frames are numbered (sequence numbers)
+- Go-Back-n: requires frames to be received in the same order they are sent
+- Selective Repeat Protocol: requires the receiver to be able to buffer frames received out of order
 
+### Go-Back-N ARQ
 
+- Discards out-of-order or damaged frames and sends a NAK
+- Otherwise, send cumulative ACKs (RR)
+- Acknowledgments may be piggybacked in a data frame; uses ACK timer
+- Sending station keeps a frame timer for each frame sent; timeout triggers a retransmission of the last *n* frames sent
 
+### Damaged Frame
+
+1. Damaged Frame
+   1. A transmits frame *i*
+      1. B detects error and sends Nak
+   2. Frame *i* lost in transit
+      1. A sends frame *i+1*
+      2. B receives frame *i+1* out of order & sends $NAK_{i}$
+      3. A retransmits from frame *i* in window
+   3. Frame *i* is lost and A does not send additional frames
+      1. B does not do anything
+      2. A's frame timer expires and sends *Receive Ready (RR)*
+2. Damaged ACK (RR)
+   1. B receives frame *i* and send ACK i+1 which is lost in transit
+      1. No problem if subsequent ACK arrives at A before timer expires
+   2. A's frame timer expires and sends RR to B and starts a Polling timer
+      1. B should respond with ACK
+3. Damaged NAK
+   1. same as 1.3
+
+### Go-Back-N Protocol
+
+- Max Window Size = $2^{k}-1$
+  - where *k* = number of bits used for frame sequence numbers
+- Sequence number field is finite; sequence numbers wrap around
+- Sequence number space must be larger than number of outstanding frames
+- Max window size = $2^{k}$ is not sifficient
+  - Suppose 3-bit SeqNum field (0..7)
+  - Window size = 8
+  - Sender transmit frames 0..7
+  - Frames arrive successfully, but ACKs lost
+  - Sender timer expires and retransmits 0..7
+  - Receiver expecting new frames 0..7 instead receives old (duplicate) frames; receiver does not detect duplication
 
 
 
