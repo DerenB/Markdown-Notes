@@ -37,6 +37,8 @@
       - [Protocol Efficiency](#protocol-efficiency)
     - [Channel Utilization](#channel-utilization)
     - [Effective Data Rate, E](#effective-data-rate-e)
+- [10/10 Notes](#1010-notes)
+    - [Sliding Winfow Protocols](#sliding-winfow-protocols)
 
 # 09-21 Notes
 
@@ -327,6 +329,21 @@ $$E=\frac{160bits}{2*(1\mu sec+\frac{200 meters}{200meters/\mu sec})+\frac{200bi
 $$E\approx5.7bits/\mu sec$$
 $$E\approx5.7Mbps$$
 
+# 10/10 Notes
+
+- Error Control Utilities
+  - 1) Sequence numbers
+  - 2) Positive and negative acknowledgments, ack x NAK x, where x is the sequence # of next frame expected
+  - 3) timer for frame(s) sent
+
+### Sliding Winfow Protocols
+
+- Sender maintains window of frames it can send
+  - Needs to buffer them for possible retransmission
+  - Window advances with next acknowledgements
+- Receiver maintains window of frames it can receive
+  - Needs to keep buffer space for arrivals
+  - Window advances with in-order arrivals
 
 
 
@@ -348,5 +365,4 @@ $$E\approx5.7Mbps$$
 
 
 
-d
 
