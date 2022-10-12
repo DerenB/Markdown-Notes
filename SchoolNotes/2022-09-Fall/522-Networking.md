@@ -43,6 +43,13 @@
     - [Damaged Frame](#damaged-frame)
     - [Go-Back-N Protocol](#go-back-n-protocol)
     - [Selective Repeat Request Protocol](#selective-repeat-request-protocol)
+- [10/12 Class Notes](#1012-class-notes)
+    - [Error Control](#error-control-1)
+    - [Hamming Distance](#hamming-distance)
+    - [Generating the Hamming Code](#generating-the-hamming-code)
+    - [Hamming Code Error Detection](#hamming-code-error-detection)
+    - [Hamming Code Error Correction](#hamming-code-error-correction)
+    - [Multiple Bit Errors](#multiple-bit-errors)
 
 # 09-21 Notes
 
@@ -413,6 +420,144 @@ $$E\approx5.7Mbps$$
 - Acknowledgments are for the frame immediately prior to the one at the beginning of the receiver's window NOT the most recently received frames
 
 [Back to Top](#table-of-contents)
+
+# 10/12 Class Notes
+
+### Error Control
+
+- Error control repairs frames that are received in error
+  - Requires errors to be detected at the receiver
+  - Typically retransmit the unacknowledged frames
+  - Timer protects against lost acknowledgements
+- Error Detection and Correction
+  - Error codes add structured redundancy to data so errors can be either detected, or corrected
+  - Error correction Codes:
+    - Hamming Codes
+    - Binary Convolution Codes
+    - Reed-Solomon and Low-Density Parity Check codes
+      - Mathematically complex
+      - Widely used in real systems
+  - Error Detection Codes
+    - Parity
+    - Checksums
+    - Cyclic redundancy Codes
+
+### Hamming Distance
+
+- Code turns data of n bits into codewords of n+k bits
+- Hamming Distance is the minimum bit flips to turn one valid codeword into any other valid one
+- **Example**:
+  - Sent: 0000 1111
+  - Received: 0010 1101
+  - Compare to codewords:
+    - 0000 0000
+    - 0000 1111
+    - 1111 0000
+    - 1111 1111
+  - Count how many bits changed
+    - 0000 0000 : d = 4
+    - 0000 1111 : d = 2
+    - 1111 0000 : d = 6
+    - 1111 1111 : d = 4
+  - Take the smallest correction D value
+    - 0000 1111
+    - Hamming Distance = 2
+
+### Generating the Hamming Code
+
+- Example:
+  - Generated Message: 10011100
+  - Insert check bits at powers of 2 (1,2,4,8,16,etc)
+  - Copy the bits into the non check bit parts
+    - 01 02 03 04 05 06 07 08 09 10 11 12
+    - x  x  -  x  -  -  -  x  -  -  -  -
+    - x  x  1  x  0  0  1  x  1  1  0  0
+  - Take the positions of the 1s
+    - 3   - 0011
+    - 7   - 0111
+    - 9   - 1001
+    - 10  - 1010
+    - Syndrome: 0111
+  - Add a 1 if the column has an odd number of 1s. Add a 0 if the number is even
+    - Syndrome: 0111
+  - Add the syndrome from right to left
+    - P1: 1
+    - P2: 1
+    - P4: 1
+    - P8: 8
+  - Hamming Code:
+    - 1111 0010 1100
+### Hamming Code Error Detection
+  - Get the positions of the 1s:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 7
+    - 9
+    - 10
+  - Get the bits:
+    - 1   0001
+    - 2   0010
+    - 3   0011
+    - 4   0100
+    - 7   0111
+    - 9   1001
+    - 10  1010
+  - Count the 1s in each column. Syndrome is 1 for odd amount, 0 for even
+    - 0000
+  - If all 0, there are no errors
+
+### Hamming Code Error Correction
+
+- Code Sent:
+  - 1111 0010 1110
+- Get the position of the 1s and their bits
+  - 1   0001
+  - 2   0010
+  - 3   0011
+  - 4   0100
+  - 7   0111
+  - 9   1001
+  - 10  1010
+  - 11  1011
+  - TT  1011
+- Count the 1s in each column, Syndrome is 1 for odd amount, 0 for even
+  - All 0s: no error
+  - Syndrome: 1011 $\rArr$ position 11 is wrong
+  - Flip position 11 value
+
+### Multiple Bit Errors
+
+- Received: 0111 1010 1100
+- Do the error check
+  - 2   - 0010
+  - 3   - 0011
+  - 4   - 0100
+  - 5   - 0101
+  - 7   - 0111
+  - 9   - 1001
+  - 10  - 1010
+  - Syn:  0100 $\not={}$ 0000
+- Hamming code error correction can only change single bit error correction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Back to Top](#table-of-contents)
+
 
 
 
