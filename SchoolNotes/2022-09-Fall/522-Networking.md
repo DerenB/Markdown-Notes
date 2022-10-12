@@ -50,6 +50,9 @@
     - [Hamming Code Error Detection](#hamming-code-error-detection)
     - [Hamming Code Error Correction](#hamming-code-error-correction)
     - [Multiple Bit Errors](#multiple-bit-errors)
+    - [Error Detection - Parity](#error-detection---parity)
+    - [Cyclic Redundancy Check](#cyclic-redundancy-check)
+    - [Extra Credit Problem](#extra-credit-problem)
 
 # 09-21 Notes
 
@@ -541,7 +544,37 @@ $$E\approx5.7Mbps$$
   - Syn:  0100 $\not={}$ 0000
 - Hamming code error correction can only change single bit error correction
 
+### Error Detection - Parity
 
+- Parity bit is added as the modulo 2 sum of data bits
+- Example
+  - N: 1 0 0 1 1 1 0
+  - E: 1 1 0 0 1 0 1
+  - +: 1 0 1 1 0 0 1 1
+  - +:               1
+  - =: 0 1 1 0 1 0 0
+
+### Cyclic Redundancy Check
+
+- Take the binary bit message, translate into polynomial statement
+- $x^{3}M(x)=x^{3}(x^{7}+x^{4}+x^{3}+x^{1})$
+- $= x^{10}+x^{7}+x^{6}+x^{4}$
+- 100 1101 0000
+- $\frac{R(x)}{c(x)}+\frac{M(x)*x^{k}}{c(x)}$
+- $=Q(x)+\frac{R(x)}{c(x)}+\frac{R(x)}{c(x)}$
+- $P(x)=m(x)*x^{k}+R(x)$
+- **Example**
+  - $x^{3}M(x)=x^{3}(x^{7}+x^{4}+x^{3}+x^{1})$
+  - $= x^{10}+x^{7}+x^{6}+x^{4}$
+  - $c(x)=x^{3}+x^{2}+1$
+
+### Extra Credit Problem
+
+- Received $P^{1}=11011010110$
+
+c(x) = x^3 + x^2 + 1
+
+divide polynomial by c(x)
 
 
 
