@@ -13,6 +13,11 @@
     - [Codecademy: Learn Design Thinking](#codecademy-learn-design-thinking)
 - [What are UI and UX Design](#what-are-ui-and-ux-design)
 - [Five Elements of UX Design](#five-elements-of-ux-design)
+    - [Strategy](#strategy)
+    - [Scope](#scope)
+    - [Structure](#structure)
+    - [Skeleton](#skeleton)
+    - [Surface](#surface)
 
 <!-- /code_chunk_output -->
 
@@ -49,10 +54,32 @@
 
 # Five Elements of UX Design
 
-- 
+- From Jesse James Garrett
+- Shows the layered steps required to turn an idea into a functional product
+- Each layer of the model building upon another from bottom up
+![](5-Layer.png)
 
+### Strategy
 
+- Takes into consideration both user needs and business goals
+- Most abstract
+- **Ex**: Mobile Phone - who is the target audience. Smartphones with a smaller form factor might target users who are frequently on the go
 
+### Scope
+
+-
+
+### Structure
+
+-
+
+### Skeleton
+
+-
+
+### Surface
+
+-
 
 [Back to top](#table-of-contents)
 
