@@ -43,6 +43,8 @@ Matt Evett
     - [Arbitrary Matrices](#arbitrary-matrices)
     - [Building a cube](#building-a-cube)
     - [Building a cube, vertex list](#building-a-cube-vertex-list)
+- [10/17 Class Notes](#1017-class-notes)
+    - [Planar Geometric Projections](#planar-geometric-projections)
 
 # 08/31 Class Notes
 
@@ -340,6 +342,8 @@ $$X=\begin{bmatrix}
   - Hardware pipeline works with 4 dimensional representations
   - For orthographic viewing, we can maintain w=0 for vectors and w=1 for points
 
+[Back to Top](#table-of-contents)
+
 # Matrix 
 
 $$\begin{bmatrix}
@@ -393,6 +397,8 @@ $$\begin{bmatrix}
 - u, v, w: lowercase letters $\rArr$ vectors in an affine space
 - $\alpha$,$\beta$,$\gamma$: Greek letters $\rArr$ scalars
 
+[Back to Top](#table-of-contents)
+
 # 10/12 Class Notes
 
 - Rotation about a fixed point 
@@ -445,7 +451,25 @@ m = mult(m, translate(-1.0, -2.0, -3.0));
 - Use pointers from the vertices into this array
 - Introduce a polygon list
 
+[Back to Top](#table-of-contents)
 
+# 10/17 Class Notes
+
+- viewing requires three basic elements
+  - One or more objects
+  - a viewer with a projection surface
+  - Projectors that go from the object(s) to the projection surface
+- Classical views are based on the relationship among these elements
+  - The viewer picks up the object and orients it how they would like to see it
+- Each object is assumed to constructed from flat *principal faces*
+
+### Planar Geometric Projections
+
+- standard projections project onto a plane
+- Projectors are lines that either:
+  - converge at a center of projection
+  - are parallel
+- Such projections preserve lines, but not necessarily angles
 
 
 
