@@ -570,7 +570,7 @@ $$E\approx5.7Mbps$$
 
 ### Extra Credit Problem
 
-- Received $P^{1}=11011010110$
+- Received $P^{1}=110 1101 0110$
 
 c(x) = x^3 + x^2 + 1
 
