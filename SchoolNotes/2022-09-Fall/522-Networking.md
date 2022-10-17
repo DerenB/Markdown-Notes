@@ -53,6 +53,11 @@
     - [Error Detection - Parity](#error-detection---parity)
     - [Cyclic Redundancy Check](#cyclic-redundancy-check)
     - [Extra Credit Problem](#extra-credit-problem)
+- [10/17 Class Notes](#1017-class-notes)
+    - [Selecting](#selecting)
+    - [Synthetic Division](#synthetic-division)
+    - [CSMA](#csma)
+    - [Example](#example-1)
 
 # 09-21 Notes
 
@@ -576,20 +581,74 @@ c(x) = x^3 + x^2 + 1
 
 divide polynomial by c(x)
 
+[Back to Top](#table-of-contents)
 
+# 10/17 Class Notes
 
+### Selecting
 
+- All single-bit errors as long as the $x^{k}$ and $x^{0}$ 
+- Error Detection - CSCs
+  - Based on standard polynomials:
+  - Ex: Ethernet 32-bit CRC is defined by:
+  - $x^{32} + x^{26} + x^{23} + x^{22} + x^{16} + x^{12} + x^{11} + x^{10} + x^{8} + x^{7} + x^{5} + x^{4} + x^{2} + x^{1} + 1$
+  - Computed with simple shift/XOR
 
+### Synthetic Division
 
+- Adds bits so that transmitted frame viewed as a polynomial is evenly divisible by a generator polynomial 
+- How to do:
+  - Add length-1 number of 0s to the end
+    - Ex: 5-digit binary $\rArr$ add 4 zeroes
 
+### CSMA
 
+- Carrier Sense Multiple Access (CSMA) improves on ALOHA by sensing the channel
+  - User doesn't 
 
+### Example
 
+1) Suppose two devices using a 0.6-persistent protocol are waiting for an idle medium. What is the probability of a successful transmission when the medium clears?
+
+P - Persistence
+
+Given: p = 0.6
+2 Devices
+Find: Pr (successful transmission)
+
+Solve: Pr(succ) = Pr(exactly one device transmits)
+  = Pr(device1 xmits) * Pr(device2 does not) + Pr(device1 does not) * Pr(device2 xmits)
+  = 0.6(1-0.6) + (1-0.6)(0.6)
+  = 0.48
+
+2) Suppose two devices using a 0.60-persistent protocol are waiting for an idle medium. What is the probability of a collision when the medium clears?
+
+Find: Pr(collision)
+Solve: Pr(collision) = Pr(both devices xmit)
+  = Pr(device1 xmits) * Pr(device2 xmits)
+  = 0.6 (0.6)
+  = 0.36
+
+3) Suppose two devices using a 0.6-persistent protocol are waiting for an idle medium. What is the probability that no device will transmit when the medium clears?
+
+Find: Pr(no transmission)
+Solve: Pr(no xmit) = Pr(device1 does not) * Pr(device2 does not)
+  = (1-0.6) * (1 - 0.6)
+  = 0.4 (0.4)
+  = 0.16
 
 
 
 
 [Back to Top](#table-of-contents)
+
+
+
+
+
+
+
+
 
 
 
