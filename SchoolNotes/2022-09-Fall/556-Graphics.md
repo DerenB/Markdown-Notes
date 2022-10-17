@@ -37,6 +37,12 @@ Matt Evett
     - [Affine Transformations](#affine-transformations)
     - [Transformations](#transformations)
     - [Notation](#notation)
+- [10/12 Class Notes](#1012-class-notes)
+    - [Rotation, Translation, Scaling](#rotation-translation-scaling)
+      - [Example:](#example)
+    - [Arbitrary Matrices](#arbitrary-matrices)
+    - [Building a cube](#building-a-cube)
+    - [Building a cube, vertex list](#building-a-cube-vertex-list)
 
 # 08/31 Class Notes
 
@@ -386,6 +392,89 @@ $$\begin{bmatrix}
 - P, Q, R: uppercase letters $\rArr$ points in an affine space
 - u, v, w: lowercase letters $\rArr$ vectors in an affine space
 - $\alpha$,$\beta$,$\gamma$: Greek letters $\rArr$ scalars
+
+# 10/12 Class Notes
+
+- Rotation about a fixed point 
+  - Start with identity matrix: C $\lArr$ I
+  - Move fixed point to origin: C $\lArr$ CT
+  - Rotate: C $\lArr$ CR
+  - Moved fixed point back: $C \lArr CT^{-1}$
+  - Results: $C=TRT^{-1}$
+
+### Rotation, Translation, Scaling
+
+- Create an identity matrix:
+```
+var m = mat4();
+```
+- Multiply on right by rotation matrix of theta in degree where (vx, vy, vz) define axis of rotation
+```
+var r = rotate(theta, vx, vy, vz);
+m = mult(m, r);
+```
+#### Example:
+  - Rotation about z-axis by 30 degrees with a fixed point of (1.0, 2.0, 3.0)
+```
+var m = mult(translate(1.0, 2.0, 3.0), rotate(30.0, [0.0, 0.0, 1.0]));
+m = mult(m, translate(-1.0, -2.0, -3.0));
+```
+- Remember that last matrix specified in the program is the first applied 
+
+### Arbitrary Matrices 
+
+- can load and multiply by matrices defined in the application program
+- Matrices are stored as one dimensional array of 16 elements by MV.js but can be treated as 4x4 matrices in row major order
+- OpenGL wants column major data
+- gl.*unifromMatrix4f* has a parameter for automatic transpose but it must be set to false
+- *flatten* function converts to column major order
+
+### Building a cube
+
+- consider a mesh. each vertex has an x,y,z
+- Define each polygon by the geometric locations of its vertices
+- Leads to WebGL code such as
+- insufficient
+- Geometry & Topology
+  - Geometry - locations of the vertices
+  - Topology - organization of the vertices and edges
+
+### Building a cube, vertex list
+
+- Put the geometry in an array
+- Use pointers from the vertices into this array
+- Introduce a polygon list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
