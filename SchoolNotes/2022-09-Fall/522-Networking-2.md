@@ -15,6 +15,7 @@
     - [Collision-Free](#collision-free)
     - [Wireless LAN Protocols](#wireless-lan-protocols)
     - [Wireless Networks: IEEE 802.11](#wireless-networks-ieee-80211)
+    - [Build on Bridge hash table](#build-on-bridge-hash-table)
 
 # 10/19 Class Notes
 
@@ -155,7 +156,29 @@
     - Called infrastructure mode; there is also ad-hoc mode with no AP, but that is rare
   - MAC is used across different physical layers
 
+### Build on Bridge hash table
 
+- Consider:
+  - (a) A sends a packet to C
+  - (b) E sends a packet to F
+![](images/522-LearningBridge.png)
+- (a) 
+  - B1 $\rArr$ 2,3,4 outgoing ports
+  - B2 $\rArr$ 1,2,3
+  - C $\rArr$ A B1 $\rArr$ 1
+- (b)
+  - E $\rArr$ F
+  - B2 $\rArr$ 1,3,4
+  - B1 $\rArr$ 1,2,3
+B1
+dest: a C E
+Outgoing ports: 1 3 4
+
+B2
+destL A E F
+Outgoing Ports: 4 2 2
+
+textbook 38
 
 
 
