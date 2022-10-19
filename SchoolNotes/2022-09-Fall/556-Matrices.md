@@ -21,7 +21,7 @@ $$(A*B)^{T} = B^{T}*A^{T}$$
 
 # Matrix Addition
 
-- Matrices have to be the same size
+Matrices have to be the same size
 
 $$\begin{bmatrix}
     4 & 5\\
@@ -36,8 +36,7 @@ $$\begin{bmatrix}
 \begin{bmatrix}
     5 & 7\\
     10 & 11\\
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 # Matrix Multiplication
 
