@@ -20,7 +20,9 @@
     - [Structure](#structure)
     - [Spaces & Codeblocks](#spaces--codeblocks)
     - [Conditionals](#conditionals)
-- [Model Page](#model-page)
+- [Page Model](#page-model)
+- [Page Model Methods](#page-model-methods)
+    - [OnGet](#onget)
 
 <!-- /code_chunk_output -->
 
@@ -52,9 +54,11 @@
 ### Structure
 
 - Requires "@page" as the first line. Indicates it as a Razor page
+- Add "@model ModelPage" 2nd to connect to the model page
 - Prepend C# code with "@"
 ```
 @pages
+@model DateModel
 <h1>@DateTime.Now.ToShortDateString()</h1>
 ```
 
@@ -87,15 +91,23 @@
 
 [Back to Top](#table-of-contents)
 
-# Model Page
+# Page Model
+
+- view layer functionality uses logic in the page model
+- File type of .cshtml.cs
+- - Add "@model ModelPage" in the view page to connect to the model page
 
 [Back to Top](#table-of-contents)
 
+# Page Model Methods
 
+### OnGet
 
+- Handler Method
+  - Methods that are executed as a result of a request
+- Get request invokes the OnGet method
 
-
-
+[Back to Top](#table-of-contents)
 
 
 
