@@ -16,6 +16,9 @@
     - [Wireless LAN Protocols](#wireless-lan-protocols)
     - [Wireless Networks: IEEE 802.11](#wireless-networks-ieee-80211)
     - [Build on Bridge hash table](#build-on-bridge-hash-table)
+- [10/24 Class Notes](#1024-class-notes)
+    - [Bridges](#bridges)
+    - [Exam Review](#exam-review)
 
 # 10/19 Class Notes
 
@@ -170,15 +173,79 @@
   - E $\rArr$ F
   - B2 $\rArr$ 1,3,4
   - B1 $\rArr$ 1,2,3
-B1
-dest: a C E
-Outgoing ports: 1 3 4
 
-B2
-destL A E F
-Outgoing Ports: 4 2 2
+[Back to Top](#table-of-contents)
 
-textbook 38
+# 10/24 Class Notes
+
+### Bridges
+
+- Bride topologies with loops and only backward learning will cause frames to circulate forever 
+  - Need spanning tree support to solve problem
+- Spanning Tree
+  - After the algorithm runs:
+  - Set B1 as the root, two dashed links are turned off
+  - B4 uses link to B2 (lower than B3 at the same distance)
+  - B5 uses B3 (distance 1 versus B4 at distance 2)
+- LAN Bridge
+  - Set the lowest address bridge to the root (B1)
+  - Identify the root ports based on distance and lowest value of address
+  - Designate Bridges
+    - Always take the bridge that's closer to the root.
+    - If the distance is the same, take the one with the lower address
+    - Can deactivate any connection that won't be sending data 
+    - LAN A - B2
+    - LAN B - B1
+    - LAN C - B2
+    - LAN D - B1
+    - LAN E - B1
+    - LAN F - B5
+
+### Exam Review
+
+- Coverage
+  - Chapters 3, 4, TCP/UDP socket programming
+- Topics
+  - Socket Programming
+    - Functions associated with the client/server exchange
+  - Terminologies
+  - Framing
+    - Byte Count, bit stuffing, byte stuffing
+  - Error control
+    - Checksum
+    - hamming code
+    - CRC
+  - FEC vs ARQ
+  - Flow Control
+    - Stop-and-wait
+    - sliding window
+      - go-back-n
+      - SRP
+  - Keeping the pipe full
+  - Channel allocation
+  - Multiple access protocols
+    - Pure Aloha/Slotted Aloha
+    - CSMA
+      - Persistence
+    - CSMA/CD
+      - Binary exponential backoff
+    - Ethernet
+      - classic ethernet, fast-, gigabit-, etc
+    - Collision-free
+      - bit-map, token ring/bus
+    - Wireless LANs
+      - IEEE 802.11
+  - Bridges
+    - Learning Bridge
+  - Spanning Tree Algorithm
+
+
+[Back to Top](#table-of-contents)
+
+
+
+
+
 
 
 
