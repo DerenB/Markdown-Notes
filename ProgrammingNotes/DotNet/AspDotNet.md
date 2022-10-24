@@ -18,7 +18,7 @@
 - [Basics](#basics)
 - [View Page](#view-page)
     - [Structure](#structure)
-    - [Spaces & Codeblocks](#spaces--codeblocks)
+    - [Spaces & Codeblocks](#spaces-codeblocks)
     - [Conditionals](#conditionals)
 - [Page Model](#page-model)
 - [Page Model Methods](#page-model-methods)
