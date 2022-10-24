@@ -12,6 +12,8 @@ Evett
     - [Orthogonal Matrix](#orthogonal-matrix)
     - [Oblique Projections](#oblique-projections)
     - [Perspective Projection Matrices](#perspective-projection-matrices)
+- [10/24 Notes](#1024-notes)
+    - [Programming Assignment Notes](#programming-assignment-notes)
 
 # 10/19 Class Notes
 
@@ -88,6 +90,56 @@ $$N=\begin{bmatrix}
   - $y"=\frac{y}{z}$
   - $Z"=-(\alpha+\frac{\beta}{z})$
 
+[Back to Top](#table-of-contents)
+
+# 10/24 Notes
+
+$$\begin{bmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & \alpha & \beta\\
+    0 & 0 & -1 & 0\\
+\end{bmatrix}*
+\begin{bmatrix}
+    x\\
+    y\\
+    z\\
+    1\\
+\end{bmatrix}=
+\begin{bmatrix}
+    x\\
+    y\\
+    \alpha z + \beta\\
+    -z\\
+\end{bmatrix}=
+\begin{bmatrix}
+    \frac{-x}{z}\\
+    \frac{-y}{z}\\
+    \frac{\alpha z+\beta}{-z}\\
+    1\\
+\end{bmatrix}$$
+
+- $x"=\frac{-x}{z}$
+- $y"=\frac{-y}{z}$
+- $z"=-(\alpha+\frac{\beta}{z})$
+- $w"=1$
+- Require
+  - $z=-1$
+  - $z=far$
+  - $x = \plusmn z \rArr x" \plusmn 1$
+  - $y = \plusmn z \rArr y" \plusmn 1$
+  - $z"_{near}=-(\alpha - \frac{\beta}{n}) \rArr \alpha=-\frac{n+f}{n-f}$
+  - $z"_{far}=-(\alpha - \frac{\beta}{f}) \rArr \beta=\frac{-znf}{n-f}$
+- If I set z = -near:
+  - $-(-(\frac{n+f}{n-f})-\frac{-znf}{(n-f)n})$
+  - $=-(\frac{n+f}{n-f}+\frac{zf}{n-f})$
+  - $=\frac{n+f-2f}{n-f}$
+  - $=\frac{n-f}{n-f}$
+  - $=1=z$
+
+### Programming Assignment Notes
+
+- 
 
 
 
@@ -96,5 +148,5 @@ $$N=\begin{bmatrix}
 
 
 
-
+[Back to Top](#table-of-contents)
 
