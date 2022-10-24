@@ -19,6 +19,7 @@
 - [10/24 Class Notes](#1024-class-notes)
     - [Bridges](#bridges)
     - [Exam Review](#exam-review)
+    - [EC](#ec)
 
 # 10/19 Class Notes
 
@@ -238,6 +239,12 @@
   - Bridges
     - Learning Bridge
   - Spanning Tree Algorithm
+
+### EC
+
+- Generate the table for F's sinktree using Dijkstra's algorithm. Give the resulting sink tree or rotating table
+- Shortest Path Algorithm
+- Slide 14
 
 
 [Back to Top](#table-of-contents)
