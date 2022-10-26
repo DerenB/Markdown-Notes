@@ -10,6 +10,7 @@
 - [Assignment 2 Notes](#assignment-2-notes)
 - [Table of Contents](#table-of-contents)
 - [Classic OpenGL Transformation Pipeline](#classic-opengl-transformation-pipeline)
+- [Assignment Instructions:](#assignment-instructions)
 
 <!-- /code_chunk_output -->
 
@@ -26,6 +27,13 @@
 - One global matrix internally for each of the two stages above:
   - $M_{modelview}$
   - $M_{projection}$
+
+
+# Assignment Instructions:
+
+- Green: X-Axis
+- Red: Y-Axis
+- Blue: Z-Axis
 
 
 
