@@ -6,6 +6,9 @@ Chapters 3, 4, and TCP/UDP socket Programming
 
 - [522 Exam 2 Notes](#522-exam-2-notes)
 - [Table of Contents](#table-of-contents)
+- [Socket Programming](#socket-programming)
+    - [UDP](#udp)
+    - [TCP](#tcp)
 - [Framing](#framing)
     - [Byte Count](#byte-count)
     - [Byte Stuffing](#byte-stuffing)
@@ -25,12 +28,25 @@ Chapters 3, 4, and TCP/UDP socket Programming
     - [CSMA](#csma)
 - [Bridges](#bridges)
 - [********* Incomplete *********](#-incomplete-)
-- [Socket Programming](#socket-programming)
-- [Terminologies](#terminologies)
+- [Socket Programming](#socket-programming-1)
 - [Flow Control](#flow-control)
 - [Keeping the pipe full](#keeping-the-pipe-full)
 - [Channel Allocation](#channel-allocation)
-- [Bridges](#bridges-1)
+
+# Socket Programming
+
+### UDP
+
+- User Datagram Protocol
+- Data checksum
+- best-effort
+
+### TCP
+
+- Transmission Control Protocol
+- Data checksum
+- Reliable byte-stream delivery
+- Flow and congestion control
 
 
 # Framing
@@ -121,15 +137,14 @@ Chapters 3, 4, and TCP/UDP socket Programming
 
 # Bridges
 
-
+- Learning Bridges
+- Spanning Tree Algorithm
 
 # ********* Incomplete *********
 
 # Socket Programming
 
 - Functions associated with the client/server exchange
-
-# Terminologies
 
 # Flow Control
 
@@ -142,10 +157,8 @@ Chapters 3, 4, and TCP/UDP socket Programming
 
 # Channel Allocation
 
-# Bridges
 
-- Learning Bridges
-- Spanning Tree Algorithm
+
 
 
 
