@@ -175,7 +175,8 @@ window.onload = function init() {
   program.vPosition = gl.getAttribLocation(program, "vPosition");
   gl.vertexAttribPointer( program.vPosition, 4, gl.FLOAT, gl.FALSE, 0, 0 );
   gl.enableVertexAttribArray( program.vPosition );
- 
+
+  
   //***Colors***
   var colorBuffer = gl.createBuffer();
   gl.bindBuffer( gl.ARRAY_BUFFER, colorBuffer );
@@ -183,6 +184,7 @@ window.onload = function init() {
   program.vColor = gl.getAttribLocation(program, "vColor");
   gl.vertexAttribPointer( program.vColor, 4, gl.FLOAT, gl.FALSE, 0, 0 );
   gl.enableVertexAttribArray( program.vColor );
+
 
   // Get addresses of shader uniforms
   projLoc = gl.getUniformLocation(program, "p");
@@ -226,14 +228,27 @@ function render() {
    // Draw the wire cube for step 5
    gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
    gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
-   
+
    // Shifts the second cube
    eye = vec3(0.0, 0.0, 10.0);
 	at =  vec3(-1.0, -1.0, 0.0);
-	up =  vec3(1, 1.0, 0.0);
+	up =  vec3(0.0, 1.0, 0.0);
    mv = lookAt(eye,at,up);
+
+   // Rotates the second cube
+   mv = mult(mv, rotate(45,vec3(0,1,0)));
 
    // Draw the 2nd wire cube for step 7
    gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
    gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
 }
+
+
+
+
+
+
+
+
+
+

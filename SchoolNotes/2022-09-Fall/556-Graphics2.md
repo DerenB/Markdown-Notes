@@ -13,7 +13,7 @@ Evett
     - [Oblique Projections](#oblique-projections)
     - [Perspective Projection Matrices](#perspective-projection-matrices)
 - [10/24 Notes](#1024-notes)
-    - [Programming Assignment Notes](#programming-assignment-notes)
+- [Midterm Topics](#midterm-topics)
 
 # 10/19 Class Notes
 
@@ -137,16 +137,25 @@ $$\begin{bmatrix}
   - $=\frac{n-f}{n-f}$
   - $=1=z$
 
-### Programming Assignment Notes
-
-- 
-
-
-
-
-
-
-
 
 [Back to Top](#table-of-contents)
+
+# Midterm Topics
+
+- Chapter 1
+- Chapter 2
+- Chapter 3 - html review
+  - Skip: 3.8, 3.10
+  - How to determine what object is clicked 
+- Chapter 4
+  - Skip: 4.13, 4.14
+- Chapter 5
+  - Hidden surface removal
+  - Meshes
+  - Skip: Shadows, shadow-maps
+
+
+
+
+
 
