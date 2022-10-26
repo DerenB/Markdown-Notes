@@ -31,6 +31,8 @@ var mvLoc, projLoc;
 var shoulder = 0, elbow = 0;
 
 
+let test = 1;
+
 //----------------------------------------------------------------------------
 // Define Shape Data 
 //----------------------------------------------------------------------------
@@ -146,7 +148,10 @@ window.onload = function init() {
   //  Configure WebGL
   //  eg. - set a clear color
   //      - turn on depth testing
-  gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+
+  // gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+  gl.viewport(0, 0, gl.canvas.clientWidth, gl.canvas.clientHeight);
+
   gl.enable(gl.DEPTH_TEST);
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.enable(gl.CULL_FACE);
@@ -187,7 +192,8 @@ window.onload = function init() {
   //gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
 
   //Set up projection matrix
-  p = perspective(45.0, 1.0, 0.1, 100.0);
+  var aspect = canvas.clientWidth / canvas.clientHeight;
+  p = perspective(45.0, 1.0, aspect, 100.0);
   gl.uniformMatrix4fv(projLoc, gl.FALSE, flatten(transpose(p)));
  
   requestAnimationFrame(render);
@@ -200,7 +206,6 @@ window.onload = function init() {
 //----------------------------------------------------------------------------
 
 function render() {
-
 	gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 	
 	//Set initial view
@@ -209,9 +214,26 @@ function render() {
 	var up =  vec3(0.0, 1.0, 0.0);
 
 	mv = lookAt(eye,at,up);
-	
+	// mv = translate(0, 0, -10);
 	
 	gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
 	gl.drawArrays(shapes.axes.type, shapes.axes.start, shapes.axes.size);	
 
+   // Shifts the first cube
+   at[0] = -1.0;
+	mv = lookAt(eye,at,up);
+
+   // Draw the wire cube for step 5
+   gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
+   gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
+   
+   // Shifts the second cube
+   eye = vec3(0.0, 0.0, 10.0);
+	at =  vec3(-1.0, -1.0, 0.0);
+	up =  vec3(1, 1.0, 0.0);
+   mv = lookAt(eye,at,up);
+
+   // Draw the 2nd wire cube for step 7
+   gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
+   gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
 }
