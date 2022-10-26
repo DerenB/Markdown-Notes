@@ -1,4 +1,10 @@
 /*
+ * Deren Bozer
+ * COSC-556 F22
+ * Lab 3: 3D Transformations
+*/
+
+/*
 * boxes.cpp
 * An exercise in positioning simple boxes using projection/modelview
 * matrices and standard transforms.
@@ -30,8 +36,15 @@ var mvLoc, projLoc;
 //Model state variables
 var shoulder = 0, elbow = 0;
 
+// Ortho
+var left = -10.0;
+var bottom = -10.0;
+var near = -100.0;
 
-let test = 1;
+var right = 10.0;
+var top = 10.0;
+var far = 100.0;
+
 
 //----------------------------------------------------------------------------
 // Define Shape Data 
@@ -191,13 +204,19 @@ window.onload = function init() {
   mvLoc = gl.getUniformLocation(program, "mv");
 
   //Set up viewport - see WebGL Anti-Patterns link
-  //gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+  gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
 
   //Set up projection matrix
   var aspect = canvas.clientWidth / canvas.clientHeight;
+
+  // Commented out Perspective line:
   p = perspective(45.0, 1.0, aspect, 100.0);
+
+  // Orthographic View
+  // p = ortho(left, right,bottom, top,near, far);
+  // p = ortho(-10,canvas.width,canvas.clientheight,10,400,-400);
+
   gl.uniformMatrix4fv(projLoc, gl.FALSE, flatten(transpose(p)));
- 
   requestAnimationFrame(render);
 };
 
