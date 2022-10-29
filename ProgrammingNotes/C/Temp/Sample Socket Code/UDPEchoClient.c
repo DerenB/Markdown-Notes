@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     unsigned int fromSize;           /* In-out of address size for recvfrom() */
     char *servIP;                    /* IP address of server */
     char *echoString;                /* String to send to echo server */
-    char echoBuffer[ECHOMAX+1];      /* Buffer for receiving echoed string */
+    char echoBuffer[STRINGMAX+1];      /* Buffer for receiving echoed string */
     int echoStringLen;               /* Length of string to echo */
     int respStringLen;               /* Length of received response */
     
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     servIP = argv[1];           /* First arg: server IP address (dotted quad) */
     echoString = argv[2];       /* Second arg: string to echo */
     
-    if ((echoStringLen = strlen(echoString)) > ECHOMAX)  /* Check input length */
+    if ((echoStringLen = strlen(echoString)) > STRINGMAX)  /* Check input length */
         DieWithError("Echo word too long");
     
     if (argc == 4)
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     
     /* Recv a response */
     fromSize = sizeof(fromAddr);
-    if ((respStringLen = recvfrom(sock, echoBuffer, ECHOMAX, 0,
+    if ((respStringLen = recvfrom(sock, echoBuffer, STRINGMAX, 0,
          (struct sockaddr *) &fromAddr, &fromSize)) != echoStringLen)
         DieWithError("recvfrom() failed");
     

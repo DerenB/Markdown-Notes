@@ -4,79 +4,79 @@
 // Client File
 
 // Include items
-#include <stdio.h>      /* for printf() and fprintf() */
-#include <sys/socket.h> /* for socket(), connect(), sendto(), and recvfrom() */
-#include <arpa/inet.h>  /* for sockaddr_in and inet_addr() */
-#include <stdlib.h>     /* for atoi() and exit() */
-#include <string.h>     /* for memset() */
-#include <unistd.h>     /* for close() */
+#include <stdio.h>      // for printf() and fprintf()
+#include <sys/socket.h> // for socket(), connect(), sendto(), and recvfrom()
+#include <arpa/inet.h>  // for sockaddr_in and inet_addr()
+#include <stdlib.h>     // for atoi() and exit()
+#include <string.h>     // for memset()
+#include <unistd.h>     // for close()
 
-#define ECHOMAX 255     /* Longest string to echo */
+// Longest String Size
+#define STRINGMAX 255
 
-// void DieWithError(char *errorMessage);  /* External error handling function */
-
-int main(int argc, char *argv[])
-{
-    int sock;                        /* Socket descriptor */
-    struct sockaddr_in echoServAddr; /* Echo server address */
-    struct sockaddr_in fromAddr;     /* Source address of echo */
-    unsigned short echoServPort;     /* Echo server port */
-    unsigned int fromSize;           /* In-out of address size for recvfrom() */
-    char *servIP;                    /* IP address of server */
-    char *echoString;                /* String to send to echo server */
-    char echoBuffer[ECHOMAX+1];      /* Buffer for receiving echoed string */
-    int echoStringLen;               /* Length of string to echo */
-    int respStringLen;               /* Length of received response */
+int main(int argc, char *argv[]) {
+    // Variables
+    int clientSocket;                   // Client Socket descriptor
+    struct sockaddr_in echoServAddr;    // Server address
+    struct sockaddr_in fromAddr;        // Source address of client
+    unsigned short mathServerPort;      // Math Server Port
+    unsigned int fromSize;              // In-out of address size for recvfrom()
+    char *serverIP;                     // IP address of server
+    char *inputString;                  // String to send to echo server
+    char stringBuffer[STRINGMAX+1];     // Buffer for receiving echoed string
+    int inputStringLen;                 // Length of string to echo
+    int respStringLen;                  // Length of received response
     
-    if ((argc < 3) || (argc > 4))    /* Test for correct number of arguments */
-    {
-        fprintf(stderr,"Usage: %s <Server IP> <Echo Word> [<Echo Port>]\n", argv[0]);
+    // Test for correct number of arguments
+    if ((argc < 3) || (argc > 4)) {
+        fprintf(stderr,"Usage: %s <Server IP> [<Port>] [Operation]\n", argv[0]);
         exit(1);
     }
     
-    servIP = argv[1];           /* First arg: server IP address (dotted quad) */
-    echoString = argv[2];       /* Second arg: string to echo */
+    // First arg: server IP address (dotted quad)
+    serverIP = argv[1];           
     
-    /* Check input length */
-    if ((echoStringLen = strlen(echoString)) > ECHOMAX) {
-        // DieWithError("Echo word too long");
+    // Third arg: string to echo
+    inputString = argv[3];       
+    
+    // Check input length
+    if ((inputStringLen = strlen(inputString)) > STRINGMAX) {
         printf("Echo word too long.");
         return -1;
     }  
-            
+    
+    // Assigns the Port
     if (argc == 4) {
-        echoServPort = atoi(argv[3]);  /* Use given port, if any */
+        // Use given port, if any
+        mathServerPort = atoi(argv[2]);  
     } else {
-        echoServPort = 7;  /* 7 is the well-known port for the echo service */
+        // 7 is the well-known port for the echo service
+        mathServerPort = 7;  
     }
 
-    /* Create a datagram/UDP socket */
-    if ((sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
-        // DieWithError("socket() failed");
+    // Create a datagram/UDP socket
+    if ((clientSocket = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
         printf("socket() failed.");
         return -1;
     }
-        
     
-    /* Construct the server address structure */
-    memset(&echoServAddr, 0, sizeof(echoServAddr));    /* Zero out structure */
-    echoServAddr.sin_family = AF_INET;                 /* Internet addr family */
-    echoServAddr.sin_addr.s_addr = inet_addr(servIP);  /* Server IP address */
-    echoServAddr.sin_port   = htons(echoServPort);     /* Server port */
+    // Construct the server address structure
+    memset(&echoServAddr, 0, sizeof(echoServAddr));      // Zero out structure
+    echoServAddr.sin_family = AF_INET;                   // Internet addr family
+    echoServAddr.sin_addr.s_addr = inet_addr(serverIP);  // Server IP address
+    echoServAddr.sin_port   = htons(mathServerPort);     // Server port
     
-    /* Send the string to the server */
-    if (sendto(sock, echoString, echoStringLen, 0, 
-    (struct sockaddr *) &echoServAddr, sizeof(echoServAddr)) != echoStringLen) {
-        // DieWithError("sendto() sent a different number of bytes than expected");
+    // Send the string to the server
+    if (sendto(clientSocket, inputString, inputStringLen, 0, 
+    (struct sockaddr *) &echoServAddr, sizeof(echoServAddr)) != inputStringLen) {
         printf("sendto() sent a different number of bytes than expected.");
         return -1;
     }
     
-    /* Recv a response */
+    // Recv a response
     fromSize = sizeof(fromAddr);
-    if ((respStringLen = recvfrom(sock, echoBuffer, ECHOMAX, 0,
-    (struct sockaddr *) &fromAddr, &fromSize)) != echoStringLen) {
-        // DieWithError("recvfrom() failed");
+    if ((respStringLen = recvfrom(clientSocket, stringBuffer, STRINGMAX, 0,
+    (struct sockaddr *) &fromAddr, &fromSize)) != inputStringLen) {
         printf("recvfrom() failed");
         return -1;
     }
@@ -87,11 +87,14 @@ int main(int argc, char *argv[])
         exit(1);
     }
     
-    /* null-terminate the received data */
-    echoBuffer[respStringLen] = '\0';
-    printf("Result: %s\n", echoBuffer);    /* Print the echoed arg */
+    // Print out the result of the operation
+    printf("Result: %s \n", stringBuffer);
     
-    close(sock);
+    // null-terminate the received data
+    stringBuffer[respStringLen] = '\0';
+    
+    // Closes the socket and exits
+    close(clientSocket);
     exit(0);
 }
 
