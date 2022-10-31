@@ -36,14 +36,17 @@ var mvLoc, projLoc;
 //Model state variables
 var shoulder = 0, elbow = 0;
 
-// Ortho
-var left = -10.0;
-var bottom = -10.0;
-var near = -100.0;
+// Cube Items
+var aspect;
 
-var right = 10.0;
-var top = 10.0;
-var far = 100.0;
+// Ortho
+var left;
+var bottom;
+var near;
+
+var right;
+var top;
+var far;
 
 
 //----------------------------------------------------------------------------
@@ -202,19 +205,31 @@ window.onload = function init() {
   // Get addresses of shader uniforms
   projLoc = gl.getUniformLocation(program, "p");
   mvLoc = gl.getUniformLocation(program, "mv");
+   // Get addresses of shader uniforms
+   projLocCube = gl.getUniformLocation(program, "p");
+   mvLocCube = gl.getUniformLocation(program, "mv");
 
   //Set up viewport - see WebGL Anti-Patterns link
   gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
 
   //Set up projection matrix
-  var aspect = canvas.clientWidth / canvas.clientHeight;
+  aspect = canvas.clientWidth / canvas.clientHeight;
 
   // Commented out Perspective line:
   p = perspective(45.0, 1.0, aspect, 100.0);
 
   // Orthographic View
+  left = 0;
+  bottom = gl.canvas.clientHeight;
+  near = 2;
+  
+  right = gl.canvas.clientWidth;
+  top = 0;
+  far = -2;
+
   // p = ortho(left, right,bottom, top,near, far);
-  // p = ortho(-10,canvas.width,canvas.clientheight,10,400,-400);
+  // p = ortho(projLoc,-10,canvas.width,canvas.clientheight,10,400,-400);
+  // p = ortho(mvLoc*projLoc,left,right,bottom,top,near,far);
 
   gl.uniformMatrix4fv(projLoc, gl.FALSE, flatten(transpose(p)));
   requestAnimationFrame(render);
@@ -230,7 +245,7 @@ function render() {
 	gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 	
 	//Set initial view
-	var eye = vec3(0.0, 0.0, 10.0);
+	var eye = vec3(10.0, 10.0, 10.0);
 	var at =  vec3(0.0, 0.0, 0.0);
 	var up =  vec3(0.0, 1.0, 0.0);
 
@@ -249,7 +264,7 @@ function render() {
    gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
 
    // Shifts the second cube
-   eye = vec3(0.0, 0.0, 10.0);
+   eye = vec3(10.0, 10.0, 10.0);
 	at =  vec3(-1.0, -1.0, 0.0);
 	up =  vec3(0.0, 1.0, 0.0);
    mv = lookAt(eye,at,up);
@@ -261,13 +276,3 @@ function render() {
    gl.uniformMatrix4fv(mvLoc, gl.TRUE, flatten(transpose(mv)));
    gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
 }
-
-
-
-
-
-
-
-
-
-

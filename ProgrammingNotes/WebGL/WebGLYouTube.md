@@ -42,6 +42,11 @@
 - [Textures](#textures)
 - [Debugging](#debugging)
     - [Link Error](#link-error)
+- [Camera Perspective](#camera-perspective)
+    - [MVP](#mvp)
+    - [GL-Matrix](#gl-matrix)
+    - [Perspective](#perspective)
+    - [Orthographic](#orthographic)
 
 # Basic Setup
 
@@ -497,6 +502,70 @@ if(!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 ```
 
 [Return to Top](#table-of-contents)
+
+# Camera Perspective
+
+### MVP
+
+- Model $\rArr$ View $\rArr$ Projection
+- Matrix Names
+- Together they define a 3D transformation
+- Allow us to see in 3D
+- Matrix Multiplication
+  - Right to Left
+  - GLSL follows this convention:
+    - gl_position = projection * view * model * aPosition
+
+### GL-Matrix
+
+- View
+  - Create view matrix with: $lookAt()$
+- Projection
+  - Create view matrix with $perspective()$ or $ortho()$
+
+### Perspective
+
+```
+perspectiev(
+  matrix,         // your 'projection' matrix
+  fovy,           // lens "power" (measured in radians)
+  aspectRatio,    // width + height (get from WebGL)
+  near,           // distance from camera to near plane
+  far             // doistance from camera to far plane
+)
+```
+- Near & Far
+  - define a range
+  - triangles inside the range are drawn
+  - triangles outside the range are not drawn **culled**
+  - parts of triangles otuside are **clipped**
+
+### Orthographic
+
+```
+ortho(
+  matrix,     // your 'projection' matrix
+  left,       // distance to left plane
+  right,      // distance to right plane
+  bottom,     // distance to bottom plane
+  top,        // distance to top plane
+  near,       // distance to near plane
+  far         // distance to far plane
+)
+```
+
+[Return to Top](#table-of-contents)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
