@@ -18,11 +18,13 @@
 - [Basics](#basics)
 - [View Page](#view-page)
     - [Structure](#structure)
-    - [Spaces & Codeblocks](#spaces-codeblocks)
+    - [Variables from Page Model](#variables-from-page-model)
+    - [Spaces & Codeblocks](#spaces--codeblocks)
     - [Conditionals](#conditionals)
 - [Page Model](#page-model)
 - [Page Model Methods](#page-model-methods)
     - [OnGet](#onget)
+- [Sharing Pages](#sharing-pages)
 
 <!-- /code_chunk_output -->
 
@@ -54,12 +56,23 @@
 ### Structure
 
 - Requires "@page" as the first line. Indicates it as a Razor page
+- File type of .cshtml
 - Add "@model ModelPage" 2nd to connect to the model page
 - Prepend C# code with "@"
 ```
 @pages
 @model DateModel
 <h1>@DateTime.Now.ToShortDateString()</h1>
+```
+
+### Variables from Page Model
+
+- Get variable values from the page model
+```
+@page
+@model PizzaModel
+<h5>Pizza for: @Model.Customer</h5>
+<h5>User: @ViewData["username"]</h5>
 ```
 
 ### Spaces & Codeblocks
@@ -95,7 +108,7 @@
 
 - view layer functionality uses logic in the page model
 - File type of .cshtml.cs
-- - Add "@model ModelPage" in the view page to connect to the model page
+- - Add `@model ModelPage` in the view page to connect to the model page
 
 [Back to Top](#table-of-contents)
 
@@ -106,12 +119,36 @@
 - Handler Method
   - Methods that are executed as a result of a request
 - Get request invokes the OnGet method
+- Can assign values on page load
+- ViewData
+  - Creates a key/value pair that's accessible in the view page
+```
+public class UserModel : PageModel {
+  public int age {get; set;}
+  public void OnGet() {
+    Age = 25;
+    ViewData["username"] = "User";
+  }
+}
+```
 
 [Back to Top](#table-of-contents)
 
+# Sharing Pages
 
+- Location of the main layout page in the `_ViewStart.cshtml` file
+  - Automatically generated under /Pages
+- Default layout file:
+```
+@{
+  Layout = "_Layout";
+}
+```
+- Directs the app to use the "_Layout" file as the main layout for all content
+  - Layout file located at: /Pages/Shared
+  - filed called: "_Layout.cshtml"
 
-
+[Back to Top](#table-of-contents)
 
 
 
