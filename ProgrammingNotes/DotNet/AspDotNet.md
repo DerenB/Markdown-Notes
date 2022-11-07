@@ -25,6 +25,8 @@
 - [Page Model Methods](#page-model-methods)
     - [OnGet](#onget)
 - [Sharing Pages](#sharing-pages)
+    - [Layout](#layout)
+    - [ViewImport](#viewimport)
 
 <!-- /code_chunk_output -->
 
@@ -136,6 +138,8 @@ public class UserModel : PageModel {
 
 # Sharing Pages
 
+### Layout
+
 - Location of the main layout page in the `_ViewStart.cshtml` file
   - Automatically generated under /Pages
 - Default layout file:
@@ -147,6 +151,11 @@ public class UserModel : PageModel {
 - Directs the app to use the "_Layout" file as the main layout for all content
   - Layout file located at: /Pages/Shared
   - filed called: "_Layout.cshtml"
+- Have to render the contents `@RenderBody()`
+
+### ViewImport
+
+
 
 [Back to Top](#table-of-contents)
 
