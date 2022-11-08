@@ -19,7 +19,7 @@
 - [View Page](#view-page)
     - [Structure](#structure)
     - [Variables from Page Model](#variables-from-page-model)
-    - [Spaces & Codeblocks](#spaces-codeblocks)
+    - [Spaces & Codeblocks](#spaces--codeblocks)
     - [Conditionals](#conditionals)
 - [Page Model](#page-model)
 - [Page Model Methods](#page-model-methods)
@@ -155,7 +155,11 @@ public class UserModel : PageModel {
 
 ### ViewImport
 
-
+- Includes directives that will become globally available
+- Most Commonly included ones are added by default:
+  - `@namespace`
+  - `@using`
+  - `@addTagHelpers`
 
 [Back to Top](#table-of-contents)
 
