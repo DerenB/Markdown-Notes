@@ -16,6 +16,7 @@
 - [Table of Contents](#table-of-contents)
 - [Definitions](#definitions)
 - [Basics](#basics)
+- [Folder Structure](#folder-structure)
 - [View Page](#view-page)
     - [Structure](#structure)
     - [Variables from Page Model](#variables-from-page-model)
@@ -25,8 +26,9 @@
 - [Page Model Methods](#page-model-methods)
     - [OnGet](#onget)
 - [Sharing Pages](#sharing-pages)
-    - [Layout](#layout)
+    - [ViewStart](#viewstart)
     - [ViewImport](#viewimport)
+- [Partials](#partials)
 
 <!-- /code_chunk_output -->
 
@@ -50,6 +52,28 @@
   - Files containing Razor generally have a .cshtml file extension
 - Every *page* has a "view page" as a .cshtml document
 - Every view page has a *page model* called "model page" as a .cshtml.cs document
+
+[Back to Top](#table-of-contents)
+
+# Folder Structure
+
+```
+Razor App
+  Startup.cs
+  Program.cs
+  RazorApp.sln
+  ...
+  Pages
+    _ViewStart.cshtml
+    MyPage.cshtml
+    MyPage.cshtml.cs
+    ...
+    Shared
+      _Layout.cshtml
+      _MyPartial.cshtml
+      ...
+  Properties
+```
 
 [Back to Top](#table-of-contents)
 
@@ -138,8 +162,10 @@ public class UserModel : PageModel {
 
 # Sharing Pages
 
-### Layout
+### ViewStart
 
+- Layout settings
+- Cares about logic required for view pages
 - Location of the main layout page in the `_ViewStart.cshtml` file
   - Automatically generated under /Pages
 - Default layout file:
@@ -155,18 +181,53 @@ public class UserModel : PageModel {
 
 ### ViewImport
 
+- Cares about imports
 - Includes directives that will become globally available
 - Most Commonly included ones are added by default:
   - `@namespace`
   - `@using`
   - `@addTagHelpers`
+- NameSpace
+  - Organizes the code into  groups
+  - Declares the root namespace for the Pages
+  - Default for most projects: `@namespace YourProjectName.Pages`
+  - Can have only 1 `namespace` directive per `ViewImports` file
+  - Directive necessary for the models to work
+- Using
+  - Allows adding imports to all of the Pages instead of adding per page
+  - Ex: if `@using Microsoft.Extensions.Localization;` is added to `Using`, every file will have it
+- Add Tag Helper
+  - Gives access to Tag Helpers throughout the pages
+  - Default Directive:
+  - `@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers`
 
 [Back to Top](#table-of-contents)
 
+# Partials
 
+- HTML snippets
+- Begin file name with underscore _
+- `<partial name="_PartialName" />`
+- Example:
+  - Create the Partial file 
+    - File Name: `_MyPartial.cshtml`
+    - Code: `<div>Here's some content from a partial!</div>`
+  - Add to the separate page:
+```
+<div>
+  <h1>Welcome to My Page!</h1>
+  <partial name="_MyPartial"/>
+</div>
+```
+- The result after loading the partial:
+```
+<div>
+  <h1>Welcome to My Page!</h1>
+  <div>Here's some content from a partial!</div>
+</div>
+```
 
-
-
+[Back to Top](#table-of-contents)
 
 
 
