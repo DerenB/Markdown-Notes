@@ -49,14 +49,15 @@ var cubeVerts = [
 ];
 
 // ********** Define points for octahedron **********
-var octaVerts = [
-    [ 0.0,  0.5,  0.0, 1.0], // 0
-    [ 0.5,  0.0,  0.5, 1.0], // 1
-    [ 0.5,  0.0, -0.5, 1.0], // 2
-    [-0.5,  0.0, -0.5, 1.0], // 3
-    [-0.5,  0.0,  0.5, 1.0], // 4
-    [ 0.0, -0.5,  0.0, 1.0], // 5
+var octahedronVertices = [
+    vec4(-1, 0, 0,1), //0
+    vec4( 1, 0, 0,1), //1
+    vec4( 0,-1, 0,1), //2
+    vec4( 0, 1, 0,1), //3
+    vec4( 0, 0,-1,1), //4
+    vec4( 0, 0, 1,1), //5
 ];
+
 
 //Solid Cube lookups - these are indices into the cubeVerts array
 var solidCubeLookups = [
@@ -70,16 +71,15 @@ var solidCubeLookups = [
 
 // ********** Solid Octahedron Lookups **********
 var solidOctaLookups = [
-    0, 4, 1,    // Top Front
-    0, 1, 2,    // Top Right
-    0, 2, 3,    // Top Back
-    0, 3, 4,    // Top Left
-    5, 1, 4,    // Bottom Front
-    5, 2, 1,    // Bottom Right
-    5, 3, 2,    // Bottom Back
-    5, 4, 3,    // Bottom Left
+    3,5,0,
+    3,0,4,
+    3,4,1,
+    3,1,5,
+    2,5,0,
+    2,0,4,
+    2,4,1,
+    2,1,5,
 ];
-
 
 //Expand Solid Cube data: 
 //  The precomputed normals used here are easy for cubes,
@@ -96,45 +96,21 @@ for (var i = 0; i < solidCubeLookups.length; i++) {
     if (i % 6 == 5) faceNum++; //Switch color for every face. 6 vertices/face
 }
 
-
+// ********** Octahedron Normals **********
 var faceNumOcta = 0;
-var octahedronVertices  = [
+var octaNormalsList  = [
     vec3( 0.0, 0.0, 1.0), vec3( 1.0, 0.0, 0.0), vec3( 0.0, 0.0,-1.0),
     vec3(-1.0, 0.0, 0.0), vec3( 0.0, 1.0, 0.0), vec3( 0.0,-1.0, 0.0)
 ];
 for (var i = 0; i < solidOctaLookups.length; i++) {
-    shapes.solidOctahedron.points.push(octaVerts[solidOctaLookups[i]]);
-    shapes.solidOctahedron.normals.push(octahedronVertices[faceNumOcta]);
+    shapes.solidOctahedron.points.push(octahedronVertices[solidOctaLookups[i]]);
+    shapes.solidOctahedron.normals.push(octaNormalsList[faceNumOcta]);
     if (i % 6 == 5) faceNumOcta++;
 }
 
 //EXERCISE: find the makeFlatNormals function in the lab notes
 //          place it here (or in uofrGraphics.js - it's a general use function)
-makeFlatNormals(
-    shapes.solidCube.points,        // array full of vertices for gl.TRIANGLES
-    0,                              // index of where those vertices start
-    shapes.solidCube.points.length, // number of vertices
-    shapes.solidCube.normals        // destination array for normals
-);
 
-function makeFlatNormals(triangles, start, num, normals) {
-    if (num % 3 != 0) {
-        console.log("Warning: number of vertices is not a multiple of 3");
-        return;
-    }
-    for (var i = start; i < start + num; i += 3) {
-        var p0 = vec3(triangles[i][0], triangles[i][1], triangles[i][2]);
-        var p1 = vec3(triangles[i + 1][0], triangles[i + 1][1], triangles[i + 1][2]);
-        var p2 = vec3(triangles[i + 2][0], triangles[i + 2][1], triangles[i + 2][2]);
-        var v1 = normalize(vec3(subtract(p1, p0))); //Vector on triangle edge one
-        var v2 = normalize(vec3(subtract(p2, p1))); //Vector on triangle edge two
-
-        var n = normalize(cross(v1, v2));
-        normals[i + 0] = vec3(n);
-        normals[i + 1] = vec3(n);
-        normals[i + 2] = vec3(n);
-    }
-}
 
 //Convenience function:
 //  - adds shape data to global points array
