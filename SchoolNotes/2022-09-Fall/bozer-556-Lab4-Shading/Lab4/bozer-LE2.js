@@ -13,7 +13,6 @@
  * Adapted for WebGL2 by Alex Clarke, Feb 2020.
 */
 
-
 //----------------------------------------------------------------------------
 // Variable Setup
 //----------------------------------------------------------------------------
@@ -58,11 +57,12 @@ for (var i = 0; i < solidCubeLookups.length; i++) {
     shapes.solidCube.points.push(cubeVerts[solidCubeLookups[i]]);
     shapes.solidCube.normals.push(vec3(0, 0, 0));
 }
-makeFlatNormals(shapes.solidCube.points, //array full of vertices for gl.TRIANGLES
-                0, //index of where those vertices start
-                shapes.solidCube.points.length, //number of vertices
-                shapes.solidCube.normals //destination array for normals
-                );
+makeFlatNormals(
+    shapes.solidCube.points, //array full of vertices for gl.TRIANGLES
+    0, //index of where those vertices start
+    shapes.solidCube.points.length, //number of vertices
+    shapes.solidCube.normals //destination array for normals
+);
 
 //----------------------------------------------------------------------------
 // makeFlatNormals(triangles, start, num, normals)
@@ -127,12 +127,10 @@ var lightblue = vec4(0.5, 0.5, 1.0, 1.0);
 var white =     vec4(1.0, 1.0, 1.0, 1.0);
 var black =     vec4(0.0, 0.0, 0.0, 1.0);
 
-
 //Variables for Transformation Matrices
 var mv = new mat4();
 var p = new mat4();
 var mvLoc, projLoc;
-
 
 //Interaction support variables
 var myX, myY, motion = false, animate = true;
@@ -143,8 +141,6 @@ var light;
 var material;
 var lighting;
 var uColor;
-
-
 
 //----------------------------------------------------------------------------
 // Initialization Event Function
