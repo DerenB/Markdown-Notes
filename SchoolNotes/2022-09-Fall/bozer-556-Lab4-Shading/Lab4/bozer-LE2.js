@@ -243,6 +243,68 @@ window.onload = function init() {
 };
 
 
+// ********** Move the light value **********
+var value0 = 0.0;
+var value1 = 1.0;
+var value2 = 0.0;
+
+var value0Increment = 0.1;
+var value1Increment = 0.1;
+var value2Increment = 0.1;
+
+// ********** Event Listener for keyboard input **********
+window.addEventListener('keydown', function (e) {
+    if(e.key === 'a') {
+        value0 -= value0Increment;
+        value1 -= value1Increment;
+        if(value0 < -1.0) {
+            value0Increment *= -1;
+        }
+        if(value1 < -1.0) {
+            value1Increment *= -1;
+        }
+        if(value0 > 1.0) {
+            value0Increment *= -1;
+        }
+        if(value1 > 1.0) {
+            value1Increment *= -1;
+        }   
+    } else if(e.key === 'd') {
+        value0 += value0Increment;
+        value1 += value1Increment;
+        if(value0 < -1.0) {
+            value0Increment *= -1;
+        }
+        if(value1 < -1.0) {
+            value1Increment *= -1;
+        }
+        if(value0 > 1.0) {
+            value0Increment *= -1;
+        }
+        if(value1 > 1.0) {
+            value1Increment *= -1;
+        }  
+    }
+    if(e.key === 'w') {
+        value2 -= value2Increment;
+        if(value2 < -1.0) {
+            value2Increment *= -1;
+        }
+        if(value2 > 1.0) {
+            value2Increment *= -1;
+        }
+    } else if(e.key === 's') {
+        value2 += value2Increment;
+        if(value2 < -1.0) {
+            value2Increment *= -1;
+        }
+        if(value2 > 1.0) {
+            value2Increment *= -1;
+        }
+    }
+}, false);
+
+
 
 //----------------------------------------------------------------------------
 // Rendering Event Function
@@ -251,6 +313,7 @@ var rx = 0, ry = 0;
 function render() {
     gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 
+    var lpos;
 
     //Set initial view
     var eye = vec3(0.0, 0.0, 10.0);
@@ -263,20 +326,18 @@ function render() {
     //Set up light properties here
 
     //Defaults:
-    gl.uniform4fv(light.diffuse, vec4(0.8, 0.8, 0.8, 1.0));
-    gl.uniform4fv(light.ambient, vec4(0.2, 0.2, 0.2, 1.0));
-    var lpos = vec4(0.0, 0.0, 1.0, 0.0);
-    gl.uniform4fv(light.position, lpos);
+    lpos = vec4(value0, value1, value2, 0.0);
 
     //EXERCISE: put Positional light position settings here
-
+    gl.uniform4fv(light.position, lpos);
 
     //EXERCISE: put Directional light position settings here
-
+    gl.uniform4fv(light.position, mult(mv, lpos));
 
     //EXERCISE: put Diffuse and ambient light color settings here
-
-
+    gl.uniform4fv(light.diffuse, vec4(0.0, 1.0, 0.0, 1.0));
+    gl.uniform4fv(light.ambient, vec4(0.2, 0.2, 0.2, 1.0));
+    
     //set cube materials to white
     gl.uniform4fv(material.diffuse, vec4(0.8, 0.8, 0.8, 1.0));
     gl.uniform4fv(material.ambient, vec4(0.4, 0.4, 0.4, 1.0));
@@ -288,7 +349,9 @@ function render() {
 
     //////////
     //EXERCISE: set left sphere materials to red as instructed in exercise
-
+    // ********** Set Left Sphere to Red **********
+    gl.uniform4fv(material.diffuse, vec4(1.0, 0.0, 0.0, 1.0));
+    gl.uniform4fv(material.ambient, vec4(0.0, 0.0, 0.0, 1.0));
 
     var sphereTF = mult(mv, translate(-2, 0, 0));
     gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(sphereTF)));
@@ -296,7 +359,9 @@ function render() {
 
     ///////////
     //EXERCISE: set right sphere materials to green as instructed in exercise
-
+    // ********** Set Right Sphere to Green **********
+    gl.uniform4fv(material.diffuse, vec4(0.0, 1.0, 0.0, 1.0));
+    gl.uniform4fv(material.ambient, vec4(0.0, 0.0, 0.0, 1.0));
 
     sphereTF = mult(mv, translate(2, 0, 0));
     gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(sphereTF)));
@@ -343,3 +408,5 @@ function resetCube(e) {
     animate = true;
     requestAnimationFrame(render);
 }
+
+
