@@ -29,6 +29,10 @@
     - [ViewStart](#viewstart)
     - [ViewImport](#viewimport)
 - [Partials](#partials)
+- [Routing](#routing)
+    - [Customize URL](#customize-url)
+    - [POST request](#post-request)
+- [Redirecting](#redirecting)
 
 <!-- /code_chunk_output -->
 
@@ -229,8 +233,44 @@ public class UserModel : PageModel {
 
 [Back to Top](#table-of-contents)
 
+# Routing
 
+### Customize URL
 
+- default URL is defined by the filename
+  - index.cshtml is at localhost:8000
+- Add the custom URL after the `@page`
+- Without '/':
+  - `@page "Pirates"`
+  - makes Privacy.cshtml: `localhost:8000/Privacy/Pirates`
+- With "/":
+  - `@page "/Pirates"`
+  - makes Privacy.cshtml: `localhost:8000/Pirates`
 
+### POST request
+
+- Replace:
+  - `localhost:8000/Days?day=1`
+- With:
+  - `localhost:8000/Days/1`
+- By Adding:
+  - `@page "/Days/{day}"`
+- Add a "?" to make the route value optional
+  - `@page "/Days/{day?}"`
+- Add a contraint to the variable type
+  - `@page "/Days/{day:int?}"`
+- Change the OnGet value in the cshtml.cs by adding "?"
+  - Makes the parameter optional, or nullable
+  - `public void OnGet(int? day)`
+- Convert the int to int?
+  - `CurrentDay = day.Value;`
+
+[Back to Top](#table-of-contents)
+
+# Redirecting
+
+- 
+
+[Back to Top](#table-of-contents)
 
 
