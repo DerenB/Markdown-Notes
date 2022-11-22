@@ -17,6 +17,7 @@ Notes on using SQL.
 - [SQL Notes](#sql-notes)
 - [Learning Sources:](#learning-sources)
 - [Table of Contents](#table-of-contents)
+- [Databases](#databases)
 - [Accessing & Creating : Data & Tables](#accessing--creating--data--tables)
     - [Select data from a table](#select-data-from-a-table)
   - [Select specific data from a table](#select-specific-data-from-a-table)
@@ -44,11 +45,18 @@ Notes on using SQL.
     - [Average](#average)
     - [Round](#round)
     - [Group By](#group-by)
+- [Multiple Tables](#multiple-tables)
+    - [Join](#join)
+    - [Left Join](#left-join)
 
 <!-- /code_chunk_output -->
 
 
 ---
+
+# Databases
+
+
 
 # Accessing & Creating : Data & Tables
 
@@ -302,3 +310,43 @@ GROUP BY price
 
 [Return to Top](#table-of-contents)
 ___
+
+# Multiple Tables
+
+- Joining: matching data between tables
+
+### Join
+
+- Won't join data that isn't in both tables
+```
+SELECT *
+FROM orders
+JOIN customers
+    ON orders.customer_id = customers.customer_id;
+```
+- SELECT: 
+  - selects all data from the joined tables
+  - can specify columns
+- FROM orders:
+  - Specifies the first table to look in
+- JOIN customers:
+  - Specifies the second table to look in
+- ON:
+  - Which columns to match data with
+```
+SELECT *
+FROM orders
+JOIN subscriptions
+  ON orders.subscription_id = subscriptions.subscription_id
+WHERE subscriptions.description = 'Fashion Magazine';
+```
+
+### Left Join
+
+[Return to Top](#table-of-contents)
+___
+
+
+
+
+
