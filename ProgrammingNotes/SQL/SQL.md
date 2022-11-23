@@ -18,7 +18,7 @@ Notes on using SQL.
 - [Learning Sources:](#learning-sources)
 - [Table of Contents](#table-of-contents)
 - [Databases](#databases)
-- [Accessing & Creating : Data & Tables](#accessing--creating--data--tables)
+- [Accessing & Creating : Data & Tables](#accessing-creating-data-tables)
     - [Select data from a table](#select-data-from-a-table)
   - [Select specific data from a table](#select-specific-data-from-a-table)
     - [Create Table](#create-table)
@@ -41,13 +41,17 @@ Notes on using SQL.
 - [Aggregate Functions](#aggregate-functions)
     - [Count](#count)
     - [SUM](#sum)
-    - [MIN / MAX](#min--max)
+    - [MIN / MAX](#min-max)
     - [Average](#average)
     - [Round](#round)
     - [Group By](#group-by)
 - [Multiple Tables](#multiple-tables)
     - [Join](#join)
     - [Left Join](#left-join)
+    - [Cross Join](#cross-join)
+    - [Union](#union)
+    - [With](#with)
+- [Primary Keys](#primary-keys)
 
 <!-- /code_chunk_output -->
 
@@ -343,8 +347,69 @@ WHERE subscriptions.description = 'Fashion Magazine';
 
 ### Left Join
 
+- Will keep all of the rows from the first table regardless if there is a matching row in the second table
+```
+SELECT *
+FROM table1
+LEFT JOIN table2
+    ON table1.c2 = table2.c2;
+```
+
+### Cross Join
+
+- Combines all rows of one table with all rows of another table
+```
+SELECT shirts.shirt_color, pants.pants_color
+FROM shirts
+CROSS JOIN pants;
+```
+
+### Union
+
+- Stacks two tables on top of each other
+- Tables must have the same number of columns
+- The columns must have the same data types in the same order as the first table
+```
+SELECT *
+FROM table1
+UNION
+SELECT *
+FROM table2;
+```
+
+### With
+
+- Combines two tables, one table from a query result
+```
+WITH previous_query AS (
+    SELECT customer_id,
+        COUNT(subscription_id) AS 'subscriptions'
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customers.customer_name,
+previous_query.subscriptions
+FROM previous_query
+JOIN customers
+	ON customers.customer_id = previous_query.customer_id;
+```
+
 [Return to Top](#table-of-contents)
 ___
+
+# Primary Keys
+
+- None of the values can be NULL
+- Each value must be unique
+- Tables can only have 1 primary key column
+- Foreign Key:
+  - when the primary key for one table appears in a different table
+
+[Return to Top](#table-of-contents)
+___
+
+
+
 
 
 

@@ -32,6 +32,17 @@ HAVING SUM(score) > 200
 ORDER BY 2 DESC;
 ```
 <hr>
+Aggregate over each month to count the number of subscribers
+```
+SELECT month,
+   COUNT(*)
+FROM newspaper
+CROSS JOIN months
+WHERE start_month <= month 
+   AND end_month >= month
+GROUP BY month;
+```
+<hr>
 
 # Like
 
