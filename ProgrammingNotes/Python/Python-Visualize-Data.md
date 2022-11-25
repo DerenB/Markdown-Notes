@@ -6,6 +6,7 @@
 - [Table of Contents](#table-of-contents)
 - [Basics](#basics)
     - [Data Storage Options](#data-storage-options)
+    - [Data Visualization Libraries](#data-visualization-libraries)
 
 
 # Basics
@@ -16,6 +17,15 @@
 - CSV Files
 - Pandas Dataframes
   - Read with `df = pd.read_csv('fileName')`
+
+### Data Visualization Libraries
+
+- Two Common Libraries
+- Matplotlib
+  - Most well-known
+- Seaborn
+  - Built on Matplotlib
+  - Leverages statistics in visualizations
 
 
 
