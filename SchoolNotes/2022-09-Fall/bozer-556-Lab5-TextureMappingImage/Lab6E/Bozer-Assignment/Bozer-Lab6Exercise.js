@@ -30,6 +30,8 @@ var cubeVerts = [
 var solidCubeStart = 0;
 var solidCubeVertices = 36;
 
+let imageValue = 3;
+
 
 //Look up patterns from cubeVerts for different primitive types
 var cubeLookups = [
@@ -146,7 +148,23 @@ function setUpTextures()
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     
     // Get image
-    var image = document.getElementById("pic1");
+    let imageString;
+    switch(imageValue) {
+        case 1:
+            imageString = "pic1";
+            break;
+        case 2:
+            imageString = "pic2";
+            break;
+        case 3:
+            imageString = "pic3";
+            break;
+        case 4:
+            imageString = "pic4";
+            break;
+    }
+
+    var image = document.getElementById(imageString);
     
     // Load image into texture object
     gl.texImage2D(gl.TEXTURE_2D,     // 2D texture
@@ -345,8 +363,23 @@ document.onkeydown = function handleKeyDown(event) {
    var key = String.fromCharCode(c);
 
 	//Place key down detection code here
-    if (key == "A")
-    {
+    if (key == "A") {
         anim = !anim;
+    }
+    if (key == "1") {
+        imageValue = 1;
+        console.log("Default image 1");
+    }
+    if (key == "2") {
+        imageValue = 2;
+        console.log("Image 2");
+    }
+    if (key == "3") {
+        imageValue = 3;
+        console.log("Image 3");
+    }
+    if (key == "4") {
+        imageValue = 4;
+        console.log("Image 4");
     }
 }
