@@ -21,34 +21,34 @@ varying vec2 texCoord;
 //structs
 struct _light
 {
-    vec4 diffuse;
-    vec4 specular;    
-    vec4 ambient;
-    vec4 position;
+  vec4 diffuse;
+  vec4 specular;    
+  vec4 ambient;
+  vec4 position;
 };
 
 struct _material
 {
-    vec4 specular;
-    float shininess;
-    vec4 diffuse;
-    vec4 ambient;
+  vec4 specular;
+  float shininess;
+  vec4 diffuse;
+  vec4 ambient;
 };
 
 //constants
 const int n = 1; // number of lights
 
 //uniforms
-uniform mat4 p;     // perspective matrix
-uniform mat4 mv;    // modelview matrix
-uniform bool lighting;  // to enable and disable lighting
-uniform vec4 uColor;    // colour to use when lighting is disabled
-uniform _light light[n]; // properties for the n lights
+uniform mat4 p;             // perspective matrix
+uniform mat4 mv;            // modelview matrix
+uniform bool lighting;      // to enable and disable lighting
+uniform vec4 uColor;        // colour to use when lighting is disabled
+uniform _light light[n];    // properties for the n lights
 uniform _material material; // material properties
 
 //globals
-vec4 mvPosition; // unprojected vertex position
-vec3 N; // fixed surface normal
+vec4 mvPosition;  // unprojected vertex position
+vec3 N;           // fixed surface normal
 
 //prototypes
 vec4 lightCalc(in _light light, inout vec4 specular);
