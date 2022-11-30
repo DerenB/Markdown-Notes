@@ -38,7 +38,7 @@ var solidCubeStart = 0;
 var solidCubeVertices = 36;
 
 // ********** VARIABLE FOR SELECTED IMAGE **********
-let imageValue = 1;
+let imageValue = 2;
 
 
 //Look up patterns from cubeVerts for different primitive types
@@ -84,23 +84,23 @@ var texCoords =
 [
     //Texture Coordinates for Solid Cube
     //Note that each face is the same.
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
     
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
     
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
     
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
     
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
     
-    1, 1,	0, 1,	0, 0, // triangle 1
-    1, 1,	0, 0,	1, 0, // triangle 2
+    3, 3,	0, 3,	0, 0, // triangle 1
+    3, 3,	0, 0,	3, 0, // triangle 2
 ];
 
 var red = 		 [1.0, 0.0, 0.0, 1.0];
@@ -149,17 +149,6 @@ function setUpTextures(imageInput)
     textures[0] = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, textures[0]);
     
-    //Set Texture Parameters
-    // scale linearly when image bigger than texture    
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-    /*
-        Used this MDN page to figure out how to correct power-of-2 problem:
-        https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL
-    */
-    
-    
     // Get image
     // ********** SETS THE IMAGE BASED ON KEYBOARD INPUT **********
     let imageString;
@@ -180,6 +169,16 @@ function setUpTextures(imageInput)
 
     // ********** GETS THE IMAGE FROM THE HTML **********
     var image = document.getElementById(imageString);
+    
+    //Set Texture Parameters
+    // scale linearly when image bigger than texture    
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    /*
+        Used this MDN page to figure out how to correct power-of-2 problem:
+        https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL
+    */
     
     // Load image into texture object
     gl.texImage2D(gl.TEXTURE_2D,     // 2D texture
