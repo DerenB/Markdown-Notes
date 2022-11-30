@@ -120,7 +120,8 @@
     uniform sampler2D tex2;
         
     void main() { 
-      gl_FragColor = texture2D(tex, texCoord)*(color+specular);
+      // gl_FragColor = texture2D(tex, texCoord)*(color+specular);
+      gl_FragColor = (texture2D(tex2, texCoord)*specular)*(texture2D(tex, texCoord)*color);
     }
   </script>
 
