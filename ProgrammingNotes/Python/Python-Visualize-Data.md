@@ -73,8 +73,8 @@
 # Dataframe Data Management
 
 - Remove rows based on column value
-  - data_table.drop(data_table[data_table['Source'] == 'Service Fee'].index, inplace = True)
-  - df.drop(df[df['ColumnName'] condition].index, inplace = True)
+  - `data_table.drop(data_table[data_table['Source'] == 'Service Fee'].index, inplace = True)`
+  - `df.drop(df[df['ColumnName'] condition].index, inplace = True)`
 
 
 
