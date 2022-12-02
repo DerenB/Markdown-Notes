@@ -50,15 +50,22 @@
 
 # Dataframe Functions
 
-- `dataframe.head`
-  - Returns headers and first 5 rows of data
-- `dataframe.shape`
-  - Returns size of dataframe (row, columns)
-- `dataframe.info()`
-  - Returns columns, non-null values, datatypes, memory usage
-- `dataframe.describe()`
+- Describe
   - Statistical properties of data set
   - Count, mean, std, min, 25%, 50%, 75%, max
+  - `dataframe.describe()`
+- Describe, 1 column
+  - Shows statistical data for a single column
+  - `dataframe['Column Name'].describe()`
+- Head
+  - Returns headers and first 5 rows of data
+  - `dataframe.head`
+- Info
+  - Returns columns, non-null values, datatypes, memory usage
+  - `dataframe.info()`
+- Shape
+  - Returns size of dataframe (row, columns)
+  - `dataframe.shape`
 
 
 
