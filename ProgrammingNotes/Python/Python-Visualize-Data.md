@@ -78,10 +78,10 @@
 
 # Dataframe Functions
 
-- Count If
-  - Counts how many rows meet the given criteria
-  - `sum(dataframe[ColumnName] == Criteria)`
-  - `sum(df['Status'] == 'Declined')`
+### Count If
+- Counts how many rows meet the given criteria
+- `sum(dataframe[ColumnName] == Criteria)`
+- `sum(df['Status'] == 'Declined')`
 
 # Output Data
 
