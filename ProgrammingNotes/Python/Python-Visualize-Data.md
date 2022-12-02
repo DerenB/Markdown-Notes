@@ -83,6 +83,22 @@
   - `sum(dataframe[ColumnName] == Criteria)`
   - `sum(df['Status'] == 'Declined')`
 
+# Output Data
+
+### Excel
+
+- Save DataFrame to Excel File
+  - dataframe.to_excel("OutputFileName.xlsx")
+
+### Maps
+
+- Save Map as interactive HTML file
+  - map.save('OutputFileName.html')  
+
+### JupyterLab
+
+- Export entire Lab to a Python file
+  - File > Save and Export Notebook as > Executable Script 
 
 
 
