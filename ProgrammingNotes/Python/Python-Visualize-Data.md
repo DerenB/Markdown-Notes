@@ -68,7 +68,7 @@
   - `dataframe.shape`
 - Unique Values
   - Lists the unique values in a column
-  - `dataframe['ColumnName'].unique()
+  - `dataframe['ColumnName'].unique()`
 
 # Dataframe Data Management
 
