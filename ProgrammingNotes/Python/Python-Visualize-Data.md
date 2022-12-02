@@ -76,7 +76,12 @@
   - `data_table.drop(data_table[data_table['Source'] == 'Service Fee'].index, inplace = True)`
   - `df.drop(df[df['ColumnName'] condition].index, inplace = True)`
 
+# Dataframe Functions
 
+- Count If
+  - Counts how many rows meet the given criteria
+  - `sum(dataframe[ColumnName] == Criteria)`
+  - `sum(df['Status'] == 'Declined')`
 
 
 
