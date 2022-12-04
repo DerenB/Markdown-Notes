@@ -2,17 +2,29 @@
 
 # Table of Contents
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
 - [Python](#python)
 - [Table of Contents](#table-of-contents)
-- [Basics](#basics)
 - [Libraries](#libraries)
+- [Basics](#basics)
     - [Data Process](#data-process)
     - [Data Storage Options](#data-storage-options)
     - [Data Visualization Libraries](#data-visualization-libraries)
 - [Dataframe Functions](#dataframe-functions)
+- [Dataframe Data Management](#dataframe-data-management)
+- [Dataframe Functions](#dataframe-functions-1)
+    - [Count If](#count-if)
+- [Output Data](#output-data)
+    - [Excel](#excel)
+    - [Maps](#maps)
+    - [JupyterLab](#jupyterlab)
 
+<!-- /code_chunk_output -->
 
-# Basics
 
 # Libraries
 
@@ -23,6 +35,8 @@
 - statsmodels - library with many advanced statistical functions
 - scipy - advanced scientific computing, including functions for optimization, linear algrebra, image processing
 - scikit-learn - most popular machine learning library for Python
+
+# Basics
 
 ### Data Process
 
@@ -48,6 +62,8 @@
   - Built on Matplotlib
   - Leverages statistics in visualizations
 
+[Back To Top](#table-of-contents)
+
 # Dataframe Functions
 
 - Describe
@@ -70,11 +86,15 @@
   - Lists the unique values in a column
   - `dataframe['ColumnName'].unique()`
 
+[Back To Top](#table-of-contents)
+
 # Dataframe Data Management
 
 - Remove rows based on column value
   - `data_table.drop(data_table[data_table['Source'] == 'Service Fee'].index, inplace = True)`
   - `df.drop(df[df['ColumnName'] condition].index, inplace = True)`
+
+[Back To Top](#table-of-contents)
 
 # Dataframe Functions
 
@@ -82,6 +102,8 @@
 - Counts how many rows meet the given criteria
 - `sum(dataframe[ColumnName] == Criteria)`
 - `sum(df['Status'] == 'Declined')`
+
+[Back To Top](#table-of-contents)
 
 # Output Data
 
@@ -100,7 +122,7 @@
 - Export entire Lab to a Python file
   - File > Save and Export Notebook as > Executable Script 
 
-
+[Back To Top](#table-of-contents)
 
 
 
