@@ -71,6 +71,7 @@ for (x = x0, y = y0; x <= x1; x++) {
   - Chapter 9
 - Bresenham's Algorithm
 - Midpoint Line Algorithm
+- Robot Arm Rotation (9.3, 9.4), test example
 
 
 
