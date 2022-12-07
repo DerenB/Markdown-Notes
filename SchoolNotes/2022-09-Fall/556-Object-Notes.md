@@ -7,6 +7,8 @@
 - [Required Matrices](#required-matrices)
 - [Hierarchical Modelling](#hierarchical-modelling)
 - [Imaging Applications](#imaging-applications)
+- [Rasterizer](#rasterizer)
+- [Exam Review](#exam-review)
 
 # Required Matrices
 
@@ -31,7 +33,45 @@
 
 - Fragment Shaders and Images
   - Suppose that we send a rectangle (two triangles) to the vertex shader and render it with an (n x m) texture map
-  - 
+
+# Rasterizer
+
+- WritePiexl(x,y,value)
+  - Given: $X_{0}$, $X_{1}$, $Y_{0}$, $Y_{1}$
+- Digital Differential Analyzer
+  - Determine which pixels to turn on between 2 given points (make a line)
+```
+float dy = y1 - y0;
+float dx = x1 - x0;
+float m = dy / dx;
+for (x = x0, y = y0; x <= x1; x++) {
+  WritePixel(x, (int) floor(y + 0.5), value)
+  y += m;
+}
+```
+- Problems:
+  - Slope has to be between 0 and 1
+  - If it's bigger than 1, you will skip pixels
+  - Can change calculations to the vertical line instead of the horizontal
+- Bresenham's Algorithm
+- Midpoint line algorithm
+
+# Exam Review
+
+- Review Slides
+- Review Book
+  - Chapter 1 (exclude 1.10)
+  - Chapter 2
+  - Chapter 3 (exclude 3.4, 3.8)
+  - Chapter 4 (exclude 4.14, 4.15)
+  - Chapter 5 (exclude 5.10, 5.11) (a lot of time)
+  - Chapter 6 (exclude 6.11, 6.12) (a lot of time)
+  - Chapter 7 (a lot of time)
+  - Chapter 8 (exclude 8.8, 8.9)
+  - Chapter 9
+- Bresenham's Algorithm
+- Midpoint Line Algorithm
+
 
 
 
