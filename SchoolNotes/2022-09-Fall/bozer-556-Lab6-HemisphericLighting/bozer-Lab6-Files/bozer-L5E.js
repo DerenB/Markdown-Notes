@@ -38,6 +38,7 @@ var grey =       vec3(128, 128, 128);
 var mv = new mat4();
 var p = new mat4();
 var mvLoc, projLoc;
+let numberOfLights = 2;
 
 //Variables for Lighting
 var light;
@@ -129,13 +130,33 @@ window.onload = function init() {
    light = [];
    //EXERCISE 2: Add an attenuation property. I suggest the follosing values:
    //            quadratic: 0.5 linear: 0 constant: 0.3
+
+   /*
    light[0] =  {diffuse: white, specular: white, ambient: vec3(50,50,50), 
-                position: vec4(0,0,-2,1)};
-   
+                position: vec4(0,0,-2,1), attenuationPack: vec3(0.3,0,0.5)};
+   */
+
    //EXERCISE 3: Add properties for a second light here for the lamp post.
    //            Make it any colour you like but you'll have to 
    //            adjust the lamp to match...
    //            You can set position here or in render().
+   
+   for(let k = 0; k < numberOfLights; k++) {
+      light[k] =  {
+         diffuse: white, 
+         specular: white, 
+         ambient: vec3(50,50,50), 
+         position: vec4(0,0,-2,1), 
+         attenuationPack: vec3(0.3,0,0.5)
+      };
+      if(k == 1) {
+         light[k].diffuse = green;
+         light[k].specular = green;
+      } else {
+         light[k].diffuse = red;
+         light[k].specular = red;
+      }
+   }
 
    //////////////////////////
    // Initialize material object
@@ -189,14 +210,15 @@ function getAndSetShaderLocations()
    //            Unfortunately, there's no easy way to learn the value
    //            of a constant in a shader, and the size of an array in
    //            glsl must be constant. 
-   var i = 0;
-   {
-      light[i].diffuseLoc = gl.getUniformLocation(program, "light[" + i + "].diffuse");
-      light[i].specularLoc = gl.getUniformLocation(program, "light[" + i + "].specular");
-      light[i].ambientLoc = gl.getUniformLocation(program, "light[" + i + "].ambient");
-      light[i].positionLoc = gl.getUniformLocation(program, "light[" + i + "].position");
+   for(let k = 0; k < numberOfLights; k++) {
+      light[k].diffuseLoc = gl.getUniformLocation(program, "light[" + k + "].diffuse");
+      light[k].specularLoc = gl.getUniformLocation(program, "light[" + k + "].specular");
+      light[k].ambientLoc = gl.getUniformLocation(program, "light[" + k + "].ambient");
+      light[k].positionLoc = gl.getUniformLocation(program, "light[" + k + "].position");
       //EXERCISE 2: get attenuation coefficients location
+      light[k].attenuationLoc = gl.getUniformLocation(program, "light[" + k + "].attenuationPack");
    }
+   var i = 0;
 
    // Get  material uniform locations
   	material.diffuseLoc = gl.getUniformLocation(program, "material.diffuse");
@@ -279,6 +301,7 @@ function setLight(light, matrix)
    gl.uniform3fv(light.specularLoc, light.specular);
    gl.uniform4fv(light.positionLoc, mult(mv,light.position));
    //EXERCISE 2: send attenuation coefficients to shader
+   gl.uniform3fv(light.attenuationLoc, light.attenuationPack);
 }
 
 //----------------------------------------------------------------------------
@@ -303,8 +326,15 @@ function render()
 
    //Position Light 1 in World space
    //EXERCISE 3: set light[1]'s position to match the top of the lamp post
+   var eye2 = vec3(0.0, 1.5, 8.0);
+   var at2 = vec3(0.0, 1.7, 0.0);
+   var up2 = vec3(0.0, 1.0, 0.0);
+
+   mv = lookAt(eye2, at2, up2);
+
    //EXERCISE 3: send light[1] to the setLight function, and also send the
    //            the mv matrix to help place it in World space
+   setLight(light[1]);
    
    var batmanTF = mult(mv, mult(translate(0, -1, 0), rotateY(ry)));
    gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(batmanTF)));
