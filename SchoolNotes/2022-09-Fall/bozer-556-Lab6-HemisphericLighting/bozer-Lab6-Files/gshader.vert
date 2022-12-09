@@ -14,10 +14,12 @@ struct _light
 {
   vec3 diffuse;
   //EXERCISE 1: Add specular colour member here.
+  vec4 specular;
   vec3 ambient;
   vec4 position;
   vec4 spotdirection;
   //EXERCISE 2: Add attenuation coefficients here
+  vec3 attenuationPack;
   // (tip: pack all three coefficients into a vec3)
 };
 
@@ -26,6 +28,8 @@ struct _material
   vec3 diffuse;
   vec3 ambient;
   //EXERCISE 1: Add specular and shininess colour members.
+  vec4 specular;
+  vec4 shininess;
 };
 
 //lighting constants
@@ -96,15 +100,19 @@ vec3 lightCalc(in _light light)
   {
     L = normalize(light.position.xyz - mvPosition.xyz);
     //EXERCISE 2: Calculate distance from mvPosition to light position
+    float dist = length(light.position.xyz - mvPosition.xyz);
     //EXERCISE 2: Calculate attenuation
-
+    // attenuation = 1.0/(constant + linear * dist + quadratic * dist*dist);
+    attenuation = 1.0/(light.attenuationPack.x + light.attenuationPack.y * dist + light.attenuationPack.z * dist * dist);
   }
 
 
   //EXERCISE 1: Set up eye vector
+  vec3 E = -normalize(mvPosition.xyz);
   //EXERCISE 1: Set up the half vector
+  vec3 H = normalize(L+E);
   //EXERCISE 1: Calculate the Specular coefficient
-  float Ks = 0.; //fixme!!
+  float Ks = pow(max(dot(N, H),0.0), float(material.shininess));
 
   //Calculate diffuse coefficient
   float Kd = dot(L,N);
