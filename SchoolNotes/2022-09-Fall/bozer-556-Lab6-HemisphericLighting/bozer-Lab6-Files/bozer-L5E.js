@@ -20,7 +20,8 @@
 // This variable will store the WebGL rendering context
 var gl;
 var batman;
-var lamppost
+var couch;
+var lamppost;
 
 var red =        vec3(255,   0,   0);
 var green =      vec3(  0, 255,   0);
@@ -113,6 +114,7 @@ window.onload = function init() {
    // separately from you normal buffers to draw them.
    // see drawObj() function for details.
    batman = loadObj(gl, "BatmanArmoured.obj");
+   couch = loadObj(gl, "Couch.obj");
    lamppost = loadObj(gl, "rv_lamp_post_2.obj");
 
 
@@ -149,30 +151,52 @@ window.onload = function init() {
          position: vec4(0,0,-2,1), 
          attenuationPack: vec3(0.3,0,0.5)
       };
-      if(k == 1) {
-         light[k].diffuse = green;
-         light[k].specular = green;
-      } else {
-         light[k].diffuse = red;
-         light[k].specular = red;
-      }
    }
 
    //////////////////////////
    // Initialize material object
    // and add some materials
    material = {};
-   material.clay = {diffuse: grey, ambient: grey, specular: grey, 
-                    shininess: 5};
-   material.redPlastic = {diffuse: red, ambient: red, specular: white, 
-                          shininess: 50};
+   material.clay = {
+      diffuse: grey, 
+      ambient: grey, 
+      specular: grey, 
+      shininess: 5
+   };
+   material.redPlastic = {
+      diffuse: red, 
+      ambient: red, 
+      specular: white, 
+      shininess: 50
+   };
+   var newBatmanColor = vec3( 6, 5, 82);
+   var newPlasticColor = vec3( 181, 89, 9);
+   var boneWhiteColor = vec3(223, 208, 183);
    //EXERCISE 5: make and name a material for you batman or other OBJ model
+   material.night = {
+      diffuse: newBatmanColor, 
+      ambient: newBatmanColor, 
+      specular: grey, 
+      shininess: 100
+   }
+   material.myNewPlastic = {
+      diffuse: newPlasticColor, 
+      ambient: newPlasticColor, 
+      specular: white, 
+      shininess: 1
+   }
+   material.boneWhite = {
+      diffuse: boneWhiteColor, 
+      ambient: boneWhiteColor, 
+      specular: white, 
+      shininess: 1
+   }
 
    // adds locations to light and material objects
    getAndSetShaderLocations();
    
    setLight(light[0]);
-   setMaterial(material.clay);
+   setMaterial(material.night);
 
    // ** setup event listeners and UI
    // Sphere resolution slider
@@ -336,16 +360,22 @@ function render()
    //            the mv matrix to help place it in World space
    setLight(light[1]);
    
-   var batmanTF = mult(mv, mult(translate(0, -1, 0), rotateY(ry)));
+   var batmanTF = mult(mv, mult(translate(0, -0.7, 0), rotateY(ry)));
    gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(batmanTF)));
    //EXERCISE 5: replace Batman's material with one designed by you
-   setMaterial(material.clay);
+   setMaterial(material.night);
    drawObj(batman);
+
+   // Batman's Couch
+   var couchTF = mult(mv, mult(translate(0, -1, 0), rotateY(ry)));
+   gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(couchTF)));
+   setMaterial(material.boneWhite);
+   drawObj(couch);
       
    //Lamp post
    var lampTF = mult(mv, translate(-3, -1, 0));
    gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(lampTF)));
-   setMaterial(material.clay);
+   setMaterial(material.night);
    drawObj(lamppost);
 
    //Light at top of lamp post
@@ -370,9 +400,8 @@ function render()
    //Sphere at right of scene.
    var sphereTF = mult(mv, translate(3, 0, 0));
    gl.uniformMatrix4fv(mvLoc, gl.FALSE, flatten(transpose(sphereTF)));
-   setMaterial(material.redPlastic);
+   setMaterial(material.myNewPlastic);
    urgl.drawSolidSphere(1, rez, rez);
-
 }
 
 
