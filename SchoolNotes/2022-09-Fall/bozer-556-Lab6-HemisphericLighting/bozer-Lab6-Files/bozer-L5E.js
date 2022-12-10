@@ -74,13 +74,13 @@ window.onload = function init() {
    gl.enable(gl.DEPTH_TEST);
 
    //  Load shaders and initialize attribute buffers
-   gouraud = initShaders(gl, "gshader.vert", "gshader.frag");
+   // gouraud = initShaders(gl, "gshader.vert", "gshader.frag");
 
    //EXERCISE 4: uncomment this line
-   //phong = initShaders(gl, "pshader.vert", "pshader.frag");
+   phong = initShaders(gl, "pshader.vert", "pshader.frag");
 
    //EXERCISE 4: switch the program to phong.
-	program = gouraud;
+	program = phong;
    gl.useProgram(program);
 
    // Set up data to draw
