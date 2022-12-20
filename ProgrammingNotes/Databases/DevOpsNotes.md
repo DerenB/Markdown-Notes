@@ -11,8 +11,9 @@
 - [Table of Contents](#table-of-contents)
 - [Tools](#tools)
 - [Create Project](#create-project)
-- [Create Database Tables](#create-database-tables)
+- [Create Database Tables, Views, Stored Procedures](#create-database-tables-views-stored-procedures)
 - [Create Foreign Keys](#create-foreign-keys)
+- [Publish Database](#publish-database)
 
 <!-- /code_chunk_output -->
 
@@ -40,9 +41,9 @@
   - Add SQL Server Object Explorer Tab
     - View $\rArr$ SQL Server Object Explorer
 
-# Create Database Tables
+# Create Database Tables, Views, Stored Procedures
 
-- Add a table:
+- Add a **Table**:
   1) Right Click Folder where table should be saved
   2) Add > Table
   3) SQL Server > Tables and Views > Table (should default to this selection)
@@ -52,6 +53,12 @@
   - [ColumnName] variableType properties,
   - `[Id] INT NOT NULL PRIMARY KEY IDENTITY,`
   - `[FirstName] NVARCHAR(50) NOT NULL,`
+- Add a **View**:
+  1) Right Click Folder where View should be saved
+  2) Add > View
+- Add a **Stored Procedure**:
+  1) Right Click Folder where table should be saved
+  2) Add > Stored Procedure
 
 # Create Foreign Keys
 
@@ -68,5 +75,24 @@
     - Goes into the "LocationId" column of the current table
     - Looks for the "Location" table
     - Looks for the "Id" column in the "Location" table
+
+# Publish Database
+
+- Only used for local Database testing, not production db
+- Public Script: the script that will run to create database forms
+- How to Publish:
+  1) Right Click database in Solution Explorer
+  2) Public..
+  3) Create connection string
+     1) Click Target database connection: > Edit..
+     2) Browse > Local > Select database location
+  4) Save with "Save Profile As.."
+     1) Saves a public script
+     2) Can be re-used without having to keep setting up settings
+     3) <u>**Don't**</u> add this file to source control
+
+
+
+
 
 
