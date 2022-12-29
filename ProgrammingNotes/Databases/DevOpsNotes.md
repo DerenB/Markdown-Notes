@@ -14,7 +14,7 @@
 - [Create Database Tables, Views, Stored Procedures](#create-database-tables-views-stored-procedures)
 - [Create Foreign Keys](#create-foreign-keys)
 - [Publish Database](#publish-database)
-- [Delete Column](#delete-column)
+- [Modifying / Deleting Columns](#modifying-deleting-columns)
 
 <!-- /code_chunk_output -->
 
@@ -92,7 +92,13 @@
      2) Can be re-used without having to keep setting up settings
      3) <u>**Don't**</u> add this file to source control
 
-# Delete Column
+# Modifying / Deleting Columns
+
+- Adding a column:
+  - New columns have to be nullable or have a default
+  - Can't add a no nulls column when there is data
+- Deleting a column:
+  - 
 
 
 
