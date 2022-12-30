@@ -14,7 +14,7 @@
 - [Create Database Tables, Views, Stored Procedures](#create-database-tables-views-stored-procedures)
 - [Create Foreign Keys](#create-foreign-keys)
 - [Publish Database](#publish-database)
-- [Modifying / Deleting Columns](#modifying-deleting-columns)
+- [Modifying / Deleting Columns](#modifying--deleting-columns)
 
 <!-- /code_chunk_output -->
 
@@ -98,7 +98,19 @@
   - New columns have to be nullable or have a default
   - Can't add a no nulls column when there is data
 - Deleting a column:
-  - 
+  - Delete column in the table design
+  - If data already in table, there will be an error when pubishing due to data loss
+  - Run Publish to see the error:
+    - Check to see that only what needs to be deleted is throwing an error
+    - Data Tools Operations (default location is at the bottom) > Find the Execution Error > View Results
+    - Find the comment line that says what data is being deleted
+    - Ex: "The column [dbo].[Location].[Country] is being dropped, data loss could occur."
+  - Rerun the publish after confirming what is being deleted
+    - In the Publish window, Click "Advanced..."
+    - Uncheck the box "Block incremental deployment if data loss might occur"
+    - Click OK
+    - Click Publish
+    - DO NOT "Save the Profile" - by not saving, the box will be checked again. Leave the box checked
 
 
 
