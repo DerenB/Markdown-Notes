@@ -14,7 +14,7 @@
 - [Create Database Tables, Views, Stored Procedures](#create-database-tables-views-stored-procedures)
 - [Create Foreign Keys](#create-foreign-keys)
 - [Publish Database](#publish-database)
-- [Modifying / Deleting Columns](#modifying--deleting-columns)
+- [Modifying / Deleting Columns](#modifying-deleting-columns)
 
 <!-- /code_chunk_output -->
 
