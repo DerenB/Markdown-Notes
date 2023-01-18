@@ -13,15 +13,19 @@
 
 - [471 Database Principles](#471-database-principles)
 - [Table of Contents](#table-of-contents)
-- [01/09 Notes, virtual](#0109-notes-virtual)
-    - [(c1) Basics](#c1-basics)
-    - [(c1) Purpose of Database System](#c1-purpose-of-database-system)
+- [Week 1, Chapter 1, Part 1](#week-1-chapter-1-part-1)
+    - [Basics](#basics)
+    - [Purpose of Database System](#purpose-of-database-system)
     - [Data Abstraction](#data-abstraction)
     - [Database Terminology](#database-terminology)
+- [Week 1, Chapter 1, Part 2](#week-1-chapter-1-part-2)
+    - [Relational Databases](#relational-databases)
+    - [Database Languages](#database-languages)
+    - [Database Design](#database-design)
 
-# 01/09 Notes, virtual
+# Week 1, Chapter 1, Part 1
 
-### (c1) Basics
+### Basics
 
 - Data
   - What is data: data is some known set of facts that have an implicit meaning in that given setting
@@ -51,7 +55,7 @@
   - DBMS uses meta data information for getting the right data
 - Databases replaced file systems 
 
-### (c1) Purpose of Database System
+### Purpose of Database System
 
 - Drawbacks of using file system to store data:
   - Data redundancy and inconsistency
@@ -126,6 +130,66 @@ type instructor = record
 - Query Processing
 - Transaction management
 - DB Architecture
+
+# Week 1, Chapter 1, Part 2
+
+### Relational Databases 
+
+- Based on the concept of a table
+- a collection of tables
+- Putting together a set of these tables consitutes the database
+- Also known as a "Record Based Model"
+- Table
+  - contains a set of rows and columns
+  - Also known as a relation
+  - Row 
+    - aka: record, tuple
+    - represents 1 entity, 1 item
+  - Column
+    - aka: attribute, field
+
+### Database Languages
+
+- Data Definition Language (DDL)
+  - Notation for defining the database schema
+  - DDL compiler generates a set of tables stored in a data dictionary
+  - Data dictionary contains metadata (data about data)
+    - Database schema
+    - Integrity constraints
+      - Primary Key 
+      - Referential integrity
+- Data Manipulation Language (DML)
+  - Language for accessing and manipulating the data organized by the approproate data model
+    - DML also known as query language
+  - 2 Classes of languages
+    - Prodedural - user specifies what data is required and how to get those data
+    - Declarative - user specifies what data is required without specifying how to get those data
+  - SQL is the most widely used query language
+- SQL
+  - widely used non-procedural language
+  - application programs generally access databases through one of:
+    - language extensions to allow embedded SQL
+    - application program interface (e.g. OOBCUDBC) which allow SQL queries to be sent to a databse
+
+### Database Design
+
+- the process of designing the general structure of the database
+- Database Design Steps:
+- **1) Conceptual Model:**
+  - Trying to describe data based on concepts
+  - Concepts:
+    - Entities
+    - Relationships
+    - Constraints
+  - Trying to describe data at a high level
+  - Entity Relationship Model (ER Model), used to design
+  - UML - Unified Modeling Language
+- **2) Logical Model**
+  - Deciding on the database scheme. Database design requires that we find a "good" collection of relation schema
+  - Business Decision - what attributes should we record in the databse?
+  - Computer Science Decision - What relation schemes should we have and how should the attributes be distributed among the various relation schemas?
+- **3) Physical Model**
+  - Functional Dependencies - determining table design problems
 
 
 
