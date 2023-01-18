@@ -108,11 +108,11 @@
 - Logical Level Example:
 ```
 type instructor = record
-        ID: string;
-        name: string;
-        dept_name: string;
-        salary: integer;
-    end;
+    ID: string;
+    name: string;
+    dept_name: string;
+    salary: integer;
+  end;
 ```
 - Architecture for a database system:
 ![](NoteImages/0109-LevelsOfAbstraction.png)
@@ -122,14 +122,15 @@ type instructor = record
 - DBMS - above
 - Data Abstraction - above
 - Schema - describes the database at each of the 3 levels
-- Instance
-- Redundancy
-- Metadata (Data dictionary)
+- Instance - the actual content
+- Redundancy - data existing in multiple locations
+- Metadata (Data dictionary) - data on the data
 - Data model
 - SQL - DDL & MDL
 - Query Processing
 - Transaction management
-- DB Architecture
+- DB Architecture - client/server, many more architectures, database backend GUI frontend
+- DB users
 
 # Week 1, Chapter 1, Part 2
 
@@ -137,7 +138,7 @@ type instructor = record
 
 - Based on the concept of a table
 - a collection of tables
-- Putting together a set of these tables consitutes the database
+- Putting together a set of these tables constitutes the database
 - Also known as a "Record Based Model"
 - Table
   - contains a set of rows and columns
@@ -159,17 +160,17 @@ type instructor = record
       - Primary Key 
       - Referential integrity
 - Data Manipulation Language (DML)
-  - Language for accessing and manipulating the data organized by the approproate data model
+  - Language for accessing and manipulating the data organized by the appropriate data model
     - DML also known as query language
   - 2 Classes of languages
-    - Prodedural - user specifies what data is required and how to get those data
+    - Procedural - user specifies what data is required and how to get those data
     - Declarative - user specifies what data is required without specifying how to get those data
   - SQL is the most widely used query language
 - SQL
   - widely used non-procedural language
   - application programs generally access databases through one of:
     - language extensions to allow embedded SQL
-    - application program interface (e.g. OOBCUDBC) which allow SQL queries to be sent to a databse
+    - application program interface which allow SQL queries to be sent to a database
 
 ### Database Design
 
@@ -186,7 +187,7 @@ type instructor = record
   - UML - Unified Modeling Language
 - **2) Logical Model**
   - Deciding on the database scheme. Database design requires that we find a "good" collection of relation schema
-  - Business Decision - what attributes should we record in the databse?
+  - Business Decision - what attributes should we record in the database?
   - Computer Science Decision - What relation schemes should we have and how should the attributes be distributed among the various relation schemas?
 - **3) Physical Model**
   - Functional Dependencies - determining table design problems
