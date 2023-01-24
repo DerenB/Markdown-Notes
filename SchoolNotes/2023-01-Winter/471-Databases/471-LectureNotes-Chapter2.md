@@ -8,10 +8,10 @@
 
 <!-- code_chunk_output -->
 
-- [471 Chapter 2 Online Lectures](#471-chapter-2-online-lectures)
-- [Table of Contents](#table-of-contents)
-- [Relational Model](#relational-model)
-    - [Formal Definition of Relational Data Model](#formal-definition-of-relational-data-model)
+- [471 Chapter 2 Online Lectures](#-471-chapter-2-online-lectures-)
+- [Table of Contents](#-table-of-contents-)
+- [Relational Model](#-relational-model-)
+    - [Formal Definition of Relational Data Model](#-formal-definition-of-relational-data-model-)
 
 <!-- /code_chunk_output -->
 
