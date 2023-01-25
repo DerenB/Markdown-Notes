@@ -13,6 +13,7 @@
 - [Overview of SQL](#overview-of-sql)
 - [SQL Data Definition](#sql-data-definition)
     - [Basic Types](#basic-types)
+    - [Basic Schema Definition](#basic-schema-definition)
 
 <!-- /code_chunk_output -->
 
@@ -49,6 +50,42 @@
   - Example: numeric(3,1) allows for 44.5, not 44.54
 - **real, double precision** - floating-point and double-precision floating-point numbers with machine-dependent precision
 - **float(n)** - floating-point number, with precision of at least *n* digits
+
+### Basic Schema Definition
+
+- Define a SQL relation by using the **create table** command
+- General Format:
+```
+create table TableName
+    AttributeName1 Type1,
+    AttributeName2 Type2,
+    (Integrity Constraints);
+```
+- Example:
+```
+create table department
+    (dept_name varchar(20),
+    building varchar(15),
+    budget numeric(12,2),
+    primary key (dept_name));
+```
+- Example that creates a relation *department* in the database
+  - Has 3 attributes: dept_name, building, budget
+  - Specifies the primary key
+- **Integrity Constraints** options:
+  - **Primary Key**
+    - Required to be non-null
+    - Required to be unique
+    - Optional, best practice to always have a primary key
+    - Format: `primary key (AttributeName)`
+    - Example: `primary key (dept_name)`
+  - **Foreign Key**
+    - Format: `foreign key(AttributeName) references (TableName)`
+    - Example: `foreign key(dept_name) references department`
+  - **not null**
+    - Format: `AttributeName Type not null`
+    - Example: `name varchar(20) not null`
+
 
 
 
