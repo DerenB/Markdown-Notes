@@ -25,6 +25,7 @@
 - PHP File
   - .php extension
   - First line: `<?php` to indicate it's a php file
+  - Closing tag is not required
 
 # PHP Keywords / Functions
 
