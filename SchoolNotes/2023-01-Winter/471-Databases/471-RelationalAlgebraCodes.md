@@ -1,3 +1,3 @@
 - Select : $\sigma$
-- Project: $\Pi$
+- Projection: $\Pi$
 - Join: $\bowtie$
