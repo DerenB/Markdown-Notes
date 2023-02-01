@@ -1,0 +1,3 @@
+- Select : $\sigma$
+- Project: $\Pi$
+- Join: $\bowtie$
