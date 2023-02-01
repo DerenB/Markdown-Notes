@@ -22,5 +22,7 @@ Application Concepts - Database Concepts
 - Curly Braces {} - Set of data, order doesn't matter
 - Parenthesis () - Order matters
 
+# 02/01 Class Notes
+
 
 
