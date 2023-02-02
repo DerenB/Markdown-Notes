@@ -2,21 +2,6 @@
 
 # Table of Contents
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [PHP Notes](#-php-notes-)
-- [Table of Contents](#-table-of-contents-)
-- [Basics](#-basics-)
-    - [PHP Execution](#-php-execution-)
-- [PHP Keywords / Functions](#-php-keywords--functions-)
-- [Variables](#-variables-)
-    - [Strings](#-strings-)
-
-<!-- /code_chunk_output -->
-
-
 # Basics
 
 - PHP can be used directly in-line within HTML document
@@ -53,11 +38,40 @@
 
 # Variables
 
+### Create Variables
+
+- Use a dollar sign, also known as a *sigil*
+- Example: `$myVariable = "Hello";`
+- Dollar Sign is used to call variable
+  - `echo $myVariable;`
+
+### Assignment Reference
+
+- Setting a variable equal to another variable makes a copy of the value
+  - `$second = $first;`
+  - Changing first won't change second
+- Can make an "alias" for a variable that points to the same spot in memory
+  - Assigned by reference
+  - `$second =& $first;`
+
 ### Strings
 
 - Needs a newline escape, won't start a newline automatically
 - Can use escape character \
 - Concatenate with "."
+- Concatenate and assign with `.=`
+  - `$name = "First";`
+  - `$name .= " Last";`
+
+### String Interpolation
+
+- Can insert variables into strings with ${}
+```
+$variable = "PHP";
+echo "This is ${variable} string interpolation";
+```
+
+
 
 
 
