@@ -106,5 +106,8 @@ addXPermanently($word); // Prints: HelloX
 echo $word; // Prints: HelloX
 ```
 
+# Built-In Functions
+  
+
 
 
