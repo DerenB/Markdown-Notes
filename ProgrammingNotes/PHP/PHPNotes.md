@@ -93,6 +93,18 @@ function myFunction() {
   - `function myFunction($parameter1, $parameter2)`
 - Parameter Default values:
   - `function myFunction($name = "Joe")`
+- Reassign variable values with function:
+  - Variables can have their value changed after being passed to a function
+  - Example:
+```
+function addXPermanently (&$param) {
+  $param = $param . "X";
+  echo $param;
+};
+$word = "Hello";
+addXPermanently($word); // Prints: HelloX
+echo $word; // Prints: HelloX
+```
 
 
 
