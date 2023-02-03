@@ -108,6 +108,9 @@ echo $word; // Prints: HelloX
 
 # Built-In Functions
   
-
+### Get Type
+  
+- Takes a variable as an arguement, returns a string with the data type
+`gettype(variable);`
 
 
