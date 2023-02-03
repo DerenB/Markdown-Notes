@@ -91,6 +91,8 @@ function myFunction() {
 - Parameters:
   - `function myFunction($parameter)`
   - `function myFunction($parameter1, $parameter2)`
+- Parameter Default values:
+  - `function myFunction($name = "Joe")`
 
 
 
