@@ -86,6 +86,8 @@ function myFunction() {
   content; 
 }
 ```
+- Call Function: `myFunction();`
+- Assigning a function to a variable also calls the function
 
 
 
