@@ -88,6 +88,9 @@ function myFunction() {
 ```
 - Call Function: `myFunction();`
 - Assigning a function to a variable also calls the function
+- Parameters:
+  - `function myFunction($parameter)`
+  - `function myFunction($parameter1, $parameter2)`
 
 
 
