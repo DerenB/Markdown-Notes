@@ -74,7 +74,7 @@ echo "This is ${variable} string interpolation";
 ### Numbers
 
 - Exponents: **
-  - $4^{2}$ $\rarr$  `4 ** 2`
+  - $4^{2}$ $\rArr$  `4 ** 2`
 - Mod: %
   - `echo 7 % 3` prints 1
 
