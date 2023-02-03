@@ -77,6 +77,15 @@ echo "This is ${variable} string interpolation";
   - $4^{2}$ $\rArr$  `4 ** 2`
 - Mod: %
   - `echo 7 % 3` prints 1
+  
+# Functions
+  
+- Basic Format:
+```
+function myFunction() {
+  content; 
+}
+```
 
 
 
