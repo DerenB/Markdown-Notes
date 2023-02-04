@@ -108,9 +108,63 @@ echo $word; // Prints: HelloX
 
 # Built-In Functions
   
-### Get Type
-  
-- Takes a variable as an arguement, returns a string with the data type
-- `gettype(variable);`
+### Variable types
 
+- **Get Type**
+   - Takes a variable as an argument, returns a string with the data type
+  - `gettype($variable);`
+- **Var Dump**
+  - Takes a variable as an argument, prints details about the variable
+  - `$name = "Aisle Nevertell";`
+  - `var_dump($name); //Prints: string(15) "Aisle Nevertell"`
 
+### Strings
+
+- **String to Lowercase**
+  - Makes all characters in string lowercase
+  - `strtolower(string);`
+- **String Reverse**
+  - Reverses a string input
+  - `strrev($variable);`
+- **String Repeat**
+  - Repeats a string N times
+  - `str_repeat(string, n);`
+ 
+### Substrings
+
+- **Substring Search Count**
+  - Searches a given string for how often a substring occurs
+  - `substr_count(string_to_search, substring_to_search_for);`
+- **Pad String with String**
+  - Pads a given string with another string using N length
+  - Options for Pad Type:
+    - STR_PAD_RIGHT (default)
+    - STR_PAD_LEFT
+    - STR_PAD_BOTH
+```
+str_pad(
+  base_string,
+  length_to_pad,
+  what_to_pad_with,
+  pad_type
+);
+str_pad(
+  "You did it!",
+  29,
+  "*~*",
+  STR_PAD_BOTH
+); // Prints *~**~**~*You did it!*~**~**~*
+```
+
+### Numbers
+
+- **Round**
+  - Rounds to the nearest integer
+  - `round(num);`
+- **Absolute Value**
+  - Returns the absolute value of the input number
+  - `abs(num);`
+  - `abs(-10.99); // Returns 10.99`
+- **Random Number**
+  - Gets a random integer between given range
+  - `rand(start_range, end_range);`
