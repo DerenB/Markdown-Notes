@@ -48,6 +48,28 @@ WHERE sem = "Spring" AND year = 2010);
 
 # Handling Nulls
 
+- If an arithmetic operation is done on a NULL value, the result will always be NULL
+- Comparison on NULL values will always result in "Unknown" (not the same as NULL)
+- Table for Comparison:
+```
+X         Y         AND     OR
+TRUE      UNKNOWN   UK      TRUE
+FALSE     UNKNOWN   FALSE   UK
+UNKNOWN   UNKNOWN   UK      UK
+```
 
+- `IS NULL` or `IS NOT NULL` operators can be used to find null values
+
+# Multiple Table Queries
+
+- Specify every source table in the `FROM`
+
+### Natural Join
+
+# Group By
+
+- Typically you include the Group-By attribute in the Selection clause
+- Don't include attributes that aren't parting of the Grouping clause 
+- Don't include attributes that creates a single result from an arithmetic function
 
 

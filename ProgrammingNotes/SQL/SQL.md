@@ -18,7 +18,7 @@ Notes on using SQL.
 - [Learning Sources:](#learning-sources)
 - [Table of Contents](#table-of-contents)
 - [Databases](#databases)
-- [Accessing & Creating : Data & Tables](#accessing-creating-data-tables)
+- [Accessing \& Creating : Data \& Tables](#accessing--creating--data--tables)
     - [Select data from a table](#select-data-from-a-table)
   - [Select specific data from a table](#select-specific-data-from-a-table)
     - [Create Table](#create-table)
@@ -41,10 +41,11 @@ Notes on using SQL.
 - [Aggregate Functions](#aggregate-functions)
     - [Count](#count)
     - [SUM](#sum)
-    - [MIN / MAX](#min-max)
+    - [MIN / MAX](#min--max)
     - [Average](#average)
     - [Round](#round)
     - [Group By](#group-by)
+    - [Having](#having)
 - [Multiple Tables](#multiple-tables)
     - [Join](#join)
     - [Left Join](#left-join)
@@ -310,6 +311,16 @@ SELECT ROUND(AVG(price),2) FROM movies;
 SELECT price, COUNT(*) FROM movies
 WHERE downloads > 20000 
 GROUP BY price
+```
+
+### Having 
+
+```
+SELECT DepartmentNum, AVG(Salary)
+FROM Employee
+WHERE ___
+GROUP BY DepartmentNum
+HAVING Count(ssn) > 2;
 ```
 
 [Return to Top](#table-of-contents)

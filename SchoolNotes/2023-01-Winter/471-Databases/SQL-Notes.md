@@ -75,5 +75,38 @@ FROM Employees
 WHERE Salary > 75000;
 ```
 
+# Set Operations
 
+### Union
+
+- Find courses that ran in Fall 2009 or in Spring 2010
+```
+(SELECT course_id FROM section
+WHERE sem = "Fall" AND year = 2009)
+UNION
+(SELECT course_id FROM section
+WHERE sem = "Spring" AND year = 2010);
+```
+
+### Intersect
+
+- Find courses that ran in Fall 2009 and in Spring 2010
+```
+(SELECT course_id FROM section
+WHERE sem = "Fall" AND year = 2009)
+INTERSECT
+(SELECT course_id FROM section
+WHERE sem = "Spring" AND year = 2010);
+```
+
+### Except
+
+- Find courses that ran in Fall 2009 but not in Spring 2010
+```
+(SELECT course_id FROM section
+WHERE sem = "Fall" AND year = 2009)
+EXCEPT
+(SELECT course_id FROM section
+WHERE sem = "Spring" AND year = 2010);
+```
 
