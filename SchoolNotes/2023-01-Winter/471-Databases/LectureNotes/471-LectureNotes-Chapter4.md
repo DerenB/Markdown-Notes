@@ -72,4 +72,18 @@ UNKNOWN   UNKNOWN   UK      UK
 - Don't include attributes that aren't parting of the Grouping clause 
 - Don't include attributes that creates a single result from an arithmetic function
 
+# Sub-Query
 
+- Option 1:
+```
+SELECT
+FROM (select ...)
+WHERE
+```
+
+- Option 2 (more common):
+```
+SELECT
+FROM
+WHERE (select ...)
+```

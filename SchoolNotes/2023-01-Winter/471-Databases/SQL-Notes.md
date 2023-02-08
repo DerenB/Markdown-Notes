@@ -1,6 +1,17 @@
 
 # SQL Notes
 
+### Select Order
+
+```
+SELECT      <attribute list>
+FROM        <table list>
+[WHERE      <condition>]
+[GROUP BY   <grouping attribute(s)>]
+[HAVING     <group condition>]
+[ORDER BY   <attribute list>]
+```
+
 # Tables
 
 ### Create Table
