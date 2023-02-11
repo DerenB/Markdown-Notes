@@ -50,3 +50,27 @@ Application Concepts - Database Concepts
 - Foreign Key - 
 - Atomic - Indivisible values
 
+# 02/08 Class Notes
+
+- Having is a special clause only associated with Group By
+- `FROM R,S ON R.x = S.y`
+- Whenever there are multiple tables in the `FROM` clause, make sure there is a `JOIN` clause
+- Don't separate the `WHERE` clause with commas
+- DELETE vs DROP vs TRUNCATE
+  - DDL - DROP
+  - DML - DELETE, TRUNCATE
+  - DELETE clears all data out of the table
+  - DROP removes the table
+  - TRUNCATE clears all data at once (without removing the table), delete clears data 1 at a time
+  - TRUNCATE will reset the increment count, delete keeps the increment count
+
+### Outer Join
+
+- outer join for listing all items, even those without a result
+- See all results even if NULL
+- Example
+  - List all employees by department, include employees that don't have a department
+
+
+
+
