@@ -168,3 +168,18 @@ str_pad(
 - **Random Number**
   - Gets a random integer between given range
   - `rand(start_range, end_range);`
+  
+# Arrays
+
+- Can be of mixed data types
+- Created with :
+  - `$myArray = array();`
+  - `$myArray = [];
+- Printing Arrays:
+  - Can print the whole array with: `implode(spacer, array);`
+  - Example: `implode(", ", $array);`
+- Print Array content
+  - Prints the content of an array and it's indexes
+  - `print_r($array);`
+
+
