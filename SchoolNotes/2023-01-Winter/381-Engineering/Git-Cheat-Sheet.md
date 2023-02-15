@@ -1,21 +1,20 @@
 
 # Git Cheatsheet
 
-# Terminal Commands
-
-- Create Directory `mkdir`
-
 # Setting up Git
 
 ### Configure the username & password
 
-`git config --global user.name "<your name>"`
-`git config --global user.email "<email>"`
+- Set your global user name
+  - Command: `git config --global user.name "<your name>"`
+  - Example: `git config --global user.name "DerenB"`
+- Set your global emails
+  - Command: `git config --global user.email "<email>"`
+  - Example: `git config --global user.email "<email>"`
 
 ### Configure the Editor
 
-- VSCode:
-- `git config --global core.editor "code --wait"`
+- VSCode: `git config --global core.editor "code --wait"`
 
 ### Generate a SSH key
 
@@ -36,7 +35,12 @@
 - Test the Connection:
   - `ssh -T git@github.com`
 
-# Creating and viewing Repo
+# Repo Creation
+
+- Clone Repo
+  - `git clone repo1 repo2`
+
+### Creating and viewing Repo
 
 - Initialize a directory into a Git repository
   - `git init`
@@ -48,7 +52,7 @@
 - Show the history of a repo
   - `git log`
 
-# Connecting to a repo from the Command Line
+### Connecting to a repo from the Command Line
 
 - `echo "Anything" > readme.md`
 - `git init`
@@ -58,7 +62,7 @@
 - `git remote add origin get@github.com:DerenB/repoName`
 - `git push -u origin main`
 
-# Adding to a Repo
+### Adding to a Repo
 
 - Add files to be committed 
   - `git add <FileName>`
@@ -97,3 +101,10 @@
 - Push remote to new branch
   - `git push -u origin old_branch:new_branch`
 
+
+# Fetch 
+
+- Fetch branch
+  - `git fetch ../<repo> <branch>`
+- Merge Origin
+  - `git merge origin/<branch>`
