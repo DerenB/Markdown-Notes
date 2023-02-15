@@ -71,6 +71,54 @@ Application Concepts - Database Concepts
 - Example
   - List all employees by department, include employees that don't have a department
 
+# 02/15 Notes
+
+- Cascading 
+  - Only happens with foreign keys
+  - If there are no foreign keys in the database, it won't come up
+- Example
+  - Employee has dependents in the dependent table
+  - Dependent is a foreign key to employee
+  - If dependent deleted, no problem
+  - If Employee deleted, can't delete the employee as dependents need the employee
+  - Cascade Delete solves this
+    - When employee gets deleted, remove the dependents as well
+- Cascade Update
+  - When one table value gets updated, update the foreign keys that use it
+- Correlated Queries
+  - Nested Queries:
+    - One query inside another query
+    - They are 2 independent queries that can be run separately
+  - Correlated Query - taps into the outer query
+  - Any nested query that references the outer query
+- Natural Joins/Inner Joins vs. Outer Joins
+```
+SELECT *
+FROM R Natural Join S
+```
+- They have an attribute that is the same, and they have a foreign key relation
+- IF they don't have a same attribute
+```
+SELECT *
+FROM R, S
+WHERE R.a = S.b;
+```
+- or
+```
+SELECT *
+FROM R Joins on R.a = S.b;
+```
+
+### Group By
+
+- Whatever is in the **GROUP BY** clause, has to be in the SELECT clause
+```
+SELECT Rating, COUNT(CODE)
+FROM Movie
+GROUP BY Rating;
+```
+
+
 
 
 

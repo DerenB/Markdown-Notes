@@ -197,4 +197,3 @@ CREATE INDEX Index_Name ON Table(column);
 
 
 
-
