@@ -48,6 +48,16 @@
 - Show the history of a repo
   - `git log`
 
+# Connecting to a repo from the Command Line
+
+- `echo "Anything" > readme.md`
+- `git init`
+- `git add readme.md`
+- `git commit -m "First Commit"`
+- `git branch -M main`
+- `git remote add origin get@github.com:DerenB/repoName`
+- `git push -u origin main`
+
 # Adding to a Repo
 
 - Add files to be committed 
@@ -59,10 +69,12 @@
 
 # Branches
 
-- List Branches in Repo
-  - `git branch`
 - Create new branch
   - `git branch <branch_name>`
+- List Branches in Repo
+  - `git branch`
+- Display Current branch
+  - `git branch --show-current`
 - Switch to Branch
   - `git checkout <branch_name>`
 - Delete Branch (safe)
