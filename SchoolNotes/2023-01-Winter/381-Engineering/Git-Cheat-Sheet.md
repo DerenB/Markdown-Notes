@@ -57,3 +57,31 @@
 - Add all changes in the staging area into one commit
   - `git commit -m "<Commit Message>"`
 
+# Branches
+
+- List Branches in Repo
+  - `git branch`
+- Create new branch
+  - `git branch <branch_name>`
+- Switch to Branch
+  - `git checkout <branch_name>`
+- Delete Branch (safe)
+  - `git branch -d <branch_name>`
+- Delete Branch (force)
+  - `git branch -D <branch_name>`
+- Rename Branch
+  - `git branch -m <branch_name>`
+- List all remote branches 
+  - `git branch -a`
+
+# Remote
+
+- List Remotes
+  - `git remote`
+- Show Origin
+  - `git remote show origin`
+- Remove remote
+  - `git remote rm <remote_name>`
+- Push remote to new branch
+  - `git push -u origin old_branch:new_branch`
+
