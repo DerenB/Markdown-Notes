@@ -47,5 +47,10 @@ if(isset($_POST['submit'])) {
 
 # Server Side Form Validation
 
+- Check if something was submitted
+- Convert to HTML characters (avoid XSS)
+- Check if Empty
+  - `if(empty($_POST['varName']))`
 
+### E-Mail Validation
 
