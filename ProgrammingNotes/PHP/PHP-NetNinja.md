@@ -90,9 +90,22 @@ if(!$conn) {
 - Write Query and set to PHP variable
   - `varName = 'sql statement';`
   - `$sql = 'SELECT title, ingredients, id FROM pizzas';`
-- Execute Query, set to PHP variable
-  - ``
+- Execute Query, set result to PHP variable
+  - `varName = mysqli_query(connectionVarName, queryVarName);`
   - `$result = mysqli_query($conn, $sql);`
+- Fetch the resulting rows
+  - `varName = mysqli_fetch_all(resultVarName, MYSQLI_ASSOC);`
+  - `$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);`
+- Free the result from memory
+  - `mysqli_free_result(resultVarName);`
+  - `mysqli_free_result($result);`
+- Close the connection to the database
+  - `mysqli_close(connectionVarName);`
+  - `mysqli_close($conn);`
+
+# Render Query Results to Screen
+
+- 
 
 
 
