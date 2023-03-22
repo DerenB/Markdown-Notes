@@ -4,6 +4,33 @@
 
 # Entity-Relationship Model
 
+# Homework Corrections
+
+- N / 1 / M notes
+- Single Line: Optional inclusion
+- Double Line: HAS to be included
+- Weak Entities: Always 1-N, full participation
+  - No primary key, only a partial key
+- Relationship Attribute
+  - Applicable when an instance is related
+  - Employee "works on" Project
+    - Hours go on relationship because 
+      - employee can have hours on multiple projects
+      - multiple employee hours on a project
+  - No keys on relationships
+- Dash line attribute: computed attribute
+- Double Circle attribute: multi value attribute
+- Ternary Relationship
+  - Don't worry about 1/n/m, assume all 'n'
+  - Can still do single/double line
+- Mapping ER diagram
+  - Weak Entities: mark partial key and parent primary key, as the primary key
+  - Can map a relationship, using the primary key from the 2 entities
+- Mapping Relationship diagram to ER diagram
+  - Any table with a single primary key will be an entity
+  - Always put the foreign key on the N side of the relationship
+  - Anytime 1/N/M is unsure, always leave as N-N
+
 ### Entities
 
 - No data types
