@@ -18,6 +18,7 @@
       - employee can have hours on multiple projects
       - multiple employee hours on a project
   - No keys on relationships
+  - N-N relationships MUST have a table
 - Dash line attribute: computed attribute
 - Double Circle attribute: multi value attribute
 - Ternary Relationship
