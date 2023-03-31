@@ -188,4 +188,9 @@ str_pad(
   - Prints the content of an array and it's indexes
   - `print_r($array);`
 
-
+# Superglobals
+  
+- Automatic Global Variables that are available in all scopes throughout a script
+- `$_GET` : associative array of variables passed to the current script using query parameters in the URL
+- `$_POST` : associative array of variables passed to the current script using a form submitted using the `POST` method
+- `$_REQUEST` : contains the content of GET, POST, and COOKIE
