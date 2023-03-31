@@ -19,6 +19,12 @@
 <p>But this code is interpreted by PHP and turned into HTML</p>
 ```
 
+### Shorthand
+
+- Can write a shorter version that doesn't need the `php` or the `echo`
+- Original: `<?php echo "<p>Let's insert some text into our HTML using PHP!</p>";?>`
+- Shorthand: `<?="<p>Let's insert some text into our HTML using PHP!</p>";?>`
+
 ### PHP Execution
 
 - Can also be executed from the terminal, output logged to terminal
