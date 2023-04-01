@@ -43,6 +43,47 @@
   - Can have multiple images and multiple containers running
 - Docker Hub - the central place where all base images live
 
+# Dockerfile Items
+
+### FROM
+
+- format: `FROM [--platform=<platform>] <image> [AS <name>]`
+- As can be any input name
+
+### COPY
+
+- format: `COPY [source] [destination]`
+- Copy from 1 image to another
+- `FROM httpd AS base`
+- `COPY [source] [destination1]`
+- `FROM httpd AS final`
+- `COPY --from=base [desination1] [destination2]`
+
+### WORKDIR
+
+- Setting the work directory
+- If the directory doesn't exist, WORKDIR will make it
+
+### RUN
+
+- d
+
+### VOLUME
+
+-
+
+### Complete Example
+
+```
+FROM httpd:alpine AS base
+WORKDIR /usr/local/apache2/htdocs/
+COPY ./html/ .
+
+FROM httpd AS final
+WORKDIR /MyApp
+COPY --from=base /usr/local/apache2/htdocs/ .
+```
+
 # Docker Commands
 
 - List Images: `docker images` 
@@ -83,6 +124,7 @@
 
 ### HTTPD
 
+- [Source](https://hub.docker.com/_/httpd)
 - Pull the image
   - `docker pull httpd`
 - In the project folder, create a file called: `Dockerfile` (case sensitive)
@@ -102,6 +144,7 @@
 
 ### Alpine
 
+- [Source](https://hub.docker.com/_/alpine)
 - Pull the image
   - `docker pull alpine`
 - Within the `Dockerfile` add: 
