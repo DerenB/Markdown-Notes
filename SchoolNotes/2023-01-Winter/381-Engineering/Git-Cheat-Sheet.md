@@ -157,4 +157,4 @@ Winter 2023
 
 - Run Flask App
   - Command: `flask --app <appname> run`
-  - Example: `flask --app myall run`
+  - Example: `flask --app myapp run`
