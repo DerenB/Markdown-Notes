@@ -140,11 +140,15 @@ Winter 2023
 
 - Create Environment
   - Command: `python3 -m venv <PathToEnvironmentLocation>`
+  - Example: `python3 -m venv /home/ec2-user/FlaskTuts/venv`
 - Start Environment
   - Command: `source <PathToEnvironmentLocation>/bin/activate`
+  - Example: `source /home/ec2-user/FlaskTuts/venv/bin/activate`
 - Deactivate Environment
   - Command: `deactivate`
 - Add Installs to Requirements File
   - Command: `<PathToEnvironmentLocation>/bin/python -m freeze > requirements.txt`
+  - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m freeze > requirements.txt`
 - Install Requirements File
   - Command: `<envFolder>/bin/python -m pip install -r <PathToRequirementsFile>/requirements.txt`
+  - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m pip install -r /home/ec2-user/FlaskTuts/requirements.txt`
