@@ -144,3 +144,5 @@ Winter 2023
   - Command: `source <PathToEnvironmentLocation>/bin/activate`
 - Deactivate Environment
   - Command: `deactivate`
+- Install Requirements File
+  - Command: `<envFolder>/bin/python -m pip install -r <PathToRequirementsFile>/requirements.txt`
