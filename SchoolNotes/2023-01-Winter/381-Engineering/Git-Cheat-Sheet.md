@@ -152,3 +152,9 @@ Winter 2023
 - Install Requirements File
   - Command: `<envFolder>/bin/python -m pip install -r <PathToRequirementsFile>/requirements.txt`
   - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m pip install -r /home/ec2-user/FlaskTuts/requirements.txt`
+
+# Flask
+
+- Run Flask App
+  - Command: `flask --app <appname> run`
+  - Example: `flask --app myall run`
