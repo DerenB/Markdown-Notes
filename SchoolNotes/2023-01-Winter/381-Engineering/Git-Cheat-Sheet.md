@@ -147,8 +147,8 @@ Winter 2023
 - Deactivate Environment
   - Command: `deactivate`
 - Add Installs to Requirements File
-  - Command: `<PathToEnvironmentLocation>/bin/python -m freeze > requirements.txt`
-  - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m freeze > requirements.txt`
+  - Command: `<PathToEnvironmentLocation>/bin/python -m pip freeze > requirements.txt`
+  - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m pip freeze > requirements.txt`
 - Install Requirements File
   - Command: `<envFolder>/bin/python -m pip install -r <PathToRequirementsFile>/requirements.txt`
   - Example: `/home/ec2-user/FlaskTuts/venv/bin/python -m pip install -r /home/ec2-user/FlaskTuts/requirements.txt`
