@@ -135,3 +135,12 @@ Winter 2023
   - Command: `git fetch ../<repo> <branch>`
 - Merge Origin
   - Command: `git merge origin/<branch>`
+
+# Virtual Environment
+
+- Create Environment
+  - Command: `python3 -m venv <PathToEnvironmentLocation>`
+- Start Environment
+  - Command: `source <PathToEnvironmentLocation>/bin/activate`
+- Deactivate Environment
+  - Command: `deactivate`
