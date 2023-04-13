@@ -14,13 +14,17 @@
 - [ASP.NET Notes](#aspnet-notes)
 - [Learning Resources:](#learning-resources)
 - [Table of Contents](#table-of-contents)
+- [VSCode Notes](#vscode-notes)
+    - [Commands](#commands)
+    - [Installs \& Extensions](#installs--extensions)
+    - [Links](#links)
 - [Definitions](#definitions)
 - [Basics](#basics)
 - [Folder Structure](#folder-structure)
 - [View Page](#view-page)
     - [Structure](#structure)
     - [Variables from Page Model](#variables-from-page-model)
-    - [Spaces & Codeblocks](#spaces--codeblocks)
+    - [Spaces \& Codeblocks](#spaces--codeblocks)
     - [Conditionals](#conditionals)
 - [Page Model](#page-model)
 - [Page Model Methods](#page-model-methods)
@@ -35,6 +39,32 @@
 - [Redirecting](#redirecting)
 
 <!-- /code_chunk_output -->
+
+# VSCode Notes
+
+### Commands
+
+- Create ASP NET project
+  - Command: `dotnet new mvc --name <ProjectName>`
+- Create Razor Project
+  - Command: ` dotnet new razor -o <ProjectName> -f net7.0`
+- Run dotnet project
+  - Command: `dotnet run --project <ProjectName>` 
+
+### Installs & Extensions
+
+- Install Dotnet Microsoft
+- Install NodeJS
+- C# 
+- HTML CSS Support
+- Live Server
+- Compile Hero Pro
+
+### Links
+
+- [How to Develop an ASP](https://www.syncfusion.com/blogs/post/how-to-develop-an-asp-net-core-application-using-visual-studio-code.aspx)
+- [Create Razor Page](https://github.com/dotnet-presentations/aspnetcore-for-beginners/blob/main/Tutorial/1-Create%20a%20Razor%20Page/Create-a-Razorpage.md)
+- [Compare Razor Pages](https://learn.microsoft.com/en-us/dotnet/architecture/porting-existing-aspnet-apps/comparing-razor-pages-aspnet-mvc)
 
 # Definitions
 
