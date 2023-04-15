@@ -158,3 +158,6 @@ Winter 2023
 - Run Flask App
   - Command: `flask --app <appname> run`
   - Example: `flask --app myapp run`
+- Initialize the Database
+  - Command: `flask --app <appname> init-db`
+  - Example: `flask --app flaskr init-db`
