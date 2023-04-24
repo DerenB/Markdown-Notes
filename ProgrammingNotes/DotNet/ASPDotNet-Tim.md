@@ -29,6 +29,15 @@
 - View
   - Looks up what .cshtml file to run
 
+### Project Similarities
+
+- d
+
+# Common Setup
+
+### Overview
+
+
 
 
 
