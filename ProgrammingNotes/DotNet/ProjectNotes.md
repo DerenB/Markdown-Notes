@@ -59,3 +59,20 @@
 - Create a `.scss` file
     - Add on the last line: `@import "../node_modules/bootstrap/scss/bootstrap.scss";` 
     - variable changes have to come before the import
+
+# VSCode Project Setup
+
+### Project Creation
+
+- Open folder that will be used
+- Create a Solution
+    - CMD: `dotnet new sln`
+- Add Projects to solution
+    - CMD: `dotnet sln add <ProjectFolder>/<ProjectFile>`
+    - Ex1: `dotnet sln add DataLibrary/DataLibrary.csproj`
+    - Ex2: `dotnet sln add DinerDB/DinerDB.sqlproj`
+
+### Add NuGet Packages
+
+- View > Command Palette > NuGet: Open NuGet Gallery
+- Search for NuGet packages, install to csproj file
