@@ -71,6 +71,8 @@
     - CMD: `dotnet sln add <ProjectFolder>/<ProjectFile>`
     - Ex1: `dotnet sln add DataLibrary/DataLibrary.csproj`
     - Ex2: `dotnet sln add DinerDB/DinerDB.sqlproj`
+- Add a Project Reference
+    - CMD: `dotnet add <ProjectFolder>/<ProjectFile> reference <ProjectFolder>/<ProjectFile>`
 
 ### Add NuGet Packages
 
