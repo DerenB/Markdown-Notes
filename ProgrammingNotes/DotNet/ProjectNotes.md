@@ -7,6 +7,7 @@
 - [How to Develop an ASP.NET Core Application Using Visual Studio Code](https://www.syncfusion.com/blogs/post/how-to-develop-an-asp-net-core-application-using-visual-studio-code.aspx)
 - [MVC vs. Razor Pages](https://learn.microsoft.com/en-us/dotnet/architecture/porting-existing-aspnet-apps/comparing-razor-pages-aspnet-mvc)
 - [VSCode - Create Razor Pages](https://github.com/dotnet-presentations/aspnetcore-for-beginners/blob/main/Tutorial/1-Create%20a%20Razor%20Page/Create-a-Razorpage.md)
+- [VSCode DotNet Library](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio-code?pivots=dotnet-7-0)
 
 ### Extensions / Installations Needed
 
