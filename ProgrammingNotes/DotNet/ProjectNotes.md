@@ -76,3 +76,10 @@
 
 - View > Command Palette > NuGet: Open NuGet Gallery
 - Search for NuGet packages, install to csproj file
+
+### Build & Run Release
+
+- Builds release version
+    - CMD: `dotnet build -c release`
+- Run release version
+    - CMD: `dotnet run -c release`
