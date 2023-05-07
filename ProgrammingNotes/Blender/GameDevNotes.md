@@ -22,6 +22,7 @@
 ### Windows
 
 - Toolbar: `T`
+- Transform: `N`
 
 # Random Notes
 
@@ -53,5 +54,21 @@
 - Rotate: `R`
 - Scale: `S`
 - Cancel Changes: `RMB`
+
+# Viewports
+
+- X-Ray - see through everything: `ALT + Z`
+- Wireframe - see wire outlines of objects
+- Solid - solid faces
+- Material Preview
+- Rendered
+
+# Render
+
+- 
+
+### Render Properties
+
+
 
 
