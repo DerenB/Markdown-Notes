@@ -65,10 +65,31 @@
 
 # Render
 
-- 
+### Render Engines
+
+- Eevee
+  - fast rendering system
+  - not completely accurate to real life
+- Cycles
+  - Slow rendering, might start grainy
 
 ### Render Properties
 
+- Change Render Resolution/Dimensions
+  - Output Properties side button
+  - Format
+  - Set Resolution X and Y
+  - Can click 3 dots at top of section for preset dimensions
 
+# Materials
+
+- Have to be in ViewPorts: Material Preview or Render to see materials
+- Shader Editor
+  - Click Editor Type Button (top left, sphere)
+  - Click NEW at top to add a shader
+
+### Principled BSDF
+
+- Base Color: Changes the shader base
 
 
