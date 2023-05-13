@@ -18,6 +18,7 @@
   - Reverse/Flip any view: `CTRL + number`
   - Toggle Orthographic / Perspective View: `5`
   - Camera View: `0`
+- Center on Nodes: `HOME`
 
 ### Windows
 
@@ -81,6 +82,13 @@
   - Set Resolution X and Y
   - Can click 3 dots at top of section for preset dimensions
 
+### Change Render Background
+
+- [Background Images](https://polyhaven.com/)
+- Shader Editor > Top Right set to `World`
+- Add > Texture > Environmental Texture
+- Open HRI file
+
 # Materials
 
 - Have to be in ViewPorts: Material Preview or Render to see materials
@@ -88,8 +96,30 @@
   - Click Editor Type Button (top left, sphere)
   - Click NEW at top to add a shader
 
+### Smooth out object
+- Right click object
+- Shade Smooth
+- Keep object shape:
+  - Right Menu > Object Data Properties > Normals
+  - Check Auto Smooth
+  - This smooths the edges of the shape but keeps the defined borders
+
 ### Principled BSDF
 
 - Base Color: Changes the shader base
+- Metallic: 0 No Metal -> 1 All Metal
+- Roughness: 0 Smooth -> 1 Rough
 
+# Light
 
+### Settings
+
+- Select Light Object
+- Right Menu > Object Data Properties
+
+### Light Types
+
+- Point - shines in all directions from point
+- Sun - Arbitrary light, acts like real world sun
+- Spotlight - spot light
+- Area - big flat light

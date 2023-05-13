@@ -3,7 +3,11 @@
         "stdio.h": "c"
     },
     "cSpell.ignoreWords": [
-        "Miniworld"
+        "BSDF",
+        "Eevee",
+        "Miniworld",
+        "Viewports",
+        "Wireframe"
     ],
     "cSpell.words": [
         "varchar"
