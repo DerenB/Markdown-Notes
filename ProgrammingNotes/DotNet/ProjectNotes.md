@@ -20,12 +20,14 @@
 
 ### Commands
 
+- Create C# Class Library
+    - CMD: `dotnet new classlib -o <FolderName>`
 - Create ASP.NET project
-    - Command: `dotnet new mvc --name <ProjectName>`
+    - CMD: `dotnet new mvc --name <ProjectName>`
 - Create Razor Pages Project
-    - Command: `dotnet new razor -o <ProjectName> -f net7.0`
+    - CMD: `dotnet new razor -o <ProjectName> -f net7.0`
 - Run dotnet Project
-    - Command: `dotnet run`
+    - CMD: `dotnet run`
 
 # Bootstrap
 
@@ -74,6 +76,9 @@
     - Ex2: `dotnet sln add DinerDB/DinerDB.sqlproj`
 - Add a Project Reference
     - CMD: `dotnet add <ProjectFolder>/<ProjectFile> reference <ProjectFolder>/<ProjectFile>`
+- List Solutions in Project
+    - CMD: `dotnet sln <SolutionFileName> list
+    - Ex: `dotnet sln MySolution.sln list`
 
 ### Add NuGet Packages
 
