@@ -51,6 +51,19 @@
 - View > Command Palette > NuGet: Open NuGet Gallery
 - Search for NuGet packages, install to csproj file
 
+### Add DLL Packages
+
+- Open project file
+    - Exa: `CashRazorPages.csproj`
+- Add the following Code block:
+```
+<ItemGroup>
+    <Reference Include="DLL FileName">
+        <HintPath> Relative Path to DLL File </HintPath>
+    </Reference>
+</ItemGroup>
+```
+
 ### Build & Run Release
 
 - Builds release version
