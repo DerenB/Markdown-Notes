@@ -44,7 +44,7 @@
     - CMD: `dotnet add <ProjectFolder>/<ProjectFile> reference <ProjectFolder>/<ProjectFile>`
 - List Solutions in Project
     - CMD: `dotnet sln <SolutionFileName> list
-    - Ex: `dotnet sln MySolution.sln list`
+    - Exa: `dotnet sln MySolution.sln list`
 
 ### Add NuGet Packages
 
@@ -57,6 +57,12 @@
     - CMD: `dotnet build -c release`
 - Run release version
     - CMD: `dotnet run -c release`
+
+# Razor Pages
+
+- Add New Razor Page
+    - CMD: `dotnet new page --name <FileName> --namespace <Namespace> --output <Directory>`
+    - Exa: `dotnet new page --name Create --namespace CashRazorPages.Pages --output Pulls`
 
 # Bootstrap
 
