@@ -53,6 +53,7 @@
 
 ### Add DLL Packages
 
+- [Stack Overflow Answer](https://stackoverflow.com/questions/41381064/vscode-c-sharp-add-reference-to-custom-assembly)
 - Open project file
     - Exa: `CashRazorPages.csproj`
 - Add the following Code block:
