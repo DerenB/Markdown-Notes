@@ -78,6 +78,11 @@
     - CMD: `dotnet new page --name <FileName> --namespace <Namespace> --output <Directory>`
     - Exa: `dotnet new page --name Create --namespace CashRazorPages.Pages --output Pulls`
 
+### Connection String 
+
+- Local Host:
+    - `"Default": "Data Source=localhost;Database=DinerDB;Integrated Security=sspi; TrustServerCertificate=True;"`
+
 # Bootstrap
 
 ### Adding Bootstrap
