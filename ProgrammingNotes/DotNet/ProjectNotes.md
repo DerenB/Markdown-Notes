@@ -9,14 +9,22 @@
 - [VSCode - Create Razor Pages](https://github.com/dotnet-presentations/aspnetcore-for-beginners/blob/main/Tutorial/1-Create%20a%20Razor%20Page/Create-a-Razorpage.md)
 - [VSCode DotNet Library](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio-code?pivots=dotnet-7-0)
 
-### Extensions / Installations Needed
+### Installations Needed
 
 - Install [Dotnet from  Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet)
 - Install [NodeJS](https://nodejs.org/en)
-- C#
+
+### Extensions
+
+- C# (MS)
 - HTML CSS Support
 - Live Server
 - Compile Hero
+- NuGet Gallery
+- SQL Server (MS)
+    - SQL Database Projects (MS)
+    - SQL Bindings (MS)
+    - Data Workspace (MS)
 
 ### Commands
 
