@@ -26,7 +26,9 @@
     - SQL Bindings (MS)
     - Data Workspace (MS)
 
-### Commands
+# VSCode Project Setup
+
+### Types of Projects
 
 - Create C# Class Library
     - CMD: `dotnet new classlib -o <FolderName>`
@@ -34,10 +36,14 @@
     - CMD: `dotnet new mvc --name <ProjectName>`
 - Create Razor Pages Project
     - CMD: `dotnet new razor -o <ProjectName> -f net7.0`
+- Create ASP.NET Core Web API
+    - CMD: `dotnet new webapi --name <ProjectName>`
+- Create Blazor Server
+    - CMD: `dotnet new blazorserver --name <ProjectName>`
+- Create Blazor Web Assembly
+    - CMD: `dotnet new blazorwasm --name <ProjectName>`
 - Run dotnet Project
     - CMD: `dotnet run`
-
-# VSCode Project Setup
 
 ### Project Creation
 
