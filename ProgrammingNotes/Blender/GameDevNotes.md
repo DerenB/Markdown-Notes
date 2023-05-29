@@ -7,6 +7,7 @@
 
 - Rotate around scene: `Middle Mouse Button`
 - Move Left/Right around scene: `L-SHIFT + Middle Mouse Button`
+- Set Camera to current view: `CTRL + ALT + NumPad 0`
 - Zoom
   - Option 1: `Mouse Wheel`
   - Option 2: `L-CTRL + Mouse Movement`
@@ -123,3 +124,48 @@
 - Sun - Arbitrary light, acts like real world sun
 - Spotlight - spot light
 - Area - big flat light
+
+# Edit Mode
+
+- Selection Object, click drop down menu at top, select "Edit Mode"
+- `Tab` will toggle between object and edit modes
+
+### Geometry Selection
+
+- `ALT + LMB` to select all edges in face
+
+#### Vertex Select
+
+- Next to Edit Mode drop down
+- KeyB Shortcut: `1`
+- Select Vertices 
+
+#### Edge Select
+
+- Next to Edit Mode drop down
+- KeyB Shortcut: `2`
+- Select Edge of shape
+
+#### Face Select
+
+- Next to Edit Mode drop down
+- KeyB Shortcut: `3`
+- Select face of shape
+
+### Extrude
+
+- While in Face Select, can extrude additional topography
+  - KeyB: `E`
+- Don't go inside other objects with extrude
+
+### Inset
+
+- KeyB: `I`
+- Opposite of Extrude 
+
+### Loop Cut
+
+- KeyB: `CTRL + R`
+- Left Click where you want to place the Loop Cut
+  - Left Click Again where you want the cut to be
+  - Right Click if you want it exactly in the middle
