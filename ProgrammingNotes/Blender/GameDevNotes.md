@@ -28,6 +28,7 @@
 
 # Random Notes
 
+- Rename Object: `F2`
 - Grid
   - White Lines / Large Squares: 1 meter wide
   - Grey Lines / Small Squares: 10cm wide
@@ -169,3 +170,23 @@
 - Left Click where you want to place the Loop Cut
   - Left Click Again where you want the cut to be
   - Right Click if you want it exactly in the middle
+
+# Sculpting 
+
+- Have to start with a 3D object
+  - Isosphere common starting point
+- Sculpting mode in same menu as Object and Edit
+
+### Brush
+
+- Change Brush Size: `F`
+- Remove / Negative Brush: `CTRL + LMB`
+
+# Modifiers
+
+- Modifiers are **not** applied until 'Apply' is selected in the drop down
+
+### Decimate
+
+- Reduces number of faces in selected object
+- Lower `Ratio` Value = Lower Face Count
