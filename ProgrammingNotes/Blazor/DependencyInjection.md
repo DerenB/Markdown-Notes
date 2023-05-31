@@ -28,5 +28,9 @@
 
 - Opposite of Transient
 - Creates only 1 instance for the entire App, for the entire life of the instance
-- 
+- Opening the link in a tab new or browser will have the same value
 - Memory will never be released
+
+### Scoped
+
+- In between Transient and Singleton
