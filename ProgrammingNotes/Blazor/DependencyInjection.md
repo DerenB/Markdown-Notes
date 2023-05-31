@@ -17,3 +17,16 @@
 - Dependencies are obvious 
 - Promotes good design patterns 
 
+# Scope
+
+### Transient
+
+- New instance every time it is requested 
+- Can inject the same class multiple times on the same page, each will be a different instance
+
+### Singleton
+
+- Opposite of Transient
+- Creates only 1 instance for the entire App, for the entire life of the instance
+- 
+- Memory will never be released
