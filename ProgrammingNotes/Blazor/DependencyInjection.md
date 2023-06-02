@@ -34,3 +34,26 @@
 ### Scoped
 
 - In between Transient and Singleton
+- Per scope, it adds a single instance
+- Every time a server request is made, a scope is made
+  - Everywhere that scope occurs, it will be the same value
+- Safe way to share information across a website without sharing across domains
+
+# User Interface 
+
+### VSCode Interface Creation
+
+1) Place cursor over class
+2) Hit `CTRL + .`
+3) Click "Extract Interface"
+4) Place cursor over new interface class
+5) Hit `CTRL + .`
+6) Click "Move 'Interface' to a new file
+
+### Add Interface to Dependency Injection
+
+- Modify the `Program.cs` file
+- Change the services line
+  - Code: `builder.Services.AddScoped<Interface,BaseClass>();`
+  - Ex: `builder.Services.AddScoped<IDemo,Demo>();`
+  - Whenever an "IDemo" is asked for, return a "Demo"
