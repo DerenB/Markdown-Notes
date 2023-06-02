@@ -64,6 +64,13 @@
 
 - View > Command Palette > NuGet: Open NuGet Gallery
 - Search for NuGet packages, install to csproj file
+- Add NuGet packages to the DLL:
+```
+<ItemGroup>
+    <PackageReference Include="Package" Version="Version" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+</ItemGroup>
+```
 
 ### Add DLL Packages
 
@@ -75,6 +82,10 @@
 <ItemGroup>
     <Reference Include="DLL FileName">
         <HintPath> Relative Path to DLL File </HintPath>
+    </Reference>
+    Ex:
+    <Reference Include="DataLibrary.dll">
+        <HintPath>BlazorServerDemoApp\DataLibrary.dll</HintPath>
     </Reference>
 </ItemGroup>
 ```
