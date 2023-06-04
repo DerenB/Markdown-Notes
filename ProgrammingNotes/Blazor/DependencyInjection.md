@@ -57,3 +57,34 @@
   - Code: `builder.Services.AddScoped<Interface,BaseClass>();`
   - Ex: `builder.Services.AddScoped<IDemo,Demo>();`
   - Whenever an "IDemo" is asked for, return a "Demo"
+
+### Why use an interface
+
+- Only have to replace the base class in one location
+- Replaced in the Program.cs file
+- Example:
+  - Current Line: `builder.Services.AddScoped<IDemo,Demo>();`
+  - New Line: `builder.Services.AddScoped<IDemo,UtcDemo>();`
+  - The same interface returns the new class of `UtcDemo`
+
+# Register Group of Services
+
+- Can move a group of services to a separate class file
+- 1 - Create a class at the root
+- Class with usings:
+```
+using BlazorServerDemo.Data;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace BlazorServerDemo {
+    public static class DemoDISetup {
+        public static IServiceCollection AddDemoInfo(this IServiceCollection services) {
+            services.AddTransient<IDemo,Demo>();
+            services.AddTransient<ProcessDemo>();
+            return services;
+        }
+    }
+}
+```
+- In `Program.cs`, add the class to the builder services
+- `builder.Services.AddDemoInfo();`
