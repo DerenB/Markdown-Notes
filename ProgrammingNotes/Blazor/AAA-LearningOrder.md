@@ -3,9 +3,9 @@
 
 # 2: Web Development Master Course
 
-# 3: ASP..NET Core from Start to Finish
+# 3: ASP..NET Core from Start to Finish - XX
 
-# 4: .NET Core Dependency Injection from Start to Finish
+# 4: .NET Core Dependency Injection from Start to Finish - XX
 
 # 5: .NET Core AppSettings from Start to Finish
 
