@@ -67,7 +67,14 @@
   - New Line: `builder.Services.AddScoped<IDemo,UtcDemo>();`
   - The same interface returns the new class of `UtcDemo`
 
-# Register Group of Services
+# Register Services
+
+### Basic
+
+- Base: `builder.services.AddTransient<Class>();`
+- With Interface: `builder.services.AddTransient<Interface, Class>();`
+
+### Register Group of Services
 
 - Can move a group of services to a separate class file
 - 1 - Create a class at the root
@@ -88,3 +95,25 @@ namespace BlazorServerDemo {
 ```
 - In `Program.cs`, add the class to the builder services
 - `builder.Services.AddDemoInfo();`
+
+### Instantiate Class with Registering
+
+- Has to be a singleton
+- `builder.Services.AddSingleton(new DemoWithData(5));`
+- How to add transient with data to pass in:
+  - `builder.services.AddTransient(i => new DemoWithData(4));
+  - With Interface: `builder.services.AddTransient<IDemo>(i => new Demo());
+
+### Conditional Registration
+
+- If already registered, it will not add another one
+- `builder.services.TryAddTransient<Interface, Class>();`
+- Not needed for every registration
+
+# Closing Notes
+
+- You should not have multiple implementations using the same interface 
+- Don't put every class into the DI system
+  - Most typically don't need to put Models in DI
+
+
