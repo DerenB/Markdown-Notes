@@ -1,0 +1,73 @@
+
+# AppSettings Locations
+
+- If a setting is in a top level, it won't be in the lower levels
+- 5 standard locations:
+1. Command Line app settings
+2. Environment Variables
+3. User Secrets 
+4. Environment Specific json files
+   1. AppSettings.Development.json files
+5. AppSettings.json
+
+# Inject Settings
+
+- Inject the configuration settings into Razor page
+- Add the Using statement to the `_Imports.razor` page
+  - `@using Microsoft.Extensions.Configuration`
+- Add a inject statement to the razor page
+  - `@inject IConfiguration _config`
+- Both steps can be done in one at the inject statement
+  - `@inject Microsoft.Extensions.Configuration.IConfiguration _config`
+
+# Connection String
+
+- Set the Connection String in Settings
+  - Connection is singular
+  - String is plural
+```
+{
+   "ConnectionStrings: {
+      "Default": "connection"
+   }
+}
+```
+- Retrieve the Connection String in a Razor page
+```
+connectionString = _config.GetConnectionString("Default");
+```
+
+# Get Setting Values
+
+- Can be used in a razor page to retrieve settings
+- Razor Page:
+```
+@code {
+    string mySetting = "";
+    string subSetting = "";
+
+    protected override void OnInitialized() {
+        mySetting = _config.GetValue<string>("MySetting");
+        subSetting = _config.GetValue<string>("MainSetting:SubSetting");
+    }
+}
+```
+- AppSettings.json:
+```
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "MySetting": "This is my setting in appsettings.json",
+  "MainSetting": {
+    "SubSetting": "This is the sub setting."
+  }
+}
+```
+
+
+
