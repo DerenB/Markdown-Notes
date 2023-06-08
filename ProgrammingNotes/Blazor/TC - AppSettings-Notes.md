@@ -69,5 +69,17 @@ connectionString = _config.GetConnectionString("Default");
 }
 ```
 
+# AppSettings.Development
 
+- Overrides the AppSettings file
+- Not a required file
+- Can be used for testing
+- Examples:
+  - Testing log out for inactivity
+  - Staying logged in for longer than normal
+  - Sending test emails
+
+# User Secrets 
+
+-
 
