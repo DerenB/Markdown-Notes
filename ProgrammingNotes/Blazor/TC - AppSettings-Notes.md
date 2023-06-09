@@ -118,3 +118,30 @@ connectionString = _config.GetConnectionString("Default");
 - Create a json file such as `application.Staging.json`
 - Set the `ISS Express: environmentVariable` to `Staging`
 
+# Options
+
+- Create a custom section in `appsettings.json`
+```
+"EmailSettings": {
+  "EnableEmailSystem": true,
+  "EmailTimeoutInSeconds": 30,
+  "EmailServers": ["ServerA", "ServerB", "ServerC"]
+}
+```
+- Create an Options Folder
+  - Add the constructor class file
+  - Use the naming convention `CustomNameOptions.cs`
+  - Exa; `EmailSettingsOptions.cs`
+- Create the class
+```
+namespace BasicDemo.Options {
+  public class EmailSettingsOptions {
+    public bool EnableEmailSystem { get; set; }
+    public int EmailTimeoutInSeconds { get; set; }
+    public List<string> EmailServers { get; set; }
+  }
+}
+```
+- Add the using statement to the `_Imports.razor` file
+  - `@using BasicDemo.Options`
+
