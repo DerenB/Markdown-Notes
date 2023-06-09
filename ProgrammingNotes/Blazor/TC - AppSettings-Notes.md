@@ -81,5 +81,40 @@ connectionString = _config.GetConnectionString("Default");
 
 # User Secrets 
 
--
+- How to set up in VSCode:
+  - 
+- Will override both AppSettings and AppSettings.Development
+- Not Encrypted, stored in plain text 
+- Don't store too sensitive data
+- DO:
+  - Local user password
+  - Local database password
+- DON'T
+  - Credit Card Numbers
+
+### VSCode Use
+
+- Install Extension: `.NET Core User Secrets`
+- Right Click `.csproj` file
+- Click Manage User Secrets
+- Pop-up prompt asking if you would like one generated 
+
+### Visual Studio Use
+
+- Right Click `.csproj` file
+- Click Manage User Secrets
+
+# Environments
+
+- Properties > launchSettings.json
+- web servers configured here
+- Environmental Variable
+  - Sets the environment to launch with when the app runs
+  - Defaults to production
+
+
+### Create an Environment
+
+- Create a json file such as `application.Staging.json`
+- Set the `ISS Express: environmentVariable` to `Staging`
 
