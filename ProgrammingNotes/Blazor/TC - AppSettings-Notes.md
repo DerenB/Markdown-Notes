@@ -145,3 +145,10 @@ namespace BasicDemo.Options {
 - Add the using statement to the `_Imports.razor` file
   - `@using BasicDemo.Options`
 
+# Security / Azure
+
+- During development, put connection string in user secrets
+- After deployment, can put in app settings
+
+
+
