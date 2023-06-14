@@ -45,3 +45,9 @@
     - CMD: `dotnet new blazorwasm --name <ProjectName>`
 - Run dotnet Project
     - CMD: `dotnet run`
+
+# Header Items
+
+- Located in Pages > `_Host.cshtml`
+- Items here apply to every page
+- Use the brackets `<HeadContent></HeadContent>` on individual pages for individual head content
