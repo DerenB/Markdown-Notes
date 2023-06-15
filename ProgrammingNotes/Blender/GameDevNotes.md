@@ -58,6 +58,29 @@
 - Scale: `S`
 - Cancel Changes: `RMB`
 
+### Scale
+
+- Use the "Transform Pivot Point" (looks like 2 circles) at the top to change scale method
+- Median Point
+  - Changes the scale based on the center point of the selected objects
+- Individual Origins
+  - Changes the scale based on their origin
+
+### Link Objects
+
+- Link objects receive the same editing
+- Copy Objects with Link
+  - Can duplicate objects that will be linked after duplication
+  - Hit: `ALT + D`
+- Link Object:
+  - Select all objects with `SHIFT + LMB`
+  - Select primary object last (will have yellow outline, others will be orange)
+  - Hit `CTRL + L`
+  - Click "Link Object Data
+- Unlink Objects
+  - Select all objects with `SHIFT + LMB`
+  - At the top: Object > Relations > Make Single User > Object & Data
+
 # Viewports
 
 - X-Ray - see through everything: `ALT + Z`
