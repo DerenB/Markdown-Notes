@@ -18,6 +18,7 @@
 - [Bootstrap](https://getbootstrap.com/)
 - [How to Develop an ASP.NET Core Application Using Visual Studio Code](https://www.syncfusion.com/blogs/post/how-to-develop-an-asp-net-core-application-using-visual-studio-code.aspx)
 - [VSCode DotNet Library](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio-code?pivots=dotnet-7-0)
+- https://github.com/dotnet-presentations/blazor-workshop/
 
 ### Installations Needed
 
@@ -92,6 +93,9 @@
 
 # Components
 
+- Create a new component
+    - `dotnet new razorcomponent -n <FileName> -o <FileLocation>`
+    - Ex: `dotnet new razorcomponent -n Todo -o Pages`
 - Add components to a page using the file name
 - Ex:
     - File Called: "Counter.razor"
@@ -103,4 +107,5 @@
 - Add a namespace to the razor component
     - Ex: `@namespace Components`
 - Add the namespace to the `_Imports.razor` file
+    - Ex: `@using Components`
 - Add the component as normal
