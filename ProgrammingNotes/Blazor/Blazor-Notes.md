@@ -89,3 +89,18 @@
 - Located in Pages > `_Host.cshtml`
 - Items here apply to every page
 - Use the brackets `<HeadContent></HeadContent>` on individual pages for individual head content
+
+# Components
+
+- Add components to a page using the file name
+- Ex:
+    - File Called: "Counter.razor"
+    - Add as a component with `<Counter />`
+
+### Namespace
+
+- Can add components using a namespace
+- Add a namespace to the razor component
+    - Ex: `@namespace Components`
+- Add the namespace to the `_Imports.razor` file
+- Add the component as normal
