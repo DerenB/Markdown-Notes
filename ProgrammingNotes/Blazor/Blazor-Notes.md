@@ -1,3 +1,15 @@
+# Homework Notes
+
+- 1
+  - Error Page
+  - Custom error page with an image 
+  - Page opens when attempting to navigate to a missing page
+- 2
+  - 2 custom routes
+  - /Demo/Counter/20
+    - Route should start the counter at the given number
+  - /Demo/Weather
+    - Custom route
 
 # Setup
 
@@ -45,6 +57,32 @@
     - CMD: `dotnet new blazorwasm --name <ProjectName>`
 - Run dotnet Project
     - CMD: `dotnet run`
+
+# Routing
+
+### Base Routing
+
+- Page loads `/` which is found in Pages/`_Host.cshtml`
+- Then `App.razor` is loaded with the given route
+  - If the route exists, the page is loaded
+  - If doesn't exist, the "NotFound" is loaded
+
+### Create Routing
+
+- Placed at the top of the .razor page
+  - Ex: `@page "/weather"`
+  - example.com/weather will direct to that file
+
+### Multiple Routing
+
+- Can have multiple `@page` at the top
+- Any of the given routes will direct there
+
+### Pass Parameters in Routing
+
+- Can specify parameters in the route
+  - Ex: `@page "/counter/{StarterValue:int}"`
+
 
 # Header Items
 
