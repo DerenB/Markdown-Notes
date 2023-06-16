@@ -1,15 +1,10 @@
-# Homework Notes
 
-- 1
-  - Error Page
-  - Custom error page with an image 
-  - Page opens when attempting to navigate to a missing page
-- 2
-  - 2 custom routes
-  - /Demo/Counter/20
-    - Route should start the counter at the given number
-  - /Demo/Weather
-    - Custom route
+# Homework
+
+- Create a blazor site with the following:
+  - a class that is shared only inside the same instance that stores the counter value and logs counter value changes
+  - A weather forecast with the number of days specified in the appsettings.json file
+  - a better looking table for the weather forecast
 
 # Setup
 
