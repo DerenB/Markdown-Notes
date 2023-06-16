@@ -135,6 +135,13 @@
 - Metallic: 0 No Metal -> 1 All Metal
 - Roughness: 0 Smooth -> 1 Rough
 
+### Material Slots
+
+- Select the Slot drop down to add more slots
+- Assign material to slot
+- In Edit Mode, select part of object
+- Select the slot, click assign
+
 # Light
 
 ### Settings
