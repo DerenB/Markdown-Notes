@@ -1,5 +1,5 @@
 
-# Random
+# Random ==================================================
 
 ### Deselect All Objects
 
@@ -10,7 +10,7 @@
 
 - KB: `F2`
 
-# Create Object
+# Create Object ==================================================
 
 - Move 3D marker location
   - `SHIFT + RMB`
@@ -20,7 +20,7 @@
   - Bottom Left Menu only when adding
   - Menu disappears after clicking off object
 
-# Move Object
+# Move Object ==================================================
 
 - Grab Object: `G`
 
@@ -39,3 +39,15 @@
   - Freeze X: `G` $\rarr$ `SHIFT + X`
   - Freeze Y: `G` $\rarr$ `SHIFT + Y`
   - Freeze Z: `G` $\rarr$ `SHIFT + Z`
+
+# Loop Cut ==================================================
+
+- CMD: `CTRL + R`
+- Increase lines: `Mouse Wheel`
+- Done in Edit mode
+- Splits an object along line
+
+### Even Loop Cut
+
+- CMD: `E`
+- While positioning cut, click `E` to toggle even yes/no cut
