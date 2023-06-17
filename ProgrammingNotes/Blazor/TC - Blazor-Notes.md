@@ -31,5 +31,27 @@
 - "bootstrap.min.css" and "site.css" are the base files
 - They're imported in Pages > `_Host.cshtml`
 
+# Logging 
+
+- Started by Program.cs > CreateBuilder
+- settings set in appsettings.json
+- Have to have log statements in code
+
+### Log Levels (High to Lowest level)
+
+- Critical
+  - Has to be seen
+  - Beyond an error, fatal problem
+- Error
+- Warning
+- Information
+- Debug
+  - 
+- Trace
+  - Just for debugging purposes
+  - A lot of them
+
+# Pages
+
 
 

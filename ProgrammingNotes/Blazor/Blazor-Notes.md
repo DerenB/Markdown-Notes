@@ -2,9 +2,9 @@
 # Homework
 
 - Create a blazor site with the following:
-  - a class that is shared only inside the same instance that stores the counter value and logs counter value changes
-  - A weather forecast with the number of days specified in the appsettings.json file
-  - a better looking table for the weather forecast
+  - a copyright notice in the default layout footer
+  - a secondary layout for new pages that identifies them as experimental
+  - working voting buttons on the experimental layout page
 
 # Setup
 
