@@ -44,6 +44,7 @@
 
 - CMD: `CTRL + R`
 - Increase lines: `Mouse Wheel`
+  - Alternative: `CTRL + NUM-` / `CTRL + NUM+`
 - Done in Edit mode
 - Splits an object along line
 
@@ -51,3 +52,38 @@
 
 - CMD: `E`
 - While positioning cut, click `E` to toggle even yes/no cut
+
+# Select Mode ==================================================
+
+### Vertex Select
+
+- Select: `1`
+
+### Edge Select
+
+- Select: `2`
+- Select all edges around object: `ALT + LMB`
+
+### Face Select
+
+- Select: `3`
+
+# Bezel ==================================================
+
+- `CTRL + B`
+
+# Scale ==================================================
+
+- `S`
+
+# Extrude ==================================================
+
+- `E`
+
+# Inset (opposite Extrude) ==================================================
+
+- `I`
+
+
+
+
