@@ -19,6 +19,7 @@
 - Set Vertices: 
   - Bottom Left Menu only when adding
   - Menu disappears after clicking off object
+    - `F9` brings the menu back up
 
 # Move Object ==================================================
 
