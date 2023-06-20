@@ -32,6 +32,9 @@
 - Grid
   - White Lines / Large Squares: 1 meter wide
   - Grey Lines / Small Squares: 10cm wide
+- Apply Scale
+  - Scale should always be 1
+  - `CTRL + A` $\rarr$ Scale
 
 # Objects
 
