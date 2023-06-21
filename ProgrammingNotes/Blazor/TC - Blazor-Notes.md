@@ -150,3 +150,7 @@ public int num = 0;
 - Add a `@body` somewhere in the file
 - Add `@layout FileName` to the top of the razor pages that should use the layout
 
+# Components ==================================================
+
+
+
