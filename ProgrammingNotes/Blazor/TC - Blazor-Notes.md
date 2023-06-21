@@ -1,4 +1,4 @@
-# Header
+# Header ==================================================
 
 - Located in `Pages > _Host.cshtml`
 - Has Head/Meta tags for every page
@@ -8,7 +8,7 @@
   - Don't include "~/" in any URL
 - Imports CSS files
 
-# Error Handling
+# Error Handling ==================================================
 
 ### Non-existent page
 
@@ -22,7 +22,7 @@
   - In the DIV with id "blazor-error-ui"
   - Gets shown any time Blazor has an unhandled exception
 
-# Static Files
+# Static Files ==================================================
 
 - Saved in the `wwwroot` directory
 
@@ -31,7 +31,7 @@
 - "bootstrap.min.css" and "site.css" are the base files
 - They're imported in Pages > `_Host.cshtml`
 
-# Logging 
+# Logging ==================================================
 
 - Started by Program.cs > CreateBuilder
 - settings set in appsettings.json
@@ -51,7 +51,51 @@
   - Just for debugging purposes
   - A lot of them
 
-# Pages
+# Pages ==================================================
+
+### _Host.cshtml
+
+- Starting Point: `_Host.cshtml`
+- App is rendered with 1 line:
+  - `<component type="typeof(App)" render-mode="ServerPrerendered"/>`
+  - Calls the `App.razor` file
+- Can add custom CSS or JS files here, will work across website
+
+### App.Razor
+
+- Next: `App.razor`
+- Loads `MainLayout.razor`
+
+### MainLayout.razor
+
+- Next: `MainLayout.razor`
+- Includes layout components that should be across the whole website
+  - Navigation bar
+  - Side panel
+  - Footer
 
 
+### NavMenu.razor
+
+- Highlight active navigation item
+  - Exact match
+    - `<NavLink class="nav-link" href="" Match="NavLinkMatch.All">`
+    - The Match.All looks if the URL is an exact match to the page information
+    - Example for `@page "/counter"`
+      - Works: website.com/counter
+      - Doesn't work: website.com/counter/23
+  - Prefix match
+    - `<NavLink class="nav-link" href="" Match="NavLinkMatch.Prefix">`
+    - Match.Prefix just tries to match the start of the URL
+    - Example for `@page "/counter"`
+      - Works: website.com/counter
+      - Works: website.com/counter/23
+
+# Creating Pages ==================================================
+
+- Create a Razor Component in `Pages` directory
+- Add a `@page` at the top 
+  - this is the URL direction
+  - `@page "/test"` will direct from "website.com/test"
+- Can use sub directories
 
