@@ -142,3 +142,11 @@ public int num = 0;
 - Render in Razor:
   - `@html.Raw()
 
+# Custom Layout Files ==================================================
+
+- Create a Razor component `.razor` file
+  - Usually goes in the "Shared" directory
+- Add: `@inherits LayoutComponentBase` at the top
+- Add a `@body` somewhere in the file
+- Add `@layout FileName` to the top of the razor pages that should use the layout
+
