@@ -99,3 +99,22 @@
   - `@page "/test"` will direct from "website.com/test"
 - Can use sub directories
 
+# Page Code Support ==================================================
+
+- Public variables need an `[Inject]`
+```
+[Inject]
+public int num = 0;
+```
+
+### Inherit from separate CS file
+
+- Create CS file
+  - Add `using Microsoft.AspNetCore.Components`
+  - Add the interface: `public class Name : ComponentBase`
+  - Ex: `public class CounterBase : ComponentBase`
+  - Make sure variables are protected, not private
+- Add the Inheritance to the .razor page
+  - `@inherits Name`
+  - Ex: `@inherits CounterBase`
+
