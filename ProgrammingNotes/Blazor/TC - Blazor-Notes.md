@@ -118,3 +118,27 @@ public int num = 0;
   - `@inherits Name`
   - Ex: `@inherits CounterBase`
 
+### Partial Class
+
+- Alternative method using partial class
+- Create a `.cs` file with the same name as the `.razor` file
+- Put "partial" in the class declaration in the `.cs` file
+  - `public partial class ClassName`
+
+# Razor Syntax ==================================================
+
+- Razor escape character: `@`
+  - Ex: `<p>@@Twitter Handle</p>`
+- Use parenthesis for code injection with spaces
+  - Ex: `@(var1 + var2)`
+- Use curly braces for multiline code
+  - @{}
+
+
+### Render HTML
+
+- Render in Blazor:
+  - `@((MarkupString)"<h1>Content</h1>")`
+- Render in Razor:
+  - `@html.Raw()
+
