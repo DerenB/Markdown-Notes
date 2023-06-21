@@ -1,10 +1,7 @@
 
 # Homework
 
-- Create a blazor site with the following:
-  - a copyright notice in the default layout footer
-  - a secondary layout for new pages that identifies them as experimental
-  - working voting buttons on the experimental layout page
+
 
 # Setup
 
