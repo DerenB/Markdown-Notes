@@ -1,4 +1,4 @@
-# Header ==================================================
+# Header =============================================
 
 - Located in `Pages > _Host.cshtml`
 - Has Head/Meta tags for every page
@@ -8,7 +8,7 @@
   - Don't include "~/" in any URL
 - Imports CSS files
 
-# Error Handling ==================================================
+# Error Handling =============================================
 
 ### Non-existent page
 
@@ -22,7 +22,7 @@
   - In the DIV with id "blazor-error-ui"
   - Gets shown any time Blazor has an unhandled exception
 
-# Static Files ==================================================
+# Static Files =============================================
 
 - Saved in the `wwwroot` directory
 
