@@ -186,3 +186,17 @@ protected override void OnParametersSet() {
   }
 }
 ```
+
+# Events =============================================
+
+```
+[Parameter]
+public EventCallback<string> OnVoted { get; set; }
+
+private void ThumbsUp() {
+  OnVoted.InvokeAsync("Approved");
+}
+```
+
+
+
