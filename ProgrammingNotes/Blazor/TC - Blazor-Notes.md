@@ -152,5 +152,37 @@ public int num = 0;
 
 # Components =============================================
 
+- Call component with the component name
+    - `<Counter></Counter>`
 
+### Parameters
 
+- Add `[Parameter]` tag before variable
+- Read parameter in with `OnParametersSet()`
+- Example:
+```
+[Parameter]
+public int startingValue { get; set; }
+protected override void OnParametersSet() {
+  base.OnParametersSet();
+  currentCount = StartingValue;
+}
+```
+- Add the parameter to the call
+    - `<Counter StartingValue="5"></Counter>`
+ 
+### Blank Parameter
+
+- Assigns the parameter variable only if there is a value
+```
+private string pageHeader = "Counter";
+
+[Parameter]
+public string PageHeader { get; set; }
+protected override void OnParametersSet() {
+  base.OnParametersSet();
+  if (string.IsNullOrWhiteSpace(PageHeader) == false) {
+    pageHeader = PageHeader;
+  }
+}
+```
