@@ -31,7 +31,7 @@
 - "bootstrap.min.css" and "site.css" are the base files
 - They're imported in Pages > `_Host.cshtml`
 
-# Logging ==================================================
+# Logging =============================================
 
 - Started by Program.cs > CreateBuilder
 - settings set in appsettings.json
@@ -51,7 +51,7 @@
   - Just for debugging purposes
   - A lot of them
 
-# Pages ==================================================
+# Pages =============================================
 
 ### _Host.cshtml
 
@@ -91,7 +91,7 @@
       - Works: website.com/counter
       - Works: website.com/counter/23
 
-# Creating Pages ==================================================
+# Creating Pages =============================================
 
 - Create a Razor Component in `Pages` directory
 - Add a `@page` at the top 
@@ -99,7 +99,7 @@
   - `@page "/test"` will direct from "website.com/test"
 - Can use sub directories
 
-# Page Code Support ==================================================
+# Page Code Support =============================================
 
 - Public variables need an `[Inject]`
 ```
@@ -125,7 +125,7 @@ public int num = 0;
 - Put "partial" in the class declaration in the `.cs` file
   - `public partial class ClassName`
 
-# Razor Syntax ==================================================
+# Razor Syntax =============================================
 
 - Razor escape character: `@`
   - Ex: `<p>@@Twitter Handle</p>`
@@ -142,7 +142,7 @@ public int num = 0;
 - Render in Razor:
   - `@html.Raw()
 
-# Custom Layout Files ==================================================
+# Custom Layout Files =============================================
 
 - Create a Razor component `.razor` file
   - Usually goes in the "Shared" directory
@@ -150,7 +150,7 @@ public int num = 0;
 - Add a `@body` somewhere in the file
 - Add `@layout FileName` to the top of the razor pages that should use the layout
 
-# Components ==================================================
+# Components =============================================
 
 
 
