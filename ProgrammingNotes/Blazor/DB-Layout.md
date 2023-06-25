@@ -10,6 +10,9 @@
 - Make sure MainLayout is being called
   - Called in `App.razor`
   - Default line: `<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>`
+- Need to import Bootstrap
+  - Default Blazor project includes the files in wwwroot > css
+  - Can add import strings to `_Host.cshtml`
 
 # MainLayout Necessary Items
 
