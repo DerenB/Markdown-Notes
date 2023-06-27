@@ -14,9 +14,15 @@
   - Default Blazor project includes the files in wwwroot > css
   - Can add import strings to `_Host.cshtml`
 
-# MainLayout Necessary Items
+# MainLayout Necessary Items =============================================
 
 - Need to inherit the layout component
   - `@inherits LayoutComponentBase`
 - Needs the body tag for where to render the body
   - `@Body`
+
+# CSS Isolation =============================================
+
+- Need to add a line to `_Host.cshtml` to have CSS isolation
+  - Add: `<link href="ProjectName.styles.css" rel="stylesheet" />`
+  - Change "ProjectName" to what you have
