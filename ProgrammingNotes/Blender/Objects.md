@@ -10,6 +10,13 @@
 
 - KB: `F2`
 
+### Show Statistics
+
+- Edit > Preferences
+- Interface
+- Editors > Status Bar
+  - Check "Scene Statistics" box
+
 # Create Object ==================================================
 
 - Move 3D marker location
@@ -81,10 +88,17 @@
 # Extrude ==================================================
 
 - `E`
+- Extrude along Normals
+  - `ALT + E`
+  - Extrudes face without scaling
 
 # Inset (opposite Extrude) ==================================================
 
 - `I`
+
+# Vertices ==================================================
+
+- 
 
 
 
