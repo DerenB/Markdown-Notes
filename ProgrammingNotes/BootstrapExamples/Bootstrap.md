@@ -20,6 +20,9 @@
 
 - `col-auto`
   - automatically adjusts column width for the content
+- `col offset-x`
+  - Creates a blank column as wide as "x"
+  - X can be 1 - 12
 
 # Card Grid
 
