@@ -63,7 +63,8 @@
 # Setup the Blazor Project
 
 1. Create a `Shared` Directory
-   1. To this Create `MainLayout.razor`
+   1. In this Create `Layout.razor`
+   2. Create with `dotnet new razorcomponent -n Layout`
 2. Add the imports to `_Imports.razor`
    1. CMD: `@using ProjectName`
    2. CMD: `@using ProjectName.Shared`
@@ -78,13 +79,79 @@
 
 # Setup Models
 
+- Support Library Models is for transferring data
+- Blazor App Models is for the front end display
+  - Can restrict what goes into the database
+
+### Support Library Models
+
 1. Add a `Model` directory to *SupportLibrary*
 2. In `Model` add your Models as CS classes
    1. Example: CashPullModel.cs
    2. Model variables should match the database table variables
-   3. Extract the interface for the model class
-      1. 
+3. Extract the interface for the model class
+   1. Place cursor inside name of class
+   2. Hit: CTRL + .
+   3. Cursor over "Extract Interface" but don't click
+   4. Hit: CTRL + Enter
+   5. Interface class is now extracted within the same class
+4. Move extracted class to it's own file
+   1. Place cursor inside name of class
+   2. Hit: CTRL + .
+   3. Cursor over "Move type to..." but don't click
+   4. Hit: CTRL + Enter
+   5. Interface is now in it's own class
+5. Add the Support Library models to Imports
+   1. Located at *BlazorApp* > `_Imports.razor`
+   2. Add: `@using SupportLibrary.Models`
 
+### Add Model Interface to Blazor App
+
+1. Create a `Models` directory in Blazor App
+2. Create a `Model.cs` file for every Model created in the Support Library (previous step)
+   1. Can preface these models to better distinguish the files from the support Library
+   2. Ex: `PersonModel.cs` in Support Library, `DisplayPersonModel.cs` in BlazorApp
+3. Add the Interface to the Blazor class
+   1. Add the using statement: `using SupportLibrary.Models;`
+   2. Add the Interface: `public class DisplayPersonModel : IPersonModel`
+   3. Add the variables, just like the support class
+4. Can add decorations to the variables in this class
+5. Add the Blazor App Models to Imports
+   1. Located at *BlazorApp* > `_Imports.razor`
+   2. Add: `@using BlazorApp.Models`
+
+# CRUD Actions
+
+### Creating
+
+1. Add using statement to Imports
+   1. Located at *BlazorApp* > `_Imports.razor`
+   2. Add: `@using Microsoft.AspNetCore.Components.Forms`
+2. Create the Razor Component where the creating will happen
+   1. CMD: `dotnet new razorcomponent -n CreateCashPull`
+3. Setup Razor component:
+   1. Add to _Imports: `@using Microsoft.AspNetCore.Components.Forms`
+   2. In the HTML section:
+      1. Create a `EditForm` for entering data
+      2. Sample: `<EditForm Model="@cashPull" OnValidSubmit="HandleValidSubmit">`
+   3. In the `@code` section:
+      1. Add model: `private ICashPullModel cashPull = new DisplayCashPullModel();`
+      2. Create a method for submission: `private void HandleValidSubmit()`
+4. Setup Data Service
+   1. Create CS file in *SupportLibrary* > *Data*
+   2. `CashPullDataService.cs`
+   3. Add NuGet packages to the SupportLibrary
+      1. VSCode View > Command Pallette > NuGet: Open NuGet Gallery
+      2. Add "Dapper" to the SupportLibrary
+      3. Should show up in the file `SupportLibrary.csproj`
+5. Setup Sql Data Access
+   1. Create CS file in *SupportLibrary* > *DataAccess*
+   2. `SqlDataAccess.cs`
+   3. Add NuGet packages to the SupportLibrary
+      1. Install: "Microsoft.Extensions.Configuration.Abstraction"
+      2. Install: "System.Data.SqlClient"
+   4. Add methods
+   5. Extract the Interface
 
 # Layout Items / CSS Isolation
 
