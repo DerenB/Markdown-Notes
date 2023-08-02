@@ -26,3 +26,12 @@
    2. *Shade Smooth* : smooths edges 
    3. *Shade Flat* : blocky base version
 
+# Sub Surface modification
+
+- AKA. Subsurf modifier
+1. Click the Wrench icon, called *Modifier Properties*
+2. Click *Add Modifier* > Subdivision Surface
+
+
+
+
