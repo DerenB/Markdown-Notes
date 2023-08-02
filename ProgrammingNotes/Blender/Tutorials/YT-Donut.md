@@ -31,6 +31,10 @@
 - AKA. Subsurf modifier
 1. Click the Wrench icon, called *Modifier Properties*
 2. Click *Add Modifier* > Subdivision Surface
+3. Levels Viewport: increases the number of division times
+   1. Higher levels increase render time
+
+# Edit Mode
 
 
 
