@@ -36,6 +36,19 @@
 
 # Edit Mode
 
+### Add Lumps to Donut
 
+1. In Edit Mode, use Vertex Select
+2. Toggle Proportional Editing
+   1. KeyB: `O`
+   2. Circle Icon at top
+3. Grab/Scale now moves vertices around selection
+4. If not working, adjust size with scroll wheel
+   1. Roll Up: Decrease selection 
+   2. Roll Down: Increase Selection
+5. Move in Same Direction
+   1. Used to scale only in the direction the faces are facing
+   2. "Shrink and Fatten" Tool
+   3. KeyB: `ALT + S`
 
 
