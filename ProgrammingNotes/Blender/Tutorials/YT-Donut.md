@@ -52,3 +52,38 @@
    3. KeyB: `ALT + S`
 
 
+# Add the Icing
+
+- Toggle Orthographic mode: `NumPad 5`
+- Look straight at the donut: `NumPad 1`
+- Edit Mode
+- Select half of the donut vertices
+  - Can't select vertices through solid objects
+  - Have to toggle X-Ray: `ALT + Z`
+  - Square Icon in top right
+- Duplicate the top half: `SHIFT + D`
+  - Right Click to leave duplication where it started
+- Have to separate duplication from original
+  - Hit `P`
+  - Click "By Selection"
+
+# Rename Objects
+
+- Double click object in the scene selection
+- With Object selected in the viewport: `F2`
+
+# Add Solidify modifier
+
+- adds thickness
+- Set "Offset" to 1
+- Set "Thickness" to 0.0025
+- Order of the modifiers matters
+  - Applied from top to bottom
+  - Move the solidify above the Subdivision
+
+# Add Drips to Icing
+
+- Hide Modifier in Edit Mode
+  - In the modifier panel, click "Edit Mode"
+  - This hides the modification in edit mode
+  - Switching back to Object mode shows it again
