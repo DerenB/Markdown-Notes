@@ -87,3 +87,46 @@
   - In the modifier panel, click "Edit Mode"
   - This hides the modification in edit mode
   - Switching back to Object mode shows it again
+- Have to turn on Snap mode
+  - Can hold `CTRL` while moving an object
+  - Or Toggle on at the top center U-Magnet 
+- Next to the magnet, can change what type of snapping
+- Set to "Face Nearest"
+- Check "Snap to Same Target" checkbox
+
+# Multiple Windows
+
+- Method 1
+  - Hover mouse over edge of window (double arrow cursor)
+  - Right click
+  - Split horizontal or vertical
+  - Click cursor wherever on screen
+- Method 2
+  - Move cursor to top right corner
+  - Cursor turns into crosshair
+  - Drag and click
+
+# Apply Modifier
+
+- Move to the top of the modifier window
+- Click dropdown arrow > Apply
+- Add another sub surface modifier at the bottom after applying other
+
+# Add Icing Drips
+
+- Select vertices
+- Extrude with `E` to drag down
+
+# Add Donut Center Crease
+
+- Apply sub surface modifier to donut
+- Hide icing
+- Hold `ALT` and click the center ring to select all vertices around donut
+- Click `S` and drag inward
+
+# Snap Icing
+
+- Icing now floating on top of center crease
+- Add modifier "Shrinkwrap" to fix
+- Place at top of modifier list
+- Use eye drop on donut to specify what to shrink to
