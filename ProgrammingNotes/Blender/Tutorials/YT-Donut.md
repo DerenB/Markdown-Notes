@@ -130,3 +130,18 @@
 - Add modifier "Shrinkwrap" to fix
 - Place at top of modifier list
 - Use eye drop on donut to specify what to shrink to
+
+# Sculpting
+
+- Have to clear out the modifiers (apply them)
+- Open "Sculpting" tab at top
+- Shortcuts
+  - Change Radius: `F`
+  - Change Strength: `SHIFT + F`
+- Sculpt Tools
+  - "Grab": `G` - grab and pull out
+  - Inflate: `I` - bulbous
+    - Have to set brush to "Airbrush"
+    - Click "Tool" on right
+    - Stroke > Stroke Method > Airbrush
+- Can go back to Layout mode and add another subdivision modifier if things get too jagged
