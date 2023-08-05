@@ -148,5 +148,27 @@
 
 # Render Camera Positioning
 
-- Snap Camera to current view: `CTRL + ALT + NumPad 0`
--  
+- Snap Camera to current view: `CTRL + ALT + NumPad`
+- Using View:
+  - Open toolbar with `N`
+  - Click `View` tab
+  - `View Lock` Section
+  - Check `Lock Camera to View` box
+  - The camera is now pinned to viewport
+  - Any panning and rotating of the view moves the camera
+
+# Render Engine
+
+- Blender comes with Cycles and Eevee render engines
+- Eevee
+  - a real time render engine
+- Cycles
+  - Slower than Eevee (in real time)
+  - an "offline" render engine
+  - Ray Tracer / Path tracer
+  - Calculates light bouncing
+- Set up GPU Render
+  - Top > Edit > Preferences
+  - System Tab
+  - Cuda / OptiX (NVIDIA choices)
+  - Use "OptiX" if you have both
