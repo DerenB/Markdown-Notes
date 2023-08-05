@@ -145,3 +145,8 @@
     - Click "Tool" on right
     - Stroke > Stroke Method > Airbrush
 - Can go back to Layout mode and add another subdivision modifier if things get too jagged
+
+# Render Camera Positioning
+
+- Snap Camera to current view: `CTRL + ALT + NumPad 0`
+-  
