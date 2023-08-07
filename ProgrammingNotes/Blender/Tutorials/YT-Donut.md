@@ -172,6 +172,7 @@
   - System Tab
   - Cuda / OptiX (NVIDIA choices)
   - Use "OptiX" if you have both
+  - Properties > Render > Scene > Device > Set to GPU
 
 # Adjust Eevee Settings
 
@@ -227,5 +228,12 @@
   - 3 values represent Red Green Blue
 - Subsurface Color
   - (possibly) set to a more saturated value than the base color
+
+### Donut Material
+
+- Open shading tab at top
+- Add in Node: `SHIFT + A` or Add
+- Add `Noise Texture`
+  - This is used a lot
 
 
