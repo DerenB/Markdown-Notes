@@ -233,7 +233,13 @@
 
 - Open shading tab at top
 - Add in Node: `SHIFT + A` or Add
-- Add `Noise Texture`
+- Add *Texture* > `Noise Texture`
   - This is used a lot
+- Remove node connection: `CTRL + RMB`
+- Add: *Converter* > `Color Ramp`
+- Add: *Input* > `Texture Coordinate`
+- Add: *Vector* > `Bump`
+  - Change distance to adjust what bumps get colored
+  - In Blender units: value of "1" is "1 meter"
 
 
