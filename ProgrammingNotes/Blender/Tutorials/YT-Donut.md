@@ -148,5 +148,98 @@
 
 # Render Camera Positioning
 
-- Snap Camera to current view: `CTRL + ALT + NumPad 0`
--  
+- Snap Camera to current view: `CTRL + ALT + NumPad`
+- Using View:
+  - Open toolbar with `N`
+  - Click `View` tab
+  - `View Lock` Section
+  - Check `Lock Camera to View` box
+  - The camera is now pinned to viewport
+  - Any panning and rotating of the view moves the camera
+
+# Render Engine
+
+- Blender comes with Cycles and Eevee render engines
+- Eevee
+  - a real time render engine
+- Cycles
+  - Slower than Eevee (in real time)
+  - an "offline" render engine
+  - Ray Tracer / Path tracer
+  - Calculates light bouncing
+- Set up GPU Render
+  - Top > Edit > Preferences
+  - System Tab
+  - Cuda / OptiX (NVIDIA choices)
+  - Use "OptiX" if you have both
+  - Properties > Render > Scene > Device > Set to GPU
+
+# Adjust Eevee Settings
+
+- Can raise the shadow Resolution
+  - (right side) Render > Shadows
+  - Raise `Cube Value` for a better shadow
+- Adjust Light Shadows
+  - Select Light Object
+  - (right side) Data > Shadow > Bias
+  - For small objects, set to a low value
+  - 0.001 for Donut
+- Ambient Occlusion
+  - Done by default by Cycles, has to be turned on for Eevee
+  - (right side) Render > Ambient Occlusion
+- Reflections
+  - (right side) Render > Screen Space Reflections
+  - Reflections colors
+
+# Set Material Preview Mode
+
+- Makes the material preview mode look like Render Preview
+- (top right) click "Material Preview mode"
+- Click the dropdown arrow to the right
+- Check "Scene Lights"
+- Check "Scene World"
+- Material Preview should now be identical to render preview
+  - Can keep rendering set to Cycles without having to wait for rendering
+
+# Reduce Noise
+
+- Noise is the static/fuz as the render creates samples
+- Render > Sampling > Denoise checkbox
+- Can set Viewport Samples to 100
+- Can set Denoise > Start Sample to 50
+
+# Materials
+
+- [Color Theme](https://colorpalettes.net/color-palette-4474/)
+- Add a new Material
+  - Click object
+  - (right side) Material > New
+- Color
+  - Base Color: sets the main color
+  - Roughness: ranges from glossy (0 value) to matte (max value)
+    - 0.150 for demo
+
+### Subsurface Scattering
+
+- Light through fingers example
+- (right side) Material > Subsurface
+- Value of 1 is "1 meter" penetration
+- Subsurface Radius
+  - 3 values represent Red Green Blue
+- Subsurface Color
+  - (possibly) set to a more saturated value than the base color
+
+### Donut Material
+
+- Open shading tab at top
+- Add in Node: `SHIFT + A` or Add
+- Add *Texture* > `Noise Texture`
+  - This is used a lot
+- Remove node connection: `CTRL + RMB`
+- Add: *Converter* > `Color Ramp`
+- Add: *Input* > `Texture Coordinate`
+- Add: *Vector* > `Bump`
+  - Change distance to adjust what bumps get colored
+  - In Blender units: value of "1" is "1 meter"
+
+
