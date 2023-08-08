@@ -32,9 +32,10 @@
 }
 ```
 
-# Class Library
+# Object Relational Mapper (ORM)
 
-- 
+- Takes data from a database and converts it into C# Objects
+- Dapper - type of ORM
 
 
 
