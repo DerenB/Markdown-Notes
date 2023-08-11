@@ -243,3 +243,26 @@
   - In Blender units: value of "1" is "1 meter"
 
 
+# Texture Painting
+
+- At the top bar
+- In Shading Menu:
+  - Add Node: *Texture* > `Image Texture`
+  - Click "New"
+  - Set dimensions low if not needed (reduced render time)
+  - Pick Starting Color
+  - Don't need alpha
+- Paint onto object
+- Same keybinds as before
+  - `F + Mouse` adjust radius
+  - `SHIFT + F + Mouse` adjust strength
+- Have to manually save the image 
+
+### Color Bump
+
+- Go back to Shading
+- Add: *Color* > *Mix Color*
+
+### Donut Shader Map:
+
+![DonutShaderMap](DonutShaderMap.PNG)
