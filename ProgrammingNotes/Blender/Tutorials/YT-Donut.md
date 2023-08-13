@@ -266,3 +266,82 @@
 ### Donut Shader Map:
 
 ![DonutShaderMap](DonutShaderMap.PNG)
+
+# Ep9: Sprinkles & Geometry Nodes
+
+- Create a workspace for Geometry Node Editor:
+  - Click "+" icon at end of top navbar
+  - General > Geometry Nodes
+- CLick "New" with the icing selected
+  - Adds a new Geometry node in the Modifier stack
+  - To use Geometry Nodes, it has to be a modifier
+  - Have to click the modifier tab to view the nodes
+    - Can click the pin to keep it
+
+### Sprinkles
+
+- "Distribute Points on Faces"
+  - Distributes points across the face of the icing
+  - Have to set high density because the area is very small
+- "Join Geometry"
+  - Allows you to have both the original mesh and the distributed points
+- Add Mesh for sprinkle
+  - Add mesh like normal (Shift a)
+  - Used a cylinder for the standard shape
+  - Apply Scale after setting size
+- "Instance on Points"
+  - Creates instances of the mesh on the points
+- "Object Info"
+  - Add the mesh (sprinkle)
+  - Sets all the points to the mesh shape
+- "Rotate Euler"
+  - rotates the points
+- "Random Value"
+  - Outputs random values
+  - Vector measured in radians, not degrees (pi/tau)
+
+### Weight Paint
+
+- Open with: `CTRL + TAB`
+- Easier to see with sprinkles/geometry node turned off
+- Edit in Properties > Data
+- Paint on heat map
+  - Blue low 
+  - Red High
+- Apply heat map to sprinkles
+  - Drag "density" on Distribute points on faces to Group Input
+  - Adds a density value
+  - In the modifier tab, apply the heat map group to the density
+  - Add a Utilities > Math > Multiply node in between
+    - This is how you can get the 10,000 values like before
+
+### Poisson Disk
+
+- Distribute Points on Faces
+- Change "random" to "Poisson Disk"
+- Set distance min to something (0.001)
+- Drag Group input Density > Density Factor
+- Drag Group input Value > Density max
+
+### Final Nodes
+
+![Geometry Nodes](GeometryNodes.PNG)
+
+# Ep 10. Sprinkles Cont.
+
+### Reshape sprinkle
+
+- Add subdivision modifier to sprinkle
+- Circle cut `CTRL + R` sprinkle at both ends
+- Make multiple shapes however
+- Put all shapes into a Collection
+
+### Add to Donut
+
+- Drag Collection into Geometry Node
+  - Check "Separate Children"
+  - Check "Reset Children"
+- Drag to Instance on Points (Instance)
+  - Check "Pick Instance"
+
+
