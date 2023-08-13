@@ -344,4 +344,47 @@
 - Drag to Instance on Points (Instance)
   - Check "Pick Instance"
 
+# Ep 11. Animation
+
+### Parenting
+
+- Select objects with `CTRL`
+  - Select parent object last
+- Hit `CTRL + P`
+- Click Object with Transformation
+
+### Change camera perspective
+
+- Move view to current camera position: `NumPad 0`
+- Camera resolution determined by output resolution
+- Clipping Distance: 
+  - Properties > Object Data Properties > Lens
+- Focal Length
+  - High: flatten image, compress depth
+  - Lower: More depth
+- Camera Grid:
+  - Properties > Object Data Properties > View Port Display > Composition Guide
+
+### Animation
+
+- Insert Keyframe: `I` (India)
+  - Use Location or Rotation
+- Show every frame
+  - animation lags
+  - Bottom left > Play back > Sync > Frame Dropping
+- Animation Tab
+  - `CTRL + Middle Mouse Button` - adjust graph scale
+
+# Ep 12. Floating Particles
+
+- Type "#frame" in the value node for frames
+  - After typing "#frame" don't type in a number
+  - Use `SHIFT + R/L Arrow` to change value (or don't change at all)
+  - Can `RMB` and "Delete Driver" to start over
+
+### Add A Comment
+
+- Can add a comment to a geometry node
+- Hit `CTRL + J` or `SHIFT + A` > Layout > Frame
+![Geometry Nodes](Particles-GeometryNodes.PNG)
 
