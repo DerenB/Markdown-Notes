@@ -388,3 +388,26 @@
 - Hit `CTRL + J` or `SHIFT + A` > Layout > Frame
 ![Geometry Nodes](Particles-GeometryNodes.PNG)
 
+# Ep 13. Lighting
+
+- Doubling the distance from the light reduces the brightness by 4 times
+- Fill Light
+  - Fills in shadows
+  - less powerful than main light
+- Remove world lights
+  - Properties > World > Surface > Strength 0
+
+### Post Processing / Color Correction
+
+- Properties > Color Management > Look
+  - Set to High or Very High Contrast for donut
+- Check Light Exposure
+  - Properties > Color Management > View Transform
+  - Set to "False Color" to view light exposure
+  - Should be no white unless it's a reflection
+
+### Rim Light
+
+- Set behind to light back shadows a little
+- So that the object isn't lost in the background
+
