@@ -411,3 +411,59 @@
 - Set behind to light back shadows a little
 - So that the object isn't lost in the background
 
+# Ep 14. Compositing
+
+- Sometimes called post processing or effects
+- Compositing tab at top bar
+- Check "Use Nodes" at top left
+
+### Image
+
+- `CTRL + SHIFT + LMB` a node to add a `Viewer` node
+- Views an image of the render
+  - Have to have a recent render for it to view
+- Better solution
+  - Turn off `Backdrop` in top left
+  - Add a Second Window
+  - Set Window to `Image Editor`
+  - Top Middle set to `Viewer Mode`
+  - Should display render
+
+### Background
+
+- Set to transparent:
+  - Properties > Render > Film > Check `Transparent` box
+  - Have to render again to see the change
+- Add Nodes:
+  - Color > Alpha Over
+  - Input > RGB
+- Background Gradient
+  - Add Matte > Ellipse Mask
+  - Add Filter > Blur
+
+### Icing Glow
+
+- Enable Render Passes
+  - Properties > View Layer > Passes > Light
+  - Check `Glossy Direct` box
+  - Should see "GlossDir" in the `Render Layers` Node
+  - Have to render again to see changes
+
+### Color Grading
+
+- Color > Color Balance
+
+### Lens Distortion
+
+- Lens > Lens Distortion
+
+### Sharpen
+
+- Filter > Filter
+- Set to `Diamond Sharpen`
+
+### Final Nodes
+
+![Composite Nodes](CompositeNodes.PNG)
+
+
