@@ -466,4 +466,120 @@
 
 ![Composite Nodes](CompositeNodes.PNG)
 
+# Ep 15. Rendering Cycles
 
+- Cycles vs Eevee
+- Render starts out "noisy"
+  - Longer the render runs, less noise
+  - More samples less noise
+
+
+### Denoiser
+
+- Properties > Render Sampling
+- OptiX: faster for viewport rendering
+- OpenImageDenoise: better algorithm for final render
+- Can turn off until number of samples decided
+
+### Noise Threshold
+
+- Default 0.01
+- Lower the value, the clearing the noise it looks for
+- a low sample count will hit the limit before the noise threshold does
+- Determine amount
+  - Look at noisiest part of the image
+  - Reduce threshold until happy
+
+### Subsurface Sampling
+
+- (With object selected) Properties > Material > Surface > Subsurface
+- Turned on significantly increases render time
+- Probably turn off with it being such a little effect
+
+### Animation / Camera
+
+- Motion Blur
+  - Properties > Render > Motion Blur checkbox
+  - Shutter speed of 0.50 or 10.00
+- Depth of Field
+  - (camera selected) > Properties > Camera Data > Depth of Field
+
+### Persistent Data
+
+- Properties > Render > Performance > Final Render > Persistent Data
+- Uses more memory to render faster
+
+### GPU
+
+- Check to make sure the GPU is doing the rendering
+- Top Bar > Edit > Preferences > System > Cycles Render Devices
+- Checkbox the GPU, not the CPU, not both
+
+### Clamping
+
+- Properties > Render > Light Paths > Clamping
+- Default at 10
+- Higher the value, faster the render
+- most noticeable in closed off room interior with 1 lamp source
+- Can turn it off
+
+### Caustics
+
+- Properties > Render > Caustics > Caustics
+- Can make a very minor difference to render times
+
+# Ep 15. Rendering Eevee
+
+### Shadows, Key Light
+
+- Properties > Render > Shadows
+  - Higher Cube Size value, more detail
+- Light Settings
+  - Select Light > properties > Data > Shadow
+  - Clip Start: 1.46m
+  - Bias: 0.001
+  - Contact Shadows
+    - Sprinkles can now cast shadows
+    - Set Distance to 0.04
+    - Set Bias to low 0.001
+    - Thickness 0.003
+
+### Shadows, Rim Light
+
+- Light Settings
+  - Select Light > properties > Data > Shadow
+  - Clip Start: 0.33
+  - Bias: 0.001
+
+### Shadows, Fill Light
+
+- Light Settings
+  - Select Light > properties > Data > Shadow
+  - Clip Start: 0.69
+  - Bias: 0.001
+
+### Screen Space Reflections
+
+- Properties > Render > Screen Space Reflections checkbox
+- Noticeable on shiny objects
+
+### Ambient Occlusion
+
+- Properties > Render > Ambient Occlusion checkbox
+- Adds darkening to crevices
+- Based on the Properties > World > Surface > Strength
+  - If set to 0, might not be able to see it
+
+### Samples
+
+- Not the same as Cycles samples
+
+# Ep 16. Finale
+
+- Save as individual image files, then compile into 1 video file
+- jpeg: will have compression artifacts
+- PNG is better, lossless, no compression
+  - Slower
+- TIFF better, good for compiling with another non-blender software
+- `USE`: OpenEXR
+  - Use Float(half) 16bit color
