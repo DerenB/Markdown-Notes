@@ -583,3 +583,30 @@
 - TIFF better, good for compiling with another non-blender software
 - `USE`: OpenEXR
   - Use Float(half) 16bit color
+
+### Video Compiling
+
+- Photos with `.exr` file extension
+- Open a new blender file
+  - File > New > Video Editing
+- Set settings
+  - Properties > Output
+  - Set resolution in format to the render resolution
+  - Set the frame rate
+  - Set the frame range end
+
+### Color Correction
+
+- Properties > Render > Color Management
+  - Set to "Filmic"
+  - Set the `Look` to what was used before
+  - Set the Exposure
+
+### Output Format
+
+- Set Output folder
+- File Format: FFmpeg Video
+- Encoding:
+  - Container: MPEG-4
+  - Video Codec: H.264
+  - Quality: Perceptually Lossless
