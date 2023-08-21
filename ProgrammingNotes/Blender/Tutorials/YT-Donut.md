@@ -143,7 +143,7 @@
   - Inflate: `I` - bulbous
     - Have to set brush to "Airbrush"
     - Click "Tool" on right
-    - Stroke > Stroke Method > Airbrush
+    - Brush Settings > Stroke > Stroke Method > Airbrush
 - Can go back to Layout mode and add another subdivision modifier if things get too jagged
 
 # Render Camera Positioning
