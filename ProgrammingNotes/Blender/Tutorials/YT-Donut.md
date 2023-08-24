@@ -276,7 +276,7 @@
   - Adds a new Geometry node in the Modifier stack
   - To use Geometry Nodes, it has to be a modifier
   - Have to click the modifier tab to view the nodes
-    - Can click the pin to keep it
+    - Can click the pin to keep it.
 
 ### Sprinkles
 
