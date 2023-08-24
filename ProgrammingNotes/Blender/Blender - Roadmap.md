@@ -47,5 +47,47 @@
 4. Compositing Effects in Blender
 5. Final Project
 
+# 2023 Categories, Free
 
+### Hard Surfaces
 
+- Josh Gambrell: [Channel](https://www.youtube.com/@JoshGambrell)
+
+### Motion Graphics
+
+- Derek Elliot: [Channel](https://www.youtube.com/@DerekElliott/videos)
+- Ducky 3D: [Channel](https://www.youtube.com/@TheDucky3D)
+
+### Character Design & Animations
+
+- SouthernShotty: [Channel](https://www.youtube.com/@SouthernShotty)
+- Grant Abbitt: [Channel](https://www.youtube.com/@grabbitt)
+
+### Procedural Shading
+
+- Ryan King Art: [Channel](https://www.youtube.com/@RyanKingArt)
+
+### General Information
+
+- Curtis Holt: [Channel](https://www.youtube.com/@CurtisHolt)
+
+### Beyond Basics
+
+- Polygon Runway: [Channel](https://www.youtube.com/@polygonrunway)
+
+### Fun Stuff
+
+- CG Geek, random: [Channel](https://www.youtube.com/@CGGeek)
+- Max Hay, Environments: [Channel](https://www.youtube.com/@maxhayart)
+
+### Honorable Mentions
+
+- Polyfjord: [Channel](https://www.youtube.com/@Polyfjord)
+- Smeaf
+- Cleverpoly
+- Default Cube
+- Kaizen Tutorials
+- Bad Normals
+- Kev Binge
+- intranetgirl
+- RenderRides 
