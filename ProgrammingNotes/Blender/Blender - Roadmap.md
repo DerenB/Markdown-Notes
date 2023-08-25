@@ -90,4 +90,27 @@
 - Bad Normals
 - Kev Binge
 - intranetgirl
-- RenderRides 
+- RenderRides
+
+# 2023 Categories, Paid
+
+- Realistic Human Face
+    - One course $67.59
+    - Multi course bundle $120.00
+    - [Blender Market Link](https://blendermarket.com/products/human-realistic-portrait-creation-with-blender)
+- Procedural Texturing
+    - One Course $33.75
+    - [Blender Market Link](https://blendermarket.com/products/procedural-texturing-blender)
+- Intro to Motion Graphics
+    - Looping animations specifically
+    - One Course $30
+    - [Blenser Market Link](https://blendermarket.com/products/intro-to-motion-graphics-blender-course)
+    - [Owner Website](https://www.ducky3d.com/store/product/intro-to-motion-graphics-blender-course)
+- Press Start: Simle Blender
+    - CG Cookie
+    - $48/mo subscription
+    - [Web Link](https://cgcookie.com/courses/press-start-your-simple-first-blender-project)
+- Master 3D Environments in Blender
+    - CG Boost
+    - One Course: $79
+    - [Web Link](https://www.cgboost.com/courses/master-3d-environments-in-blender)
