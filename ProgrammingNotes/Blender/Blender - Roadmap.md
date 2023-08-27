@@ -1,3 +1,10 @@
+# Links
+
+- [Blender Market](https://blendermarket.com/)
+- [CG Boost](https://www.cgboost.com/resources)
+- [CG Cookie](https://cgcookie.com/)
+- []()
+- []()
 
 # 4 Week List
 
