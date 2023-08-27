@@ -1,3 +1,10 @@
+# Links
+
+- [Blender Market](https://blendermarket.com/)
+- [CG Boost](https://www.cgboost.com/resources)
+- [CG Cookie](https://cgcookie.com/)
+- []()
+- []()
 
 # 4 Week List
 
@@ -47,5 +54,70 @@
 4. Compositing Effects in Blender
 5. Final Project
 
+# 2023 Categories, Free
 
+### Hard Surfaces
 
+- Josh Gambrell: [Channel](https://www.youtube.com/@JoshGambrell)
+
+### Motion Graphics
+
+- Derek Elliot: [Channel](https://www.youtube.com/@DerekElliott/videos)
+- Ducky 3D: [Channel](https://www.youtube.com/@TheDucky3D)
+
+### Character Design & Animations
+
+- SouthernShotty: [Channel](https://www.youtube.com/@SouthernShotty)
+- Grant Abbitt: [Channel](https://www.youtube.com/@grabbitt)
+
+### Procedural Shading
+
+- Ryan King Art: [Channel](https://www.youtube.com/@RyanKingArt)
+
+### General Information
+
+- Curtis Holt: [Channel](https://www.youtube.com/@CurtisHolt)
+
+### Beyond Basics
+
+- Polygon Runway: [Channel](https://www.youtube.com/@polygonrunway)
+
+### Fun Stuff
+
+- CG Geek, random: [Channel](https://www.youtube.com/@CGGeek)
+- Max Hay, Environments: [Channel](https://www.youtube.com/@maxhayart)
+
+### Honorable Mentions
+
+- Polyfjord: [Channel](https://www.youtube.com/@Polyfjord)
+- Smeaf
+- Cleverpoly
+- Default Cube
+- Kaizen Tutorials
+- Bad Normals
+- Kev Binge
+- intranetgirl
+- RenderRides
+
+# 2023 Categories, Paid
+
+- Realistic Human Face
+    - One course $67.59
+    - Multi course bundle $120.00
+    - [Blender Market Link](https://blendermarket.com/products/human-realistic-portrait-creation-with-blender)
+- Procedural Texturing
+    - One Course $33.75
+    - [Blender Market Link](https://blendermarket.com/products/procedural-texturing-blender)
+- Intro to Motion Graphics
+    - Looping animations specifically
+    - One Course $30
+    - [Blenser Market Link](https://blendermarket.com/products/intro-to-motion-graphics-blender-course)
+    - [Owner Website](https://www.ducky3d.com/store/product/intro-to-motion-graphics-blender-course)
+- Press Start: Simle Blender
+    - CG Cookie
+    - $48/mo subscription
+    - [Web Link](https://cgcookie.com/courses/press-start-your-simple-first-blender-project)
+- Master 3D Environments in Blender
+    - CG Boost
+    - One Course: $79
+    - [Web Link](https://www.cgboost.com/courses/master-3d-environments-in-blender)
