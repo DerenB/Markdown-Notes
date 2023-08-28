@@ -49,3 +49,8 @@
 - Add `Mix Color` Node
 - Disconnect `Color Ramp` Node
 - ![NodeImage](Donut-Texture-With-Painting.PNG)
+
+# Ep. 9 Geometry Node Sprinkles
+
+- In order to use geometry nodes, it has to be a modifier
+
