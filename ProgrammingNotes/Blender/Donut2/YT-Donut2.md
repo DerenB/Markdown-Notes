@@ -53,4 +53,27 @@
 # Ep. 9 Geometry Node Sprinkles
 
 - In order to use geometry nodes, it has to be a modifier
+  - Applying the modifier removes the nodes
+
+### Heat / Weight Map Painting
+
+- Select object to be painted
+  - Hit: `CTRL + Tab`
+  - Vertex Group in Properties > Data
+  - Hide Geometry Node modifier in modifier tab
+  - Paint on Icing
+  - Rename heat map group
+  - `CTRL + TAB` back to Object mode when done
+- Have to assign the heat map to the group input
+  - Select the modifier tab
+  - Click the box next to the input
+    - Looks like a cross in a box (Denmark Flag)
+    - Click the blank text box and select the heat map
+
+### Fix Object Sprinkles
+
+- `Problem`: Sprinkle Objects floating over the donut
+- `Fix`: Select Object > Top Bar > Object > Set Origin > Origin to Geometry 
+
+
 
