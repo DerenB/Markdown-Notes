@@ -75,5 +75,14 @@
 - `Problem`: Sprinkle Objects floating over the donut
 - `Fix`: Select Object > Top Bar > Object > Set Origin > Origin to Geometry 
 
+# Animation
+
+### Attach Icing
+
+- CTRL click all items to attach
+- Click parent last
+- Hit `CTRL + P`
+- Set parent to object
+
 
 
