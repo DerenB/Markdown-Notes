@@ -399,7 +399,7 @@
 
 ### Post Processing / Color Correction
 
-- Properties > Color Management > Look
+- Properties > Render > Color Management > Look
   - Set to High or Very High Contrast for donut
 - Check Light Exposure
   - Properties > Color Management > View Transform
@@ -423,7 +423,7 @@
 - Views an image of the render
   - Have to have a recent render for it to view
 - Better solution
-  - Turn off `Backdrop` in top left
+  - Turn off `Backdrop` in top Right
   - Add a Second Window
   - Set Window to `Image Editor`
   - Top Middle set to `Viewer Mode`
@@ -445,6 +445,7 @@
 
 - Enable Render Passes
   - Properties > View Layer > Passes > Light
+  - Labeled as Specular > Light in 3.0+
   - Check `Glossy Direct` box
   - Should see "GlossDir" in the `Render Layers` Node
   - Have to render again to see changes
@@ -476,7 +477,7 @@
 
 ### Denoiser
 
-- Properties > Render Sampling
+- Properties > Render > Sampling
 - OptiX: faster for viewport rendering
 - OpenImageDenoise: better algorithm for final render
 - Can turn off until number of samples decided
@@ -577,6 +578,7 @@
 # Ep 16. Finale
 
 - Save as individual image files, then compile into 1 video file
+- Properties > Output > Output
 - jpeg: will have compression artifacts
 - PNG is better, lossless, no compression
   - Slower
