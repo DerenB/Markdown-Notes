@@ -6,6 +6,19 @@
 - Donut Shader:
   - Light: #FFAC33
   - Dark: #AD6208
+- Sprinkles:
+  - Final:
+    - White: #FFFFFF
+    - Red: #B22234
+    - Blue: #0A3161
+  - Version 1:
+    - White: #FFFFFF
+    - Red: #B22234
+    - Blue: #3C3B6E
+  - Version 2:
+    - White: #FFFFFF
+    - Red: #B31942
+    - Blue: #0A3161
 
 ### Color Reference:
 

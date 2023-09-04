@@ -596,6 +596,12 @@
   - Set resolution in format to the render resolution
   - Set the frame rate
   - Set the frame range end
+  - Donut2 Settings:
+    - 1488 x 2266
+    - 60 FPS
+    - 0-600 Frame Range
+- Add Photos
+  - Bottom Sequencer > Add > Image Sequence
 
 ### Color Correction
 
@@ -606,9 +612,12 @@
 
 ### Output Format
 
-- Set Output folder
-- File Format: FFmpeg Video
+- Properties > Output
+- Output:
+  - Set Output folder
+  - File Format: FFmpeg Video
 - Encoding:
   - Container: MPEG-4
+- Video:
   - Video Codec: H.264
   - Quality: Perceptually Lossless
