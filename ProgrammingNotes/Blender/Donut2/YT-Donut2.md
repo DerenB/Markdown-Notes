@@ -31,7 +31,7 @@
 - Texture Coordinate
   - Fixes the stretch effect
   - Blender attempts to wrap the texture around the curved surfaces
-  - This stops that
+  - This stops that.
 - Noise Texture
   - Creates the splotches for the color and bumps
   - Adjust the `Scale` for splotch size
