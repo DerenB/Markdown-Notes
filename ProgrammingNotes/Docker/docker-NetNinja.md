@@ -9,3 +9,11 @@
 - Container
   - Running an instance of the image
   - Runs the application
+
+### Images
+
+- Made up of layers
+- First Layer: Parent Image
+  - OS
+  - Runtime environment
+- Dependencies
