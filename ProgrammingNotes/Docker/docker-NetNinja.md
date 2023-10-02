@@ -14,6 +14,6 @@
 
 - Made up of layers
 - First Layer: Parent Image
-  - OS
+  - lightweight OS
   - Runtime environment
 - Dependencies
