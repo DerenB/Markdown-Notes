@@ -74,6 +74,7 @@
 
 ### Add DLL Packages
 
+- Used for exporting the server files
 - [Stack Overflow Answer](https://stackoverflow.com/questions/41381064/vscode-c-sharp-add-reference-to-custom-assembly)
 - Open project file
     - Exa: `CashRazorPages.csproj`
